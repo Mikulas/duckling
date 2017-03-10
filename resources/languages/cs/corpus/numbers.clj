@@ -4,6 +4,7 @@
 
   "0"
   "nic"
+  "nul"
   "nula"
   "žádný"
   "žádní"
@@ -105,5 +106,5 @@
   (ordinal 4)
 
   "patnáctá"
-  (number 15)
+  (ordinal 15)
 )
