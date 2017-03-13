@@ -183,27 +183,6 @@
    :value (* (:value %1) (:value %2))
    :grain (:grain %2)}
 
-  ; "integer 100..999"
-  ; [(integer 100) (integer 1 99)]
-  ; {:dim :number
-  ;  :integer true
-  ;  :value (+ (:value %1) (:value %2))
-  ;  :grain 1}
-
-  ; "integer 1000..9999"
-  ; [(integer 1000) (integer 1 999)]
-  ; {:dim :number
-  ;  :integer true
-  ;  :value (+ (:value %1) (:value %2))
-  ;  :grain 1}
-
-  ; "integer 1000000..9999999"
-  ; [(integer 1000000) (integer 1 999999)]
-  ; {:dim :number
-  ;  :integer true
-  ;  :value (+ (:value %1) (:value %2))
-  ;  :grain 1}
-
  ;; Compound numbers: single digit prefix
 
  ; "one and ordinal-tens no space"
@@ -214,211 +193,67 @@
  ; [#"(?i)třia" (dim :number (:numeric-tens true))]
  ; {:dim :number :value (+ 3 (get %2 :value))}
 
-;  "single"
-;  #"(?i)pojedynczy"
-;  {:dim :number :integer true :value 1 :grain 1}
+ ;;
+ ;; Decimals
+ ;;
 
-;  "a pair"
-;  #"(?i)para?"
-;  {:dim :number :integer true :value 2 :grain 1}
+ "decimal number"
+ #"(\d*[.,]\d+)"
+ {:dim :number
+  :value (-> (:groups %1)
+             first
+             (clojure.string/replace #"," ".")
+             Double/parseDouble)}
 
-;  "dozen"
-;  #"(?i)tuzin"
-;  {:dim :number :integer true :value 12 :grain 1 :grouping true} ;;restrict composition and prevent "2 12"
+ "number dot number"
+ [(dim :number #(not (:number-prefixed %))) #"(?i)celá" (dim :number #(not (:number-suffixed %)))]
+ {:dim :number
+  :value (+
+    (double (/
+      (:value %3)
+      (Math/pow 10 (+ 1 (Math/floor (Math/log10 (:value %3)))))
+    ))
+    (:value %1)
+  )}
 
-;  "number 100"
-;  #"(?i)(sto|setki)"
-;  {:dim :number :integer true :value 100 :grain 2}
+ ; "decimal with thousands separator"
+ ; #"(\d+( \d\d\d)+[,.]\d+)"
+ ; {:dim :number
+ ;  :value (-> (:groups %1)
+ ;             first
+ ;             (clojure.string/replace #"," ".") ;; convert decimal comma to decimal point
+ ;             (clojure.string/replace #" " "") ;; remove thousand separators
+ ;             Double/parseDouble)}
 
-;  "number 200"
-;  #"(?i)(dwie(ście| setki))"
-;  {:dim :number :integer true :value 200 :grain 2}
-
-;  "number 300"
-;  #"(?i)(trzy(sta| setki))"
-;  {:dim :number :integer true :value 300 :grain 2}
-
-;  "number 400"
-;  #"(?i)(cztery(sta| setki))"
-;  {:dim :number :integer true :value 400 :grain 2}
-
-;  "number 500"
-;  #"(?i)(pięć(set| setek))"
-;  {:dim :number :integer true :value 500 :grain 2}
-
-;  "number 600"
-;  #"(?i)(sześć(set| setek))"
-;  {:dim :number :integer true :value 600 :grain 2}
-
-;  "number 700"
-;  #"(?i)(siedem(set| setek))"
-;  {:dim :number :integer true :value 700 :grain 2}
-
-;  "number 800"
-;  #"(?i)(osiem(set| setek))"
-;  {:dim :number :integer true :value 800 :grain 2}
-
-;  "number 900"
-;  #"(?i)(dziewięć(set| setek))"
-;  {:dim :number :integer true :value 900 :grain 2}
-
-;  "thousand"
-;  #"(?i)ty(s|ś)i(a|ą|ę)c(e|y)?"
-;  {:dim :number :integer true :value 1000 :grain 3}
-
-;  "million"
-;  #"(?i)milion(y|ów)?"
-;  {:dim :number :integer true :value 1000000 :grain 6}
-
-;  "couple"
-;  #"pare"
-;  {:dim :number :integer true :value 2}
-
-;  "a few" ; TODO set assumption
-;  #"kilk(a|u)"
-;  {:dim :number :integer true :precision :approximate :value 3}
-
-;  "twenty"
-;  #"(?i)dwadzie(ś|s)cia|dwudziest(u|oma)"
-;  {:dim :number :integer true :value 20 :grain 1}
-
-;  "thirty"
-;  #"(?i)trzydzieści|trzydziest(u|oma)"
-;  {:dim :number :integer true :value 30 :grain 1}
-
-;  "thirty"
-;  #"(?i)trzydzieści|trzydziest(u|oma)"
-;  {:dim :number :integer true :value 30 :grain 1}
-
-;  "fou?rty"
-;  #"(?i)czterdzieści|czterdziest(u|oma)"
-;  {:dim :number :integer true :value 40 :grain 1}
-
-;  "fifty"
-;  #"(?i)pięćdziesiąt|pięćdziesięci(u|oma)"
-;  {:dim :number :integer true :value 50 :grain 1}
-
-;  "sixty"
-;  #"(?i)sześćdziesiąt|sześćdziesięci(u|oma)"
-;  {:dim :number :integer true :value 60 :grain 1}
-
-;  "integer (20..90)"
-;  #"(?i)(twenty|thirty|fou?rty|fifty|sixty|seventy|eighty|ninety)"
-;  {:dim :number
-;   :integer true
-;   :value (get {"dwadzieścia" 20 "trzydzieści" 30 "czterdzieści" 40 "pięćdziesiąt" 50 "sześćdziesiąt" 60
-;                "siedemdziesiąt" 70 "osiemdziesiąt" 80 "dziewięćdziesiąt" 90}
-;               (-> %1 :groups first .toLowerCase))
-;   :grain 1}
-
-;  "integer 21..99"
-;  [(integer 10 90 #(#{20 30 40 50 60 70 80 90} (:value %))) (integer 1 9)]
-;  {:dim :number
-;   :integer true
-;   :value (+ (:value %1) (:value %2))}
-
-;  "integer (numeric)"
-;  #"(\d{1,18})"
-;  {:dim :number
-;   :integer true
-;   :value (Long/parseLong (first (:groups %1)))}
-
-;  "integer with thousands separator ,"
-;  #"(\d{1,3}(,\d\d\d){1,5})"
-;  {:dim :number
-;   :integer true
-;   :value (-> (:groups %1)
-;              first
-;              (clojure.string/replace #"," "")
-;              Long/parseLong)}
-
-;                                         ; composition
-;  "special composition for missing hundreds like in one twenty two"
-;  [(integer 1 9) (integer 10 99)] ; grain 1 are taken care of by specific rule
-;  {:dim :number
-;   :integer true
-;   :value (+ (* (:value %1) 100) (:value %2))
-;   :grain 1}
+ ;; negative number
+ "numbers prefix with -, negative or minus"
+ [#"(?i)-|m[ií]nus\s?|záporn[ýéáo]\s?" (dim :number #(not (:number-prefixed %)))]
+ (let [multiplier -1
+       value      (* (:value %2) multiplier)
+       int?       (zero? (mod value 1)) ; often true, but we could have 1.1111K
+       value      (if int? (long value) value)] ; cleaner if we have the right type
+   (assoc %2 :value value
+          :integer int?
+          :number-prefixed true)) ; prevent "- -3km" to be 3 billions
 
 
-;  "number dozen"
-;  [(integer 1 10) (dim :number #(:grouping %))]
-;  {:dim :number
-;   :integer true
-;   :value (* (:value %1) (:value %2))
-;   :grain (:grain %2)}
+ ;; suffixes
 
+                                        ; note that we check for a space-like char after the M, K or G
+                                        ; to avoid matching 3 Mandarins
+ "numbers suffixes (K, M, G)"
+ [(dim :number #(not (:number-suffixed %))) #"(?i)([kmg])(?=[\W\$€]|$)"]
+ (let [multiplier (get {"k" 1000 "m" 1000000 "g" 1000000000}
+                       (-> %2 :groups first .toLowerCase))
+       value      (* (:value %1) multiplier)
+       int?       (zero? (mod value 1)) ; often true, but we could have 1.1111K
+       value      (if int? (long value) value)] ; cleaner if we have the right type
+   (assoc %1 :value value
+          :integer int?
+          :number-suffixed true)) ; prevent "3km" to be 3 billions
 
-;  "number thousands"
-;  [(integer 1 999) (integer 1000 1000)]
-;  {:dim :number
-;   :integer true
-;   :value (* (:value %1) (:value %2))
-;   :grain (:grain %2)}
-
-;  "number millions"
-;  [(integer 1 99) (integer 1000000 1000000)]
-;  {:dim :number
-;   :integer true
-;   :value (* (:value %1) (:value %2))
-;   :grain (:grain %2)}
-
-;  ;;
-;  ;; Decimals
-;  ;;
-
-;  "decimal number"
-;  #"(\d*[.,]\d+)"
-;  {:dim :number
-;   :value (-> (:groups %1)
-;              first
-;              (clojure.string/replace #"," ".")
-;              Double/parseDouble)}
-
-;  "number dot number"
-;  [(dim :number #(not (:number-prefixed %))) #"(?i)celá" (dim :number #(not (:number-suffixed %)))]
-;  {:dim :number
-;   :value (+ (* 0.1 (:value %3)) (:value %1))}
-
-
-;  "decimal with thousands separator"
-;  #"(\d+( \d\d\d)+[,.]\d+)"
-;  {:dim :number
-;   :value (-> (:groups %1)
-;              first
-;              (clojure.string/replace #"," ".") ;; convert decimal comma to decimal point
-;              (clojure.string/replace #" " "") ;; remove thousand separators
-;              Double/parseDouble)}
-
-;  ;; negative number
-;  "numbers prefix with -, negative or minus"
-;  [#"(?i)-|m[ií]nus\s?|záporn[ýéáo]\s?" (dim :number #(not (:number-prefixed %)))]
-;  (let [multiplier -1
-;        value      (* (:value %2) multiplier)
-;        int?       (zero? (mod value 1)) ; often true, but we could have 1.1111K
-;        value      (if int? (long value) value)] ; cleaner if we have the right type
-;    (assoc %2 :value value
-;           :integer int?
-;           :number-prefixed true)) ; prevent "- -3km" to be 3 billions
-
-
-;  ;; suffixes
-
-;                                         ; note that we check for a space-like char after the M, K or G
-;                                         ; to avoid matching 3 Mandarins
-;  "numbers suffixes (K, M, G)"
-;  [(dim :number #(not (:number-suffixed %))) #"(?i)([kmg])(?=[\W\$€]|$)"]
-;  (let [multiplier (get {"k" 1000 "m" 1000000 "g" 1000000000}
-;                        (-> %2 :groups first .toLowerCase))
-;        value      (* (:value %1) multiplier)
-;        int?       (zero? (mod value 1)) ; often true, but we could have 1.1111K
-;        value      (if int? (long value) value)] ; cleaner if we have the right type
-;    (assoc %1 :value value
-;           :integer int?
-;           :number-suffixed true)) ; prevent "3km" to be 3 billions
-
-;  ;;
-;  ;; Ordinal numbers
+ ;;
+ ;; Ordinal numbers
 
  "first ordinal"
  #"(?i)první(m|ma|ch|mi|ho|mu)?"
