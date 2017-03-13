@@ -7,7 +7,7 @@
 
   ; same thing, with "of" in between like "Sunday of last week"
   "intersect by \"of\", \"from\", \"'s\""
-  [(dim :time #(not (:latent %))) #"(?i)z" (dim :time #(not (:latent %)))] ; sequence of two tokens with a time fn
+  [(dim :time #(not (:latent %))) #"(?i)ve?|ze?" (dim :time #(not (:latent %)))] ; sequence of two tokens with a time fn
   (intersect %1 %3)
 
   ; mostly for January 12, 2005
@@ -18,11 +18,11 @@
   (intersect %1 %3)
 
   "on <date>" ; on Wed, March 23
-  [#"(?i)we?" (dim :time)]
+  [#"(?i)ve?|na" (dim :time)]
   %2 ; does NOT dissoc latent
 
   "on a named-day" ; on a sunday
-  [#"(?i)we?" {:form :day-of-week}]
+  [#"(?i)ve?|na" {:form :day-of-week}]
   %2 ; does NOT dissoc latent
 
 
@@ -30,182 +30,138 @@
   ;; Named things
 
   "named-day"
-  #"(?i)poniedzia(l|ł)(ek|ku|kowi|kiem|kowy)|pon\.?"
+  #"(?i)ponděl(íma|ích|ími|ím|í|kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)"
   (day-of-week 1)
 
   "named-day"
-  #"(?i)wtorek|wtorku|wtorkowi|wtorkiem|wtr?\.?"
+  #"(?i)úter(ýma|ých|ým|ý|kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)"
   (day-of-week 2)
 
   "named-day"
-  #"(?i)(Ś|ś|s)rod(a|ą|y|e|ę|zie|owy|o)|(s|ś|Ś)ro?\.?"
+  #"(?i)stř(edách|edami|edama|edám|edě|edou|eda|edo|edu|edy|ed)"
   (day-of-week 3)
 
   "named-day"
-  #"(?i)czwartek|czwartku|czwartkowi|czwartkiem|czwr?\.?"
+  #"(?i)čtvrt(kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)"
   (day-of-week 4)
 
   "named-day"
-  #"(?i)piątek|piatek|piątku|piatku|piątkowi|piatkowi|piątkiem|piatkiem|pi(ą|a)tkowy|pia\.?"
+  #"(?i)pát(cích|kách|kům|kama|kem|ků|kum|ka|ek|ku|ky)"
   (day-of-week 5)
 
   "named-day"
-  #"(?i)sobota|soboty|sobocie|sobotę|sobote|sobotą|sobota|sobocie|soboto|sob\.?"
+  #"(?i)sob(otách|otami|otama|otám|otě|otou|ota|oto|otu|oty|ot)"
   (day-of-week 6)
 
   "named-day"
-  #"(?i)niedziela|niedzieli|niedzielę|niedziele|niedziela|niedzielą|niedzieli|niedzielo|nied?z?\.?"
+  #"(?i)nedě(lích|lema|lemi|lím|lí|le|li|l)"
   (day-of-week 7)
 
   "named-month"
- #"(?i)styczeń|styczen|stycznia|styczniowi|styczniem|styczniu|sty(cz)?\.?"
+  #"(?i)led(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
   (month 1)
 
   "named-month"
-  #"(?i)luty|lutego|lutemu|lut?\.?"
+  #"(?i)úno(rům|rama|rech|rum|rem|rů|ra|re|ru|ry|r)"
   (month 2)
 
   "named-month"
-  #"(?i)marzec|marca|marcowi|marcem|marcu|marz?\.?"
+  #"(?i)břez(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
   (month 3)
 
   "named-month"
-  #"(?i)kwiecień|kwiecien|kwietnia|kwietniowi|kwietniem|kwietniu|kwiet?\.?"
+  #"(?i)dub(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
   (month 4)
 
   "named-month"
-  #"(?i)maj|maja|majowi|majem|maju"
+  #"(?i)květ(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
   (month 5)
 
   "named-month"
-  #"(?i)czerwiec|czerwca|czerwcowi|czerwcem|czerwcu|czer?\.?"
+  #"(?i)červ(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
   (month 6)
 
   "named-month"
-  #"(?i)lipiec|lipca|lipcowi|lipcem|lipcu|lip\.?"
+  #"(?i)červen(cích|cům|cema|cum|ců|cem|ec|ce|ci)"
   (month 7)
 
   "named-month"
-  #"(?i)sierpień|sierpien|sierpnia|sierpniowi|sierpniem|sierpniu|sierp\.?|sier\.?|sie\.?"
+  #"(?i)srp(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
   (month 8)
 
   "named-month"
-  #"(?i)wrzesień|wrzesien|września|wrzesnia|wrześniowi|wrzesniowi|wrzesień|wrzesien|wrześniem|wrzesniem|wrześniu|wrzesniu|wrz\.?|wrze\.?"
+  #"(?i)zář(íma|ích|ími|ím|í)"
   (month 9)
 
   "named-month"
-  #"(?i)pa(z|ź)dziernik(a|owi|iem|u)?|paź\.?|paz\.?"
+  #"(?i)říj(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
   (month 10)
 
   "named-month"
-  #"(?i)listopad|listopada|listopadowi|listopadem|listopadzie|lis\.?|list\.?"
+  #"(?i)listop(adama|adům|adech|adem|adum|adů|ade|adu|ady|ad)"
   (month 11)
 
   "named-month"
-  #"(?i)grudzień|grudzien|grudnia|grudniowi|grudniem|grudniu|gru\.?|grud\.?"
+  #"(?i)prosin(cích|cům|cema|cum|ců|cem|ec|ce|ci)"
   (month 12)
 
   ; Holiday TODO: check online holidays
   ; or define dynamic rule (last thursday of october..)
 
-  "christmas"
-  #"(?i)((Ś|ś|s)wi(e|ę)ta)? ?bo(z|ż)(ym|ego|e) narodzeni(e|a|u)"
- (month-day 12 25)
+ ;  "christmas"
+ ;  #"(?i)((Ś|ś|s)wi(e|ę)ta)? ?bo(z|ż)(ym|ego|e) narodzeni(e|a|u)"
+ ; (month-day 12 25)
 
   "christmas eve"
-  #"(?i)(wigilia|wigilii|wigili(e|ę)|wigili(a|ą)|wigilio) ?(bo(z|ż)ego narodzenia)?"
+  #"(?i)Ván(ocích|ocema|ocemi|ocům|oce|oci|oc)"
   (month-day 12 24)
 
   "new year's eve"
-  #"(?i)sylwester|nowy rok"
+  #"(?i)Silvest(rové|rovi|rama|rech|rům|rum|ři|rem|rů|ře|ra|re|ru|ry|r)|nový rok"
   (month-day 12 31)
 
   "valentine's day"
-  #"(?i)walentynki"
+  #"(?i)Valentý(nové|nům|novi|nama|nech|nem|num|nů|na|ne|ni|nu|ny|n)"
   (month-day 2 14)
 
-  ;; "MLK Day";third Monday of January
-  ;;  #"(?i)(MLK|Martin Luther King,?)( Jr.?| Junior)? day"
-  ;; (intersect (day-of-week 1) (month 1) (cycle-nth-after :week 3 (month-day 1 1)))
-
-  ;; "memorial day" ;the last Monday of May
-  ;; #"(?i)memorial day"
-  ;; (pred-last-of (day-of-week 1) (month 5))
-
-  ;; "memorial day weekend" ;the weekend leading to the last Monday of May
-  ;; #"(?i)memorial day week(\s|-)?end"
-  ;; (interval (intersect (cycle-nth-after :day -3 (pred-last-of (day-of-week 1) (month 5))) (hour 18 false))
-  ;;           (intersect (pred-last-of (day-of-week 2) (month 5)) (hour 0 false)) ;need to use Tuesday to include monday
-  ;;           false)
-
-  "Polish independence day"
-  #"(?i)(s|ś)wiet(a|o) niepodleg(l|ł)o(s|ś)ci|(ś|s)w\.? niepodleg(l|ł)o(s|ś)ci"
-  (month-day 11 11)
-
-  ;; "labor day" ;first Monday in September
-  ;; #"(?i)labor day"
-  ;; (intersect (month 9) (day-of-week 1))
-
-  ;; "labor day weekend" ;weekend before 1st Monday in September
-  ;; #"(?i)labor day week(\s|-)?end"
-  ;; (interval (intersect (cycle-nth-after :day -3 (intersect (day-of-week 1) (month 9))) (hour 18 false))
-  ;;           (intersect (month 9) (day-of-week 2) (hour 0 false)) ;need to use Tuesday to include monday
-  ;;           true)
-
-  "Father's Day";third Sunday of June
-  #"(?i)dzie(n|ń) ?(taty|ojca)"
-  (intersect (day-of-week 7) (month 6) (cycle-nth-after :week 2 (month-day 6 1)))
-
-  "Mother's Day";second Sunday in May.
-  #"(?i)dzie(n|ń) ? ma(my|tki|m)"
-  (intersect (day-of-week 7) (month 5) (cycle-nth-after :week 1 (month-day 5 1)))
-
   "halloween day"
-  #"(?i)hall?owe?en( day)?"
+  #"(?i)hall?owe?e(nama|nům|nech|nem|num|nů|ne|nu|ny|n)"
   (month-day 10 31)
-
-  "thanksgiving day" ; fourth Thursday of November
-  #"(?i)((s|ś)wiet(a|o)|(dzie(n|ń)))? ?dzi(e|ę)kczynieni(e|a)"
-  (intersect (day-of-week 4) (month 11) (cycle-nth-after :week 4 (month-day 11 1)))
-
-  ;; "black friday"; (the fourth Friday of November),
-  ;; #"(?i)black frid?day"
-  ;; (intersect (day-of-week 5) (month 11) (cycle-nth-after :week 4 (month-day 11 1)))
 
   "absorption of , after named day"
   [{:form :day-of-week} #","]
   %1
 
   "now"
-  #"(?i)(w)? ?(tym|tej)? ?(teraz|momencie|chwili|momeńcie)"
+  #"(?i)teď|nyní"
   (cycle-nth :second 0)
 
   "today"
-  #"(?i)dzisiejszy|dzisiaj|dziś|dzis|w ten dzień|w ten dzien|w obecny dzień|w obecny dzien|obecnego dnia"
+  #"(?i)dnes|dneska|dnešek"
   (cycle-nth :day 0)
 
   "tomorrow"
-  #"(?i)jutr(o|a|u|em|ze(jszy|jsza)?)|jtr|jutr"
+  #"(?i)zejtra|zítra|zítř(kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)"
  (cycle-nth :day 1)
 
  "day-after-tomorrow (single-word)"
- #"(?i)(po ?jutr(o|ze))"
+ #"(?i)pozítří|pozítř(cích|kách|kama|kům|kem|ků|kum|ek|ku|ky)"
  (cycle-nth :day 2)
 
  "day-before-yesterday (single-word)"
- #"(?i)przedwczoraj"
+ #"(?i)předevčír(em|u)?"
  (cycle-nth :day 2)
 
   "yesterday"
-  #"(?i)wczoraj(szym|szy)?|wczrj|wczor"
+  #"(?i)včera|včerejš(kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)"
   (cycle-nth :day -1)
 
   "EOM|End of month"
-  #"(?i)(na |w )?(koniec|ko(n|ń)ca|ko(n|ń)cu|ko(n|ń)cowi|ko(n|ń)cem|ko(n|ń)c(o|ó)wke) (miesi(a|ą)ca|msc)"
+  #"(?i)((ve?|na|ze?) )kon(cích|cům|cema|cum|ců|cem|ec|ce|ci) měsí(cích|cema|cům|cem|cum|ců|ce|ci|c)"
   (cycle-nth :month 1)
 
   "EOY|End of year"
-  #"(?i)(na |w )?(koniec|ko(n|ń)ca|ko(n|ń)cu|ko(n|ń)cowi|ko(n|ń)cem|ko(n|ń)c(o|ó)wke) (rok(u|owi|iem))"
+  #"(?i)((ve?|na|ze?) )kon(cích|cům|cema|cum|ců|cem|ec|ce|ci) (rok(ama|ách|em|um|ům|ův|y|a|u|ů)?)"
   (cycle-nth :year 1)
 
   ;;
@@ -214,51 +170,51 @@
   ;; assumed to be strictly in the future:
   ;; "this Monday" => next week if today is Monday
   "this|next <day-of-week>"
-  [#"(?i)kolejn(ym|y|ego|emu|e)|nast(e|ę)pn(ym|y|ego|emu|e|(a|ą)|ej|e)" {:form :day-of-week}]
+  [#"(?i)t(ěmihle|ěmahle|ěchhle|ěmhle|ohohle|omuhle|ímhle|ímdle|ýhle|éhle|ýdle|oudle|enhle|ěhle|ouhle|omhle|ahle|yhle|uhle|ohle|odle|ihle|omle|ěmito|ěchto|ěmato|ohoto|omuto|ímto|ěmto|ento|omto|outo|éto|ato|ito|oto|uto|yto)" {:form :day-of-week}]
   (pred-nth-not-immediate %2 0)
 
   ;; for other preds, it can be immediate:
   ;; "this month" => now is part of it
   ; See also: cycles in en.cycles.clj
   "this <time>"
-  [#"(?i)te(mu|n|go|j)|ta|to|tym|nadchodz(a|ą)c(ym|y|ego|emu|(a|ą)|ej)" (dim :time)]
+  [#"(?i)t(ěmihle|ěmahle|ěchhle|ěmhle|ohohle|omuhle|ímhle|ímdle|ýhle|éhle|ýdle|oudle|enhle|ěhle|ouhle|omhle|ahle|yhle|uhle|ohle|odle|ihle|omle|ěmito|ěchto|ěmato|ohoto|omuto|ímto|ěmto|ento|omto|outo|éto|ato|ito|oto|uto|yto)" (dim :time)]
   (pred-nth %2 0)
 
   "next <time>"
-  [#"(?i)kolejn(ym|y|ego|emu|(a|ą)|ej|e)|nast(e|ę)pn(ym|y|ego|emu|e|(a|ą)|ej|e)|przysz(l|ł)(ego|emu|ym|(a|ą)|ej|ych|i|ymi|y|e)" (dim :time #(not (:latent %)))]
+  [#"(?i)příšt(ímu|ích|íma|ího|ími|ím|im|í)|nadcházejíc(ímu|ích|íma|ího|ími|ím|im|í)" (dim :time #(not (:latent %)))]
   (pred-nth-not-immediate %2 0)
 
   "last <time>"
-  [#"(?i)ostatni(ego|ch|emu|mi|m|(a|ą)|ej)?|(po ?)?przedni(ego|ch|emu|e|mi|m|a)?" (dim :time)]
+  [#"(?i)předchoz(ímu|ích|íma|ího|ími|ím|im|í)|minul(ýmu|ých|ýma|ýho|ými|ým|im|ý|ou|á|ému|é)|posledn(ímu|ích|íma|ího|ími|ím|im|í)" (dim :time)]
   (pred-nth %2 -1)
 
-  "<time> after next"
-  [(dim :time) #"(?i)po kolejnym|po nast(e|ę)pn(ym|y|ego|emu|(a|ą)|ej|e)|po przysz(l|ł)(ym|y|ego|emu|(a|ą)|ej)"]
-  (pred-nth-not-immediate %1 1)
+  "after next <time>"
+  [#"(?i)((po|v|na) )?(příšt(ímu|ích|íma|ího|ími|ím|im|í)|nadcházejíc(ímu|ích|íma|ího|ími|ím|im|í))" (dim :time)]
+  (pred-nth-not-immediate %2 1)
 
-   "<time> before last"
-  [(dim :time) #"(?i)przed ?ostatni(ego|ch|emu|mi|m|(a|ą)|ej)?"]
-  (pred-nth %1 -2)
+   "before last <time> "
+  [#"(?i)předminul(ýmu|ých|ýma|ýho|ými|ým|im|ý|ou|á|ému|é)|předposledn(ímu|ích|íma|ího|ími|ím|im|í)" (dim :time)]
+  (pred-nth %2 -2)
 
   "last <day-of-week> of <time>"
-  [#"(?i)ostatni(ego|ch|emu|mi|m|(a|ą)|ej)?" {:form :day-of-week} #"(?i)w(e)?|z(e)?" (dim :time)]
+  [#"(?i)posledn(ímu|ích|íma|ího|ími|ím|im|í)" {:form :day-of-week} #"(?i)ve?|ze?" (dim :time)]
   (pred-last-of %2 %4)
 
   "last <day-of-week> <time>"
-  [#"(?i)ostatni(ego|ch|emu|mi|m|(a|ą)|ej)?" {:form :day-of-week} (dim :time)]
+  [#"(?i)posledn(ímu|ích|íma|ího|ími|ím|im|í)" {:form :day-of-week} (dim :time)]
   (pred-last-of %2 %3)
 
  "last <cycle> of <time>"
- [#"(?i)ostatni(ego|ch|emu|mi|m|(a|ą)|ej)?" (dim :cycle) #"(?i)w(e)?|z(e)?" (dim :time)]
+ [#"(?i)posledn(ímu|ích|íma|ího|ími|ím|im|í)" (dim :cycle) #"(?i)ve?|na|ze?" (dim :time)]
  (cycle-last-of %2 %4)
 
  "last <cycle> <time>"
- [#"(?i)ostatni(ego|ch|emu|mi|m|(a|ą)|ej)?" (dim :cycle) (dim :time)]
+ [#"(?i)posledn(ímu|ích|íma|ího|ími|ím|im|í)" (dim :cycle) (dim :time)]
  (cycle-last-of %2 %3)
 
   ; Ordinals
  "nth <time> of <time>"
- [(dim :ordinal) (dim :time) #"(?i)w(e)?|z(e)?" (dim :time)]
+ [(dim :ordinal) (dim :time) #"(?i)ve?|na|ze?" (dim :time)]
  (pred-nth (intersect %4 %2) (dec (:value %1)))
 
  "nth <time> <time>"
