@@ -140,6 +140,36 @@
  #"(?i)(devadesáti?)"
  {:dim :number :integer true :value 90 :grain 1 :numeric-tens true}
 
+ ;; Hundreds
+
+ "one hundred implicit"
+ #"(?i)(s(et|tě|to|tu|tem))"
+ {:dim :number :integer true :value 100 :grain 1}
+
+ "hundreds with count"
+ [(integer 1 9) #"(?i)(s(et|tě|to|tech|tům|ty|ta|tu|tem))"]
+ {:dim :number :integer true :value (* 100 (:value %1)) :grain 1}
+
+ ;; Thousands
+
+ "one thousand implicit"
+ #"(?i)(tis(íc|íce|íci|ícem|ícum|ících))"
+ {:dim :number :integer true :value 1000 :grain 1}
+
+ "thousands with count"
+ [(integer 1 999) #"(?i)(tis(íc|íce|íci|ícem|ícum|íců|ícema|ícům|ících))"]
+ {:dim :number :integer true :value (* 1000 (:value %1)) :grain 1}
+
+ ;; Millions
+
+ "one million implicit"
+ #"(?i)(mil(ion|ionu|ión|ione|ióne|iónu|ionem|iónem|iónum))"
+ {:dim :number :integer true :value 1000000 :grain 1}
+
+ "millions with count"
+ [(integer 1 9) #"(?i)(mil(ion|ionu|iony|ión|ione|ióne|ionum|iónu|ionů|ionem|ióny|ionama|ionům|ionech|iónů|iónem|iónum|iónama|iónech|iónům))"]
+ {:dim :number :integer true :value (* 1000000 (:value %1)) :grain 1}
+
  ;; Compound numbers
 
  "integer 21..29,31..99"
@@ -147,6 +177,48 @@
   {:dim :number
    :integer true
    :value (+ (:value %1) (:value %2))}
+
+  "number hundreds"
+  [(integer 1 9) (integer 100 100)]
+  {:dim :number
+   :integer true
+   :value (* (:value %1) (:value %2))
+   :grain (:grain %2)}
+
+  "number thousands"
+  [(integer 1 999) (integer 1000 1000)]
+  {:dim :number
+   :integer true
+   :value (* (:value %1) (:value %2))
+   :grain (:grain %2)}
+
+  "number millions"
+  [(integer 1 999999) (integer 1000000 1000000)]
+  {:dim :number
+   :integer true
+   :value (* (:value %1) (:value %2))
+   :grain (:grain %2)}
+
+  "integer 100..999"
+  [(integer 100) (integer 1 99)]
+  {:dim :number
+   :integer true
+   :value (+ (:value %1) (:value %2))
+   :grain 1}
+
+  "integer 1000..9999"
+  [(integer 1000) (integer 1 999)]
+  {:dim :number
+   :integer true
+   :value (+ (:value %1) (:value %2))
+   :grain 1}
+
+  "integer 1000000..9999999"
+  [(integer 1000000) (integer 1 999999)]
+  {:dim :number
+   :integer true
+   :value (+ (:value %1) (:value %2))
+   :grain 1}
 
  ;; Compound numbers: single digit prefix
 
