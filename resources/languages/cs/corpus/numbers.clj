@@ -99,6 +99,9 @@
   "sedm set dvacet jedna tisíc dvanáct"
   (number 721012)
 
+  "jeden milion"
+  (number 1000000)
+
   "šedesát pět milionů"
   (number 65000000)
 

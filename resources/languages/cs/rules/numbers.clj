@@ -5,7 +5,7 @@
  (compose-numbers %1 %2)
 
  "intersect (with and)"
- [(dim :number :grain #(> (:grain %) 1)) #"(?i)i|a" (dim :number)] ; grain 1 are taken care of by specific rule
+ [(dim :number :grain #(> (:grain %) 1)) #"(?i)a" (dim :number)] ; grain 1 are taken care of by specific rule
  (compose-numbers %1 %3)
 
  ;;
@@ -24,151 +24,134 @@
  ;;
 
  "zero"
- #"(?i)(nul(a|e|o|u|y|ou|ama|ami|ám|ách)?|nic|žádn(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho))"
+ #"(?i)(nu(lách|lami|lama|lám|lou|la|le|lo|lu|ly|l)|nic|žádn(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej))"
  {:dim :number :integer true :value 0 :grain 1}
 
  "one"
- #"(?i)(jed(na|en|noho|nomu|nom|ním|ny|něch|něm|němi|ni)|jednič(ka|ce|ek|ko|ku|ky|kou|kama|kám|kami|kách))|jediný"
+ #"(?i)(jednič(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|jed(na|en|noho|nomu|nom|ním|ny|něch|něm|němi|ni)|jediný)"
  {:dim :number :integer true :value 1 :grain 1}
 
  "two"
- #"(?i)(dv(a|ou|ě|oum|ouma|ěma)|dvoj(ka|ce|ek|ko|ku|ky|kou|kama|kám|kami|kách))"
+ #"(?i)(dvoj(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|dv(ouma|ěma|oum|ou|ě|a))"
  {:dim :number :integer true :value 2 :grain 1}
 
  "three"
- #"(?i)(tř(i|em|í|ema|emi|ech)|troj(ka|ce|ek|ko|ku|ky|kou|kama|kám|kami|kách))"
+ #"(?i)(troj(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|tř(ema|emi|ech|em|í|i))"
  {:dim :number :integer true :value 3 :grain 1}
 
  "four"
- #"(?i)((čtyr|čtyry|čtyř|čtyři|čtyrem|čtyrmi|čtyrma|čtyřma|čtyřmi|čtyřem|čtyrech|čtyřech|štyři)|(čtyřka|čtyřce|čtyřek|čtyřko|čtyřku|čtyřky|čtyřkou|čtyřkama|čtyřkám|čtyřkami|čtyřkách|štyrka|štyrce|štyrek|štyrko|štyrku|štyrky|štyrkou|štyrkama|štyrkám|štyrkami|štyrkách)|čtver(ka|ce|ek|ko|ku|ky|kou|kama|kám|kami|kách))"
+ #"(?i)(čtyřkách|štyrkách|čtyřkama|čtyřkám|čtyřkami|štyrkami|štyrkám|štyrkama|čtyřkou|štyrkou|čtyřka|čtyřky|čtyřce|čtyřku|čtyřko|čtyřek|štyrce|štyrek|štyrko|štyrku|štyrky|štyrka|čtyřech|čtyřmi|čtyřma|čtyřem|čtyrech|čtyři|čtyrem|čtyrmi|čtyrma|štyři|čtyry|čtyř|čtyr)"
  {:dim :number :integer true :value 4 :grain 1}
 
  "five"
- #"(?i)(pět(i)?|pět(ka|ce|ek|ko|ku|ky|kou|kama|kám|kami|kách))"
+ #"(?i)(pět(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|pěti?)"
  {:dim :number :integer true :value 5 :grain 1}
 
  "six"
- #"(?i)(šest(i)?|šest(ka|ce|ek|ko|ku|ky|kou|kama|kám|kami|kách))"
+ #"(?i)(šest(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|šes(ti|t))"
  {:dim :number :integer true :value 6 :grain 1}
 
  "seven"
- #"(?i)(sed(um|m|mi)|sed(ma|em|mo|mu|my|mou|mě|mám|mama|mami|mách)|sedmič(ka|ce|ek|ko|ku|ky|kou|kama|kám|kami|kách))"
+ #"(?i)(sedmič(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|sed(um|mi|m))"
  {:dim :number :integer true :value 7 :grain 1}
 
  "eight"
- #"(?i)(osum|vosum|osm|osmi|os(ma|em|mo|mu|my|mou|mě|mám|mama|mami|mách)|osmič(ka|ce|ek|ko|ku|ky|kou|kama|kám|kami|kách))"
+ #"(?i)(v?osmič(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|v?osu?(mama|mami|mách|mám|mou|ma|em|mo|mu|my|mě|m))"
  {:dim :number :integer true :value 8 :grain 1}
 
  "nine"
- #"(?i)(dev(íti|ět)|devít(ka|ce|ek|ko|ku|ky|kou|kama|kám|kami|kách))"
+ #"(?i)(devít(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)|devět)"
  {:dim :number :integer true :value 9 :grain 1}
 
  "ten"
- #"(?i)(des(et|eti|íti)|desít(ka|ce|ek|ko|ku|ky|kou|kama|kám|kami|kách))"
+ #"(?i)(desít(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|des(íti|eti|et))"
  {:dim :number :integer true :value 10 :grain 1}
 
  "eleven"
- #"(?i)(jedenáct(i|ka|ce|ek|ko|ku|ky|kou|kama|kám|kami|kách)?)"
+ #"(?i)jedenáct(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 11 :grain 1}
 
  "twelve"
- #"(?i)(dvanáct(i|ka|ce|ek|ko|ku|ky|kou|kama|kám|kami|kách)?)"
+ #"(?i)dvanáct(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 12 :grain 1}
 
  "thirteen"
- #"(?i)(třináct(i|ka|ce|ek|ko|ku|ky|kou|kama|kám|kami|kách)?)"
+ #"(?i)třináct(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 13 :grain 1}
 
  "fourteen"
- #"(?i)(čtrnáct(i|ka|ce|ek|ko|ku|ky|kou|kama|kám|kami|kách)?)"
+ #"(?i)čtrnáct(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 14 :grain 1}
 
  "fifteen"
- #"(?i)(patnáct(i|ka|ce|ek|ko|ku|ky|kou|kama|kám|kami|kách)?)"
+ #"(?i)patnáct(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 15 :grain 1}
 
  "sixteen"
- #"(?i)(šestnáct(i|ka|ce|ek|ko|ku|ky|kou|kama|kám|kami|kách)?)"
+ #"(?i)šestnáct(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 16 :grain 1}
 
  "seventeen"
- #"(?i)(sedmnáct(i|ka|ce|ek|ko|ku|ky|kou|kama|kám|kami|kách)?)"
+ #"(?i)sedmnáct(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 17 :grain 1}
 
  "eighteen"
- #"(?i)(osu?mnáct(i|ka|ce|ek|ko|ku|ky|kou|kama|kám|kami|kách)?)"
+ #"(?i)osmnáct(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 18 :grain 1}
 
  "nineteen"
- #"(?i)(devatenáct(i|ka|ce|ek|ko|ku|ky|kou|kama|kám|kami|kách)?)"
+ #"(?i)devatenáct(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 19 :grain 1}
-
-; TODO  TODO  TODO  TODO  TODO  TODO  TODO  TODO  TODO  TODO
- ;; 14-19
 
  ;; Numeric tens
 
  "twenty"
- #"(?i)(dvac(et|eti|íti))"
+ #"(?i)(dvacít(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|dvac(et|eti|íti))"
  {:dim :number :integer true :value 20 :grain 1 :numeric-tens true}
 
  "thirty"
- #"(?i)(třic(et|eti|íti))"
+ #"(?i)(třicít(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|třic(et|eti|íti))"
  {:dim :number :integer true :value 30 :grain 1 :numeric-tens true}
 
  "fourty"
- #"(?i)(čty(rycet|ryceti|řicet|řiceti|řicíti))"
+ #"(?i)(čtyřicít(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|čty(rycet|ryceti|řicet|řiceti|řicíti))"
  {:dim :number :integer true :value 40 :grain 1 :numeric-tens true}
 
  "fifty"
- #"(?i)(padesáti?)"
+ #"(?i)padesát(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 50 :grain 1 :numeric-tens true}
 
  "sixty"
- #"(?i)(šedesát(i|e)?)"
+ #"(?i)šedesát(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 60 :grain 1 :numeric-tens true}
 
  "seventy"
- #"(?i)(sedu?mdesáti?)"
+ #"(?i)sedu?mdesát(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 70 :grain 1 :numeric-tens true}
 
  "eighty"
- #"(?i)(osu?mdesáti?)"
+ #"(?i)osu?mdesát(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 80 :grain 1 :numeric-tens true}
 
  "ninety"
- #"(?i)(devadesáti?)"
+ #"(?i)devadesát(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 90 :grain 1 :numeric-tens true}
 
- ;; Hundreds
+ ;; Multipliers
 
- "one hundred implicit"
- #"(?i)(s(et|tě|to|tu|tem))"
- {:dim :number :integer true :value 100 :grain 1}
-
- "hundreds with count"
- [(integer 1 9) #"(?i)(s(et|tě|to|tech|tům|ty|ta|tu|tem))"]
- {:dim :number :integer true :value (* 100 (:value %1)) :grain 1}
+ "hundred"
+ #"(?i)s(tech|tům|tě|tem|et|to|ty|ta|tu)"
+ {:dim :number :integer true :value 100 :grain 2}
 
  ;; Thousands
 
- "one thousand implicit"
- #"(?i)(tis(íc|íce|íci|ícem|ícum|ících))"
- {:dim :number :integer true :value 1000 :grain 1}
+ "thousand"
+ #"(?i)tisí(cích|cema|cům|cem|cum|ců|ce|ci|c)"
+ {:dim :number :integer true :value 1000 :grain 3}
 
- "thousands with count"
- [(integer 1 999) #"(?i)(tis(íc|íce|íci|ícem|ícum|íců|ícema|ícům|ících))"]
- {:dim :number :integer true :value (* 1000 (:value %1)) :grain 1}
-
- ;; Millions
-
- "one million implicit"
- #"(?i)(mil(ion|ionu|ión|ione|ióne|iónu|ionem|iónem|iónum))"
- {:dim :number :integer true :value 1000000 :grain 1}
-
- "millions with count"
- [(integer 1 9) #"(?i)(mil(ion|ionu|iony|ión|ione|ióne|ionum|iónu|ionů|ionem|ióny|ionama|ionům|ionech|iónů|iónem|iónum|iónama|iónech|iónům))"]
- {:dim :number :integer true :value (* 1000000 (:value %1)) :grain 1}
+ "million"
+ #"(?i)mili(ónům|ónech|ónama|onama|ónum|ónem|ónů|onech|onům|óny|onem|onů|ónu|onum|óne|onu|one|ón|ony|on)"
+ {:dim :number :integer true :value 1000000 :grain 6}
 
  ;; Compound numbers
 
@@ -176,7 +159,8 @@
   [(integer 10 90 #(#{20 30 40 50 60 70 80 90} (:value %))) (integer 1 9)]
   {:dim :number
    :integer true
-   :value (+ (:value %1) (:value %2))}
+   :value (+ (:value %1) (:value %2))
+   :grain 1}
 
   "number hundreds"
   [(integer 1 9) (integer 100 100)]
@@ -199,26 +183,26 @@
    :value (* (:value %1) (:value %2))
    :grain (:grain %2)}
 
-  "integer 100..999"
-  [(integer 100) (integer 1 99)]
-  {:dim :number
-   :integer true
-   :value (+ (:value %1) (:value %2))
-   :grain 1}
+  ; "integer 100..999"
+  ; [(integer 100) (integer 1 99)]
+  ; {:dim :number
+  ;  :integer true
+  ;  :value (+ (:value %1) (:value %2))
+  ;  :grain 1}
 
-  "integer 1000..9999"
-  [(integer 1000) (integer 1 999)]
-  {:dim :number
-   :integer true
-   :value (+ (:value %1) (:value %2))
-   :grain 1}
+  ; "integer 1000..9999"
+  ; [(integer 1000) (integer 1 999)]
+  ; {:dim :number
+  ;  :integer true
+  ;  :value (+ (:value %1) (:value %2))
+  ;  :grain 1}
 
-  "integer 1000000..9999999"
-  [(integer 1000000) (integer 1 999999)]
-  {:dim :number
-   :integer true
-   :value (+ (:value %1) (:value %2))
-   :grain 1}
+  ; "integer 1000000..9999999"
+  ; [(integer 1000000) (integer 1 999999)]
+  ; {:dim :number
+  ;  :integer true
+  ;  :value (+ (:value %1) (:value %2))
+  ;  :grain 1}
 
  ;; Compound numbers: single digit prefix
 
