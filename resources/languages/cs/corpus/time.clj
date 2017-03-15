@@ -109,7 +109,7 @@
  "15tého února"
  "Únor 15"
  "15-tého Února"
- "2/15"
+ "15/2"
  "15. 2."
  "15.2."
  "patnáctého února"
@@ -128,10 +128,10 @@
  "října 2014"
  (datetime 2014 10 :year 2014 :month 10)
 
- "10/31/1974"
- "10/31/74"
- "10-31-74"
+ "31/10/1974"
  "31. 10. 1974"
+ "1974-10-31"
+ "31. 10.1974"
  "31.10.1974"
  (datetime 1974 10 31 :day 31 :month 10 :year 1974)
 
@@ -155,30 +155,30 @@
 ;  "příští březen"
 ;  (datetime 2013 3)
 
-;  "Neděle, 10 února"
-;  "Neděle, února 10"
-;  "Neděle, 10tého února"
-;  "Neděle, 10-tého února"
-;  "Neděle, 10-tý únor"
-;  "Neděle, 10. února"
-;  (datetime 2013 2 10 :day-of-week 7 :day 10 :month 2)
+ "Neděle, 10 února"
+ "Neděle, února 10"
+ "Neděle, 10tého února"
+ "Neděle, 10-tého února"
+ "Neděle, 10-tý únor"
+ "Neděle, 10. února"
+ (datetime 2013 2 10 :day-of-week 7 :day 10 :month 2)
 
-;  "st., Únor13"
-;  "středa, 13Února"
-;  "středa, 13únor"
-;  "st 13tého Února"
-;  "St, 13února"
-;  "středa třináctého února"
-;  (datetime 2013 2 13 :day-of-week 3 :day 13 :month 2)
+ "st., Únor13"
+ "středa, 13Února"
+ "středa, 13únor"
+ "st 13tého Února"
+ "St, 13února"
+ "středa třináctého února"
+ (datetime 2013 2 13 :day-of-week 3 :day 13 :month 2)
 
-;  "Pondělí, únor 18"
-;  "Pondělí, 18 února"
-;  "Pondělí, 18. února"
-;  "Pondělek, únor 18"
-;  "Pondělek, 18 února"
-;  "Pondělek, 18. února"
-;  "Po, únor 18"
-;  (datetime 2013 2 18 :day-of-week 1 :day 18 :month 2)
+ "Pondělí, únor 18"
+ "Pondělí, 18 února"
+ "Pondělí, 18. února"
+ "Pondělek, únor 18"
+ "Pondělek, 18 února"
+ "Pondělek, 18. února"
+ "Po, únor 18"
+ (datetime 2013 2 18 :day-of-week 1 :day 18 :month 2)
 
 ;  ;; ;   ;; Cycles
 

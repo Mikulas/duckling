@@ -25,7 +25,6 @@
   [#"(?iu)ve?|na" {:form :day-of-week}]
   %2 ; does NOT dissoc latent
 
-
   ;;;;;;;;;;;;;;;;;;;
   ;; Named things
 
@@ -274,7 +273,7 @@
 
   "<named-month> <day-of-month> (non ordinal)" ; march 12
   [{:form :month} (integer 1 31)]
- (intersect %1 (day-of-month (:value %2)))
+  (intersect %1 (day-of-month (:value %2)))
 
   "<day-of-month> (ordinal) of <named-month>"
   [(dim :ordinal #(<= 1 (:value %) 31)) #"(?iu)of|in" {:form :month}]
@@ -426,27 +425,19 @@
   [#(:relative-minutes %) #"(?iu)po" (dim :time :full-hour)]
   (hour-relativemin (:full-hour %3) (:relative-minutes %1) true)
 
-
- ;;TODO IMPLEMENT W POL DO XX
-
-  ;; "half <integer> (UK style hour-of-day)"
-  ;; [#"half" (dim :time :full-hour)]
-  ;; (hour-relativemin (:full-hour %2) 30 true)
-
-
-  ; Formatted dates and times
-
-  "mm/dd/yyyy"
-  #"(0?[1-9]|1[0-2])[/-](3[01]|[12]\d|0?[1-9])[-/](\d{2,4})"
-  (parse-dmy (second (:groups %1)) (first (:groups %1)) (nth (:groups %1) 2) true)
+  ;; Formatted dates and times
 
   "yyyy-mm-dd"
   #"(\d{2,4})-(0?[1-9]|1[0-2])-(3[01]|[12]\d|0?[1-9])"
   (parse-dmy (nth (:groups %1) 2) (second (:groups %1)) (first (:groups %1)) true)
 
-  "mm/dd"
-  #"(0?[1-9]|1[0-2])/(3[01]|[12]\d|0?[1-9])"
-  (parse-dmy (second (:groups %1)) (first (:groups %1)) nil true)
+  "dd/mm/yyyy"
+  #"(3[01]|[12]\d|0?[1-9]) ?[./-] ?(0?[1-9]|1[0-2]) ?[.-/] ?(\d{2,4})"
+  (parse-dmy (first (:groups %1)) (second (:groups %1)) (nth (:groups %1) 2) true)
+
+  "dd/mm"
+  #"(3[01]|[12]\d|0?[1-9]) ?[/.] ?(0?[1-9]|1[0-2]) ?\.?"
+  (parse-dmy (first (:groups %1)) (second (:groups %1)) nil true)
 
 
   ; Part of day (morning, evening...). They are intervals.
