@@ -256,155 +256,155 @@
  ;; Ordinal numbers
 
  "first ordinal"
- #"(?i)prvn(íma|ích|ími|ího|ímu|ím|í)"
+ #"(?i)(1-?|prvn)(íma|ích|ími|ího|ímu|ím|í)"
  {:dim :ordinal
   :ordinal-digit true
   :value 1}
 
  "second ordinal"
- #"(?i)dru(hýho|hýma|hými|hýmu|hému|hých|hejma|hejch|hého|hém|hejm|hým|zí|há|hej|hé|hym|hou|hý)"
+ #"(?i)(2-?|dru)(hýho|hýma|hými|hýmu|hému|hých|hejma|hejch|hého|hém|hejm|hým|zí|há|hej|hé|hym|hou|hý)"
  {:dim :ordinal
   :ordinal-digit true
   :value 2}
 
  "third ordinal"
- #"(?i)třet(íma|ích|ími|ího|ímu|ím|í)"
+ #"(?i)(3-?|tře)(tíma|tích|tími|tího|tímu|tím|tí)"
  {:dim :ordinal
   :ordinal-digit true
   :value 3}
 
  "fourth ordinal"
- #"(?i)čtvrt(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(4-?|čtvr)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :ordinal-digit true
   :value 4}
 
  "fifth ordinal"
- #"(?i)pát(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(5-?|pá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :ordinal-digit true
   :value 5}
 
  "sixth ordinal"
- #"(?i)šest(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(6-?|šes)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :ordinal-digit true
   :value 6}
 
  "seventh ordinal"
- #"(?i)sedm(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(7-?|sedu?)(mýho|mých|mými|mejch|mýma|mejma|mýmu|mému|mého|mým|mejm|mém|mym|mý|mí|mé|má|mou|mej)"
  {:dim :ordinal
   :ordinal-digit true
   :value 7}
 
  "8th ordinal"
- #"(?i)osm(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(8-?|osu?)(mýho|mých|mými|mejch|mýma|mejma|mýmu|mému|mého|mým|mejm|mém|mym|mý|mí|mé|má|mou|mej)"
  {:dim :ordinal
   :ordinal-digit true
   :value 8}
 
  "9th ordinal"
- #"(?i)devát(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(9-?|devá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :ordinal-digit true
   :value 9}
 
  "10th ordinal"
- #"(?i)desát(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(10-?|desá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :value 10}
 
  "11th ordinal"
- #"(?i)jedenáct(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(11-?|jedenác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :value 11}
 
  "12th ordinal"
- #"(?i)dvanáct(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(12-?|dvanác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :value 12}
 
  "13th ordinal"
- #"(?i)třináct(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(13-?|třinác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :value 13}
 
  "14th ordinal"
- #"(?i)čtrnáct(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(14-?|čtrnác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :value 14}
 
  "15th ordinal"
- #"(?i)patnáct(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(15-?|patnác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :value 15}
 
  "16th ordinal"
- #"(?i)šestnáct(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(16-?|šestnác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :value 16}
 
  "17th ordinal"
- #"(?i)sedu?mnáct(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(17-?|sedu?mnác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :value 17}
 
  "18th ordinal"
- #"(?i)osu?mnáct(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(18-?|osu?mnác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :value 18}
 
  "19th ordinal"
- #"(?i)devatenáct(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(19-?|devatenác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :value 19}
 
  ;; ordinal tens
 
  "20th ordinal"
- #"(?i)dvacát(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(20-?|dvacá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 20}
 
  "30th ordinal"
- #"(?i)třicát(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(30-?|třicá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 30}
 
  "40th ordinal"
- #"(?i)čtyřicát(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(40-?|čtyřicá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 40}
 
  "50th ordinal"
- #"(?i)padesát(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(50-?|padesá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 50}
 
  "60th ordinal"
- #"(?i)šedesát(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(60-?|šedesá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 60}
 
  "70th ordinal"
- #"(?i)sedu?mdesát(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(70-?|sedu?mdesá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 70}
 
  "80th ordinal"
- #"(?i)osu?mdesát(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(80-?|osu?mdesá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 80}
 
  "90th ordinal"
- #"(?i)devadesát(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)(90-?|devadesá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 90}

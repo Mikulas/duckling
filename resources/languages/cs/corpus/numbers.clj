@@ -114,8 +114,7 @@
   (ordinal 4)
 
   "patnáctá"
-  (ordinal 15)
-
+  "15-tý"
   "15tý"
   (ordinal 15)
 )
