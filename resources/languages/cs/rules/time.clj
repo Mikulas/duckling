@@ -7,7 +7,7 @@
 
   ; same thing, with "of" in between like "Sunday of last week"
   "intersect by \"of\", \"from\", \"'s\""
-  [(dim :time #(not (:latent %))) #"(?i)ve?|ze?" (dim :time #(not (:latent %)))] ; sequence of two tokens with a time fn
+  [(dim :time #(not (:latent %))) #"(?iu)ve?|ze?" (dim :time #(not (:latent %)))] ; sequence of two tokens with a time fn
   (intersect %1 %3)
 
   ; mostly for January 12, 2005
@@ -18,11 +18,11 @@
   (intersect %1 %3)
 
   "on <date>" ; on Wed, March 23
-  [#"(?i)ve?|na" (dim :time)]
+  [#"(?iu)ve?|na" (dim :time)]
   %2 ; does NOT dissoc latent
 
   "on a named-day" ; on a sunday
-  [#"(?i)ve?|na" {:form :day-of-week}]
+  [#"(?iu)ve?|na" {:form :day-of-week}]
   %2 ; does NOT dissoc latent
 
 
@@ -30,102 +30,102 @@
   ;; Named things
 
   "named-day"
-  #"(?i)ponděl(íma|ích|ími|ím|í|kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)"
+  #"(?iu)ponděl(íma|ích|ími|ím|í|kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)|pon?\.?"
   (day-of-week 1)
 
   "named-day"
-  #"(?i)úter(ýma|ých|ým|ý|kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)"
+  #"(?iu)úter(ýma|ých|ým|ý|kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)|út\.?"
   (day-of-week 2)
 
   "named-day"
-  #"(?i)stř(edách|edami|edama|edám|edě|edou|eda|edo|edu|edy|ed)"
+  #"(?iu)stř(edách|edami|edama|edám|edě|edou|eda|edo|edu|edy|ed)|st\.?"
   (day-of-week 3)
 
   "named-day"
-  #"(?i)čtvrt(kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)"
+  #"(?iu)čtvrt(kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)|čtv?\.?"
   (day-of-week 4)
 
   "named-day"
-  #"(?i)pát(cích|kách|kům|kama|kem|ků|kum|ka|ek|ku|ky)"
+  #"(?iu)pát(cích|kách|kům|kama|kem|ků|kum|ka|ek|ku|ky)|pát?\.?"
   (day-of-week 5)
 
   "named-day"
-  #"(?i)sob(otách|otami|otama|otám|otě|otou|ota|oto|otu|oty|ot)"
+  #"(?iu)sob(otách|otami|otama|otám|otě|otou|ota|oto|otu|oty|ot)|sob?\.?"
   (day-of-week 6)
 
   "named-day"
-  #"(?i)nedě(lích|lema|lemi|lím|lí|le|li|l)"
+  #"(?iu)nedě(lích|lema|lemi|lím|lí|le|li|l)|ne\.?"
   (day-of-week 7)
 
   "named-month"
-  #"(?i)led(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
+  #"(?iu)led(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
   (month 1)
 
   "named-month"
-  #"(?i)úno(rům|rama|rech|rum|rem|rů|ra|re|ru|ry|r)"
+  #"(?iu)úno(rům|rama|rech|rum|rem|rů|ra|re|ru|ry|r)"
   (month 2)
 
   "named-month"
-  #"(?i)břez(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
+  #"(?iu)břez(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
   (month 3)
 
   "named-month"
-  #"(?i)dub(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
+  #"(?iu)dub(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
   (month 4)
 
   "named-month"
-  #"(?i)květ(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
+  #"(?iu)květ(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
   (month 5)
 
   "named-month"
-  #"(?i)červ(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
+  #"(?iu)červ(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
   (month 6)
 
   "named-month"
-  #"(?i)červen(cích|cům|cema|cum|ců|cem|ec|ce|ci)"
+  #"(?iu)červen(cích|cům|cema|cum|ců|cem|ec|ce|ci)"
   (month 7)
 
   "named-month"
-  #"(?i)srp(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
+  #"(?iu)srp(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
   (month 8)
 
   "named-month"
-  #"(?i)zář(íma|ích|ími|ím|í)"
+  #"(?iu)zář(íma|ích|ími|ím|í)"
   (month 9)
 
   "named-month"
-  #"(?i)říj(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
+  #"(?iu)říj(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
   (month 10)
 
   "named-month"
-  #"(?i)listop(adama|adům|adech|adem|adum|adů|ade|adu|ady|ad)"
+  #"(?iu)listop(adama|adům|adech|adem|adum|adů|ade|adu|ady|ad)"
   (month 11)
 
   "named-month"
-  #"(?i)prosin(cích|cům|cema|cum|ců|cem|ec|ce|ci)"
+  #"(?iu)prosin(cích|cům|cema|cum|ců|cem|ec|ce|ci)"
   (month 12)
 
   ; Holiday TODO: check online holidays
   ; or define dynamic rule (last thursday of october..)
 
  ;  "christmas"
- ;  #"(?i)((Ś|ś|s)wi(e|ę)ta)? ?bo(z|ż)(ym|ego|e) narodzeni(e|a|u)"
+ ;  #"(?iu)((Ś|ś|s)wi(e|ę)ta)? ?bo(z|ż)(ym|ego|e) narodzeni(e|a|u)"
  ; (month-day 12 25)
 
   "christmas eve"
-  #"(?i)Ván(ocích|ocema|ocemi|ocům|oce|oci|oc)"
+  #"(?iu)Ván(ocích|ocema|ocemi|ocům|oce|oci|oc)"
   (month-day 12 24)
 
   "new year's eve"
-  #"(?i)Silvest(rové|rovi|rama|rech|rům|rum|ři|rem|rů|ře|ra|re|ru|ry|r)|nový rok"
+  #"(?iu)Silvest(rové|rovi|rama|rech|rům|rum|ři|rem|rů|ře|ra|re|ru|ry|r)|nový rok"
   (month-day 12 31)
 
   "valentine's day"
-  #"(?i)Valentý(nové|nům|novi|nama|nech|nem|num|nů|na|ne|ni|nu|ny|n)"
+  #"(?iu)Valentý(nové|nům|novi|nama|nech|nem|num|nů|na|ne|ni|nu|ny|n)"
   (month-day 2 14)
 
   "halloween day"
-  #"(?i)hall?owe?e(nama|nům|nech|nem|num|nů|ne|nu|ny|n)"
+  #"(?iu)hall?owe?e(nama|nům|nech|nem|num|nů|ne|nu|ny|n)"
   (month-day 10 31)
 
   "absorption of , after named day"
@@ -133,35 +133,35 @@
   %1
 
   "now"
-  #"(?i)teď|nyní"
+  #"(?iu)teď|nyní|okamžitě|hned|co nejdříve?"
   (cycle-nth :second 0)
 
   "today"
-  #"(?i)dnes|dneska|dnešek"
+  #"(?iu)dnes(ka)?|dneš(kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)"
   (cycle-nth :day 0)
 
   "tomorrow"
-  #"(?i)zejtra|zítra|zítř(kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)"
+  #"(?iu)zejtra|zítra|zítř(kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)|((za|o) )?den po(zději)?"
  (cycle-nth :day 1)
 
  "day-after-tomorrow (single-word)"
- #"(?i)pozítří|pozítř(cích|kách|kama|kům|kem|ků|kum|ek|ku|ky)"
+ #"(?iu)pozítří|pozítř(cích|kách|kama|kům|kem|ků|kum|ek|ku|ky)|((za|o) )?(dva|2) dny po(zději)?"
  (cycle-nth :day 2)
 
  "day-before-yesterday (single-word)"
- #"(?i)předevčír(em|u)?"
+ #"(?iu)předevčír(em|u)?"
  (cycle-nth :day 2)
 
   "yesterday"
-  #"(?i)včera|včerejš(kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)"
+  #"(?iu)včera|včerejš(kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)|před dnem|den (zpátky|zpět)|předchozí den|den před(chozí)?"
   (cycle-nth :day -1)
 
   "EOM|End of month"
-  #"(?i)((ve?|na|ze?) )kon(cích|cům|cema|cum|ců|cem|ec|ce|ci) měsí(cích|cema|cům|cem|cum|ců|ce|ci|c)"
+  #"(?iu)((ve?|na|ze?) )kon(cích|cům|cema|cum|ců|cem|ec|ce|ci) měsí(cích|cema|cům|cem|cum|ců|ce|ci|c)"
   (cycle-nth :month 1)
 
   "EOY|End of year"
-  #"(?i)((ve?|na|ze?) )kon(cích|cům|cema|cum|ců|cem|ec|ce|ci) (rok(ama|ách|em|um|ům|ův|y|a|u|ů)?)"
+  #"(?iu)((ve?|na|ze?) )kon(cích|cům|cema|cum|ců|cem|ec|ce|ci) (rok(ama|ách|em|um|ům|ův|y|a|u|ů)?)"
   (cycle-nth :year 1)
 
   ;;
@@ -170,51 +170,51 @@
   ;; assumed to be strictly in the future:
   ;; "this Monday" => next week if today is Monday
   "this|next <day-of-week>"
-  [#"(?i)t(ěmihle|ěmahle|ěchhle|ěmhle|ohohle|omuhle|ímhle|ímdle|ýhle|éhle|ýdle|oudle|enhle|ěhle|ouhle|omhle|ahle|yhle|uhle|ohle|odle|ihle|omle|ěmito|ěchto|ěmato|ohoto|omuto|ímto|ěmto|ento|omto|outo|éto|ato|ito|oto|uto|yto)" {:form :day-of-week}]
+  [#"(?iu)t(ěmihle|ěmahle|ěchhle|ěmhle|ohohle|omuhle|ímhle|ímdle|ýhle|éhle|ýdle|oudle|enhle|ěhle|ouhle|omhle|ahle|yhle|uhle|ohle|odle|ihle|omle|ěmito|ěchto|ěmato|ohoto|omuto|ímto|ěmto|ento|omto|outo|éto|ato|ito|oto|uto|yto)" {:form :day-of-week}]
   (pred-nth-not-immediate %2 0)
 
   ;; for other preds, it can be immediate:
   ;; "this month" => now is part of it
   ; See also: cycles in en.cycles.clj
   "this <time>"
-  [#"(?i)t(ěmihle|ěmahle|ěchhle|ěmhle|ohohle|omuhle|ímhle|ímdle|ýhle|éhle|ýdle|oudle|enhle|ěhle|ouhle|omhle|ahle|yhle|uhle|ohle|odle|ihle|omle|ěmito|ěchto|ěmato|ohoto|omuto|ímto|ěmto|ento|omto|outo|éto|ato|ito|oto|uto|yto)" (dim :time)]
+  [#"(?iu)t(ěmihle|ěmahle|ěchhle|ěmhle|ohohle|omuhle|ímhle|ímdle|ýhle|éhle|ýdle|oudle|enhle|ěhle|ouhle|omhle|ahle|yhle|uhle|ohle|odle|ihle|omle|ěmito|ěchto|ěmato|ohoto|omuto|ímto|ěmto|ento|omto|outo|éto|ato|ito|oto|uto|yto)" (dim :time)]
   (pred-nth %2 0)
 
   "next <time>"
-  [#"(?i)příšt(ímu|ích|íma|ího|ími|ím|im|í)|nadcházejíc(ímu|ích|íma|ího|ími|ím|im|í)" (dim :time #(not (:latent %)))]
+  [#"(?iu)příšt(ímu|ích|íma|ího|ími|ím|im|í)|nadcházejíc(ímu|ích|íma|ího|ími|ím|im|í)" (dim :time #(not (:latent %)))]
   (pred-nth-not-immediate %2 0)
 
   "last <time>"
-  [#"(?i)předchoz(ímu|ích|íma|ího|ími|ím|im|í)|minul(ýmu|ých|ýma|ýho|ými|ým|im|ý|ou|á|ému|é)|posledn(ímu|ích|íma|ího|ími|ím|im|í)" (dim :time)]
+  [#"(?iu)předchoz(ímu|ích|íma|ího|ími|ím|im|í)|minul(ýmu|ých|ýma|ýho|ými|ým|im|ý|ou|á|ému|é)|posledn(ímu|ích|íma|ího|ími|ím|im|í)" (dim :time)]
   (pred-nth %2 -1)
 
   "after next <time>"
-  [#"(?i)((po|v|na) )?(příšt(ímu|ích|íma|ího|ími|ím|im|í)|nadcházejíc(ímu|ích|íma|ího|ími|ím|im|í))" (dim :time)]
+  [#"(?iu)((po|v|na) )?(příšt(ímu|ích|íma|ího|ími|ím|im|í)|nadcházejíc(ímu|ích|íma|ího|ími|ím|im|í))" (dim :time)]
   (pred-nth-not-immediate %2 1)
 
    "before last <time> "
-  [#"(?i)předminul(ýmu|ých|ýma|ýho|ými|ým|im|ý|ou|á|ému|é)|předposledn(ímu|ích|íma|ího|ími|ím|im|í)" (dim :time)]
+  [#"(?iu)předminul(ýmu|ých|ýma|ýho|ými|ým|im|ý|ou|á|ému|é)|předposledn(ímu|ích|íma|ího|ími|ím|im|í)" (dim :time)]
   (pred-nth %2 -2)
 
   "last <day-of-week> of <time>"
-  [#"(?i)posledn(ímu|ích|íma|ího|ími|ím|im|í)" {:form :day-of-week} #"(?i)ve?|ze?" (dim :time)]
+  [#"(?iu)posledn(ímu|ích|íma|ího|ími|ím|im|í)" {:form :day-of-week} #"(?iu)ve?|ze?" (dim :time)]
   (pred-last-of %2 %4)
 
   "last <day-of-week> <time>"
-  [#"(?i)posledn(ímu|ích|íma|ího|ími|ím|im|í)" {:form :day-of-week} (dim :time)]
+  [#"(?iu)posledn(ímu|ích|íma|ího|ími|ím|im|í)" {:form :day-of-week} (dim :time)]
   (pred-last-of %2 %3)
 
  "last <cycle> of <time>"
- [#"(?i)posledn(ímu|ích|íma|ího|ími|ím|im|í)" (dim :cycle) #"(?i)ve?|na|ze?" (dim :time)]
+ [#"(?iu)posledn(ímu|ích|íma|ího|ími|ím|im|í)" (dim :cycle) #"(?iu)ve?|na|ze?" (dim :time)]
  (cycle-last-of %2 %4)
 
  "last <cycle> <time>"
- [#"(?i)posledn(ímu|ích|íma|ího|ími|ím|im|í)" (dim :cycle) (dim :time)]
+ [#"(?iu)posledn(ímu|ích|íma|ího|ími|ím|im|í)" (dim :cycle) (dim :time)]
  (cycle-last-of %2 %3)
 
   ; Ordinals
  "nth <time> of <time>"
- [(dim :ordinal) (dim :time) #"(?i)ve?|na|ze?" (dim :time)]
+ [(dim :ordinal) (dim :time) #"(?iu)ve?|na|ze?" (dim :time)]
  (pred-nth (intersect %4 %2) (dec (:value %1)))
 
  "nth <time> <time>"
@@ -222,15 +222,15 @@
  (pred-nth (intersect %3 %2) (dec (:value %1)))
 
   ;; "nth <time> of <time>"
-  ;; [#"(?i)the" (dim :ordinal) (dim :time) #"(?i)of|in" (dim :time)]
+  ;; [#"(?iu)the" (dim :ordinal) (dim :time) #"(?iu)of|in" (dim :time)]
   ;; (pred-nth (intersect %5 %3) (dec (:value %2)))
 
   "nth <time> after <time>"
-  [(dim :ordinal) (dim :time) #"(?i)po" (dim :time)]
+  [(dim :ordinal) (dim :time) #"(?iu)po" (dim :time)]
   (pred-nth-after %2 %4 (dec (:value %1)))
 
   ;; "nth <time> after <time>"
-  ;; [#"(?i)the" (dim :ordinal) (dim :time) #"(?i)after" (dim :time)]
+  ;; [#"(?iu)the" (dim :ordinal) (dim :time) #"(?iu)after" (dim :time)]
   ;; (pred-nth-after %3 %5 (dec (:value %2)))
 
     ; Years
@@ -257,7 +257,7 @@
   ; In general we are flexible and accept both ordinals (3rd) and numbers (3)
 
   ;; "the <day-of-month> (ordinal)" ; this one is not latent
-  ;; [#"(?i)the" (dim :ordinal #(<= 1 (:value %) 31))]
+  ;; [#"(?iu)the" (dim :ordinal #(<= 1 (:value %) 31))]
   ;; (day-of-month (:value %2))
 
   "<day-of-month> (ordinal)" ; this one is latent
@@ -265,7 +265,7 @@
   (assoc (day-of-month (:value %1)) :latent true)
 
   ;; "the <day-of-month> (non ordinal)" ; this one is latent
-  ;; [#"(?i)the" (integer 1 31)]
+  ;; [#"(?iu)the" (integer 1 31)]
   ;; (assoc (day-of-month (:value %2)) :latent true)
 
   "<named-month> <day-of-month> (ordinal)" ; march 12th
@@ -277,11 +277,11 @@
  (intersect %1 (day-of-month (:value %2)))
 
   "<day-of-month> (ordinal) of <named-month>"
-  [(dim :ordinal #(<= 1 (:value %) 31)) #"(?i)of|in" {:form :month}]
+  [(dim :ordinal #(<= 1 (:value %) 31)) #"(?iu)of|in" {:form :month}]
   (intersect %3 (day-of-month (:value %1)))
 
   "<day-of-month> (non ordinal) of <named-month>"
-  [(integer 1 31) #"(?i)of|in" {:form :month}]
+  [(integer 1 31) #"(?iu)of|in" {:form :month}]
   (intersect %3 (day-of-month (:value %1)))
 
   "<day-of-month> (non ordinal) <named-month>" ; 12 mars
@@ -297,7 +297,7 @@
   (intersect %2 (day-of-month (:value %1)) (year (Integer/parseInt(first (:groups %3)))))
 
   "the ides of <named-month>" ; the ides of march 13th for most months, but on the 15th for March, May, July, and October
-  [#"(?i)the ides? of" {:form :month}]
+  [#"(?iu)the ides? of" {:form :month}]
   (intersect %2 (day-of-month (if (#{3 5 7 10} (:month %2)) 15 13)))
 
   ;; Hours and minutes (absolute time)
@@ -306,22 +306,22 @@
   (assoc (hour (:value %1) true) :latent true)
 
   "at <time-of-day>" ; o godzinie
-  [#"(?i)o|na|@" {:form :time-of-day}]
+  [#"(?iu)o|na|@" {:form :time-of-day}]
   (dissoc %2 :latent)
 
 
   "<time-of-day> o'clock"
-  [{:form :time-of-day} #"(?i)godzina"]
+  [{:form :time-of-day} #"(?iu)godzina"]
   (dissoc %1 :latent)
 
   "hh:mm"
-  #"(?i)((?:[01]?\d)|(?:2[0-3]))[:.]([0-5]\d)"
+  #"(?iu)((?:[01]?\d)|(?:2[0-3]))[:.]([0-5]\d)"
   (hour-minute (Integer/parseInt (first (:groups %1)))
                (Integer/parseInt (second (:groups %1)))
                true)
 
   "hh:mm:ss"
-  #"(?i)((?:[01]?\d)|(?:2[0-3]))[:.]([0-5]\d)[:.]([0-5]\d)"
+  #"(?iu)((?:[01]?\d)|(?:2[0-3]))[:.]([0-5]\d)[:.]([0-5]\d)"
   (hour-minute-second (Integer/parseInt (first (:groups %1)))
                (Integer/parseInt (second (:groups %1)))
                (Integer/parseInt (second (next (:groups %1))))
@@ -329,14 +329,14 @@
 
 
   "hhmm (military)"
-  #"(?i)((?:[01]?\d)|(?:2[0-3]))([0-5]\d)"
+  #"(?iu)((?:[01]?\d)|(?:2[0-3]))([0-5]\d)"
   (-> (hour-minute (Integer/parseInt (first (:groups %1)))
                    (Integer/parseInt (second (:groups %1)))
                    false) ; not a 12-hour clock)
       (assoc :latent true))
 
   "hhmm (military) am|pm" ; hh only from 00 to 12
-  [#"(?i)((?:1[012]|0?\d))([0-5]\d)" #"(?i)([ap])\.?m?\.?"]
+  [#"(?iu)((?:1[012]|0?\d))([0-5]\d)" #"(?iu)([ap])\.?m?\.?"]
   ; (-> (hour-minute (Integer/parseInt (first (:groups %1)))
   ;                  (Integer/parseInt (second (:groups %1)))
   ;                  false) ; not a 12-hour clock)
@@ -352,21 +352,21 @@
         (assoc :form :time-of-day)))
 
   "<time-of-day> rano"
-  [{:form :time-of-day} #"(?i)(z )?ran(o|a|u|em)"]
+  [{:form :time-of-day} #"(?iu)(z )?ran(o|a|u|em)"]
  (let [[p meridiem]
         [[(hour 0) (hour 12) false] :am]]
     (-> (intersect %1 (apply interval p))
         (assoc :form :time-of-day)))
 
  "<time-of-day> popołudniu/wieczorem/w nocy"
- [{:form :time-of-day} #"(?i)(w )?noc(y|(a|ą))|(po ?)?po(l|ł)udni(em|e|a|u)|wiecz(o|ó)r(i|u|a|owi|em|rze)"]
+ [{:form :time-of-day} #"(?iu)(w )?noc(y|(a|ą))|(po ?)?po(l|ł)udni(em|e|a|u)|wiecz(o|ó)r(i|u|a|owi|em|rze)"]
  (let [[p meridiem]
        [[(hour 12) (hour 0) false] :pm]]
    (-> (intersect %1 (apply interval p))
        (assoc :form :time-of-day)))
 
  ;;  "<time-of-day> popołudniu/wieczorem/w nocy"
- ;; [{:form :time-of-day} #"(?i)(w )?noc(y|(a|ą))|(po ?)?po(l|ł)udni(em|e|a|u)|wiecz(o|ó)r(i|u|a|owi|em|rze)"]
+ ;; [{:form :time-of-day} #"(?iu)(w )?noc(y|(a|ą))|(po ?)?po(l|ł)udni(em|e|a|u)|wiecz(o|ó)r(i|u|a|owi|em|rze)"]
  ;; (let [[p meridiem]
  ;;       [[(hour 0) (hour 12) true] :pm]]
  ;;   (-> (intersect %1 (apply interval p))
@@ -374,7 +374,7 @@
 
 
  ;; "<ordinal> popołudniu/wieczorem/w nocy"
- ;; [(dim :ordinal #(<= 1 (:value %) 12)) #"(?i)(po ?)?po(l|ł)udni(em|e|a|u)|wiecz(o|ó)r(i|u|a|owi|em|rze)|(w )?noc(y|(a|ą))?"]
+ ;; [(dim :ordinal #(<= 1 (:value %) 12)) #"(?iu)(po ?)?po(l|ł)udni(em|e|a|u)|wiecz(o|ó)r(i|u|a|owi|em|rze)|(w )?noc(y|(a|ą))?"]
  ;; (let [[p meridiem]
  ;;       [[(hour 12) (hour 0) false] :pm]]
  ;;   (-> (intersect (:value %1) (apply interval p))
@@ -386,7 +386,7 @@
 
 
   ;; "<time-of-day> am|pm"
-  ;; [{:form :time-of-day} #"(?i)(in the )?([ap])(\s|\.)?m?\.?"]
+  ;; [{:form :time-of-day} #"(?iu)(in the )?([ap])(\s|\.)?m?\.?"]
   ;; ;; TODO set_am fn in helpers => add :ampm field
   ;; (let [[p meridiem] (if (= "a" (-> %2 :groups second .toLowerCase))
   ;;                      [[(hour 0) (hour 12) false] :am]
@@ -395,15 +395,15 @@
   ;;       (assoc :form :time-of-day)))
 
   "noon"
-  #"(?i)po(l|ł)udni(em|e|a|u)" ;;TODO REPLACE
+  #"(?iu)po(l|ł)udni(em|e|a|u)" ;;TODO REPLACE
   (hour 12 false)
 
   ;; "midnight|EOD|end of day"
-  ;; #"(?i)północ|polnoc|koniec dnia"
+  ;; #"(?iu)północ|polnoc|koniec dnia"
   ;; (hour 0 false)
 
   "quarter (relative minutes)"
-  #"(?i)kwadrans(ie|owi|em|a)?"
+  #"(?iu)kwadrans(ie|owi|em|a)?"
   {:relative-minutes 15}
 
   "half (relative minutes)"
@@ -419,11 +419,11 @@
   (hour-relativemin (:full-hour %1) (:relative-minutes %2) true)
 
   "relative minutes to|till|before <integer> (hour-of-day)"
-  [#(:relative-minutes %) #"(?i)do|przed" (dim :time :full-hour)]
+  [#(:relative-minutes %) #"(?iu)do|przed" (dim :time :full-hour)]
   (hour-relativemin (:full-hour %3) (- (:relative-minutes %1)) true)
 
   "relative minutes after|past <integer> (hour-of-day)"
-  [#(:relative-minutes %) #"(?i)po" (dim :time :full-hour)]
+  [#(:relative-minutes %) #"(?iu)po" (dim :time :full-hour)]
   (hour-relativemin (:full-hour %3) (:relative-minutes %1) true)
 
 
@@ -452,44 +452,44 @@
   ; Part of day (morning, evening...). They are intervals.
 
   "morning" ;; TODO "3am this morning" won't work since morning starts at 4...
-  [#"(?i)rano|poran(ek|ku|ka)|z rana|(s|ś)witem"]
+  [#"(?iu)rano|poran(ek|ku|ka)|z rana|(s|ś)witem"]
   (assoc (interval (hour 4 false) (hour 12 false) false) :form :part-of-day :latent true)
 
   "afternoon"
-  [#"(?i)po(l|ł)udni(em|e|a|u)"]
+  [#"(?iu)po(l|ł)udni(em|e|a|u)"]
   (assoc (interval (hour 12 false) (hour 19 false) false) :form :part-of-day :latent true)
 
   "evening|night"
-  [#"(?i)wiecz(o|ó)r(em|owi|ze|a|u)?|noc(ą)?"]
+  [#"(?iu)wiecz(o|ó)r(em|owi|ze|a|u)?|noc(ą)?"]
   (assoc (interval (hour 18 false) (hour 0 false) false) :form :part-of-day :latent true)
 
   "lunch"
-  [#"(?i)(na )?la?u?nc(z|h)|obiad"]
+  [#"(?iu)(na )?la?u?nc(z|h)|obiad"]
   (assoc (interval (hour 12 false) (hour 14 false) false) :form :part-of-day :latent true)
 
   "in|during the <part-of-day>" ;; removes latent
-  [#"(?i)(w|na) ?(czas(ie)?)" {:form :part-of-day}]
+  [#"(?iu)(w|na) ?(czas(ie)?)" {:form :part-of-day}]
   (dissoc %2 :latent)
 
   "this <part-of-day>"
-  [#"(?i)ten|tego|ta|to" {:form :part-of-day}]
+  [#"(?iu)ten|tego|ta|to" {:form :part-of-day}]
   (assoc (intersect (cycle-nth :day 0) %2) :form :part-of-day) ;; removes :latent
 
   ;; "tonight"
-  ;; #"(?i)toni(ght|gth|te)"
+  ;; #"(?iu)toni(ght|gth|te)"
   ;; (assoc (intersect (cycle-nth :day 0)
   ;;                   (interval (hour 18 false) (hour 0 false) false))
   ;;        :form :part-of-day) ; no :latent
 
   ;; "after lunch"
-  ;; #"(?i)after(-|\s)?lunch"
+  ;; #"(?iu)after(-|\s)?lunch"
   ;; (assoc (intersect (cycle-nth :day 0)
   ;;                   (interval (hour 13 false) (hour 17 false) false))
   ;;        :form :part-of-day) ; no :latent
 
 
   ;; "after work"
-  ;; #"(?i)after(-|\s)?work"
+  ;; #"(?iu)after(-|\s)?work"
   ;; (assoc (intersect (cycle-nth :day 0)
   ;;                   (interval (hour 17 false) (hour 21 false) false))
   ;;        :form :part-of-day) ; no :latent
@@ -499,39 +499,39 @@
   (intersect %2 %1)
 
   ;; "<part-of-day> of <time>" ; since "morning" "evening" etc. are latent, general time+time is blocked
-  ;; [{:form :part-of-day} #"(?i)of" (dim :time)]
+  ;; [{:form :part-of-day} #"(?iu)of" (dim :time)]
   ;; (intersect %1 %3)
 
 
   ; Other intervals: week-end, seasons
 
   "week-end" ; from Friday 6pm to Sunday midnight
-  #"(?i)((wek|week|wik)(\s|-)?end|wkend)"
+  #"(?iu)((wek|week|wik)(\s|-)?end|wkend)"
   (interval (intersect (day-of-week 5) (hour 18 false))
             (intersect (day-of-week 1) (hour 0 false))
             false)
 
   "season"
-  #"(?i)lato|lata|latu|latem|lecie" ;could be smarter and take the exact hour into account... also some years the day can change
+  #"(?iu)lato|lata|latu|latem|lecie" ;could be smarter and take the exact hour into account... also some years the day can change
   (interval (month-day 6 21) (month-day 9 23) false)
 
   "season"
-  #"(?i)jesień|jesien|jesieni|jesienią|jesienia"
+  #"(?iu)jesień|jesien|jesieni|jesienią|jesienia"
   (interval (month-day 9 23) (month-day 12 21) false)
 
   "season"
-  #"(?i)zima|zimy|zimie|zimę|zime|zimą|zima|zimie|zimo"
+  #"(?iu)zima|zimy|zimie|zimę|zime|zimą|zima|zimie|zimo"
   (interval (month-day 12 21) (month-day 3 20) false)
 
   "season"
-  #"(?i)wiosna|wiosny|wiośnie|wiosnie|wiosnę|wiosne|wiosną|wiosna|wiośnie|wiosnie|wiosno"
+  #"(?iu)wiosna|wiosny|wiośnie|wiosnie|wiosnę|wiosne|wiosną|wiosna|wiośnie|wiosnie|wiosno"
   (interval (month-day 3 20) (month-day 6 21) false)
 
 
   ; Time zones
 
   "timezone"
-  #"(?i)(YEKT|YEKST|YAPT|YAKT|YAKST|WT|WST|WITA|WIT|WIB|WGT|WGST|WFT|WEZ|WET|WESZ|WEST|WAT|WAST|VUT|VLAT|VLAST|VET|UZT|UYT|UYST|UTC|ULAT|TVT|TMT|TLT|TKT|TJT|TFT|TAHT|SST|SRT|SGT|SCT|SBT|SAST|SAMT|RET|PYT|PYST|PWT|PT|PST|PONT|PMST|PMDT|PKT|PHT|PHOT|PGT|PETT|PETST|PET|PDT|OMST|OMSST|NZST|NZDT|NUT|NST|NPT|NOVT|NOVST|NFT|NDT|NCT|MYT|MVT|MUT|MST|MSK|MSD|MMT|MHT|MEZ|MESZ|MDT|MAWT|MART|MAGT|MAGST|LINT|LHST|LHDT|KUYT|KST|KRAT|KRAST|KGT|JST|IST|IRST|IRKT|IRKST|IRDT|IOT|IDT|ICT|HOVT|HNY|HNT|HNR|HNP|HNE|HNC|HNA|HLV|HKT|HAY|HAT|HAST|HAR|HAP|HAE|HADT|HAC|HAA|GYT|GST|GMT|GILT|GFT|GET|GAMT|GALT|FNT|FKT|FKST|FJT|FJST|ET|EST|EGT|EGST|EET|EEST|EDT|ECT|EAT|EAST|EASST|DAVT|ChST|CXT|CVT|CST|COT|CLT|CLST|CKT|CHAST|CHADT|CET|CEST|CDT|CCT|CAT|CAST|BTT|BST|BRT|BRST|BOT|BNT|AZT|AZST|AZOT|AZOST|AWST|AWDT|AST|ART|AQTT|ANAT|ANAST|AMT|AMST|ALMT|AKST|AKDT|AFT|AEST|AEDT|ADT|ACST|ACDT)"
+  #"(?iu)(YEKT|YEKST|YAPT|YAKT|YAKST|WT|WST|WITA|WIT|WIB|WGT|WGST|WFT|WEZ|WET|WESZ|WEST|WAT|WAST|VUT|VLAT|VLAST|VET|UZT|UYT|UYST|UTC|ULAT|TVT|TMT|TLT|TKT|TJT|TFT|TAHT|SST|SRT|SGT|SCT|SBT|SAST|SAMT|RET|PYT|PYST|PWT|PT|PST|PONT|PMST|PMDT|PKT|PHT|PHOT|PGT|PETT|PETST|PET|PDT|OMST|OMSST|NZST|NZDT|NUT|NST|NPT|NOVT|NOVST|NFT|NDT|NCT|MYT|MVT|MUT|MST|MSK|MSD|MMT|MHT|MEZ|MESZ|MDT|MAWT|MART|MAGT|MAGST|LINT|LHST|LHDT|KUYT|KST|KRAT|KRAST|KGT|JST|IST|IRST|IRKT|IRKST|IRDT|IOT|IDT|ICT|HOVT|HNY|HNT|HNR|HNP|HNE|HNC|HNA|HLV|HKT|HAY|HAT|HAST|HAR|HAP|HAE|HADT|HAC|HAA|GYT|GST|GMT|GILT|GFT|GET|GAMT|GALT|FNT|FKT|FKST|FJT|FJST|ET|EST|EGT|EGST|EET|EEST|EDT|ECT|EAT|EAST|EASST|DAVT|ChST|CXT|CVT|CST|COT|CLT|CLST|CKT|CHAST|CHADT|CET|CEST|CDT|CCT|CAT|CAST|BTT|BST|BRT|BRST|BOT|BNT|AZT|AZST|AZOT|AZOST|AWST|AWDT|AST|ART|AQTT|ANAT|ANAST|AMT|AMST|ALMT|AKST|AKDT|AFT|AEST|AEDT|ADT|ACST|ACDT)"
   {:dim :timezone
    :value (-> %1 :groups first .toUpperCase)}
 
@@ -546,25 +546,25 @@
   ;-  shouldn't remove latency, except maybe -ish
 
   "<time-of-day> approximately" ; 7ish
-  [{:form :time-of-day} #"(?i)o?ko(l|ł)o|mniej wi(e|ę)cej"]
+  [{:form :time-of-day} #"(?iu)o?ko(l|ł)o|mniej wi(e|ę)cej"]
   (-> %1
     (dissoc :latent)
     (merge {:precision "approximate"}))
 
   "<time-of-day> sharp" ; sharp
-  [{:form :time-of-day} #"(?i)r(o|ó)wno|dok(l|ł)adnie"]
+  [{:form :time-of-day} #"(?iu)r(o|ó)wno|dok(l|ł)adnie"]
   (-> %1
     (dissoc :latent)
     (merge {:precision "exact"}))
 
   "about <time-of-day>" ; about
-  [#"(?i)o?ko(l|ł)o|mniej wi(e|ę)cej|tak o" {:form :time-of-day}]
+  [#"(?iu)o?ko(l|ł)o|mniej wi(e|ę)cej|tak o" {:form :time-of-day}]
   (-> %2
     (dissoc :latent)
     (merge {:precision "approximate"}))
 
   "exactly <time-of-day>" ; sharp
-  [#"(?i)(r(o|ó)wno|dok(l|ł)adnie)( o)?" {:form :time-of-day} ]
+  [#"(?iu)(r(o|ó)wno|dok(l|ł)adnie)( o)?" {:form :time-of-day} ]
   (-> %2
     (dissoc :latent)
     (merge {:precision "exact"}))
@@ -585,11 +585,11 @@
   (interval %1 %3 true)
 
   "from <datetime> - <datetime> (interval)"
-  [#"(?i)od|p(o|ó)(z|ź)niej ni(z|ż)" (dim :time) #"\-|do|po|aż do|az do|aż po|az po|ale przed" (dim :time)]
+  [#"(?iu)od|p(o|ó)(z|ź)niej ni(z|ż)" (dim :time) #"\-|do|po|aż do|az do|aż po|az po|ale przed" (dim :time)]
   (interval %2 %4 true)
 
   "between <datetime> and <datetime> (interval)"
-  [#"(?i)(po|po )?mi(e|ę)dzy" (dim :time) #"a|i" (dim :time)]
+  [#"(?iu)(po|po )?mi(e|ę)dzy" (dim :time) #"a|i" (dim :time)]
   (interval %2 %4 true)
 
   ; Specific for time-of-day, to help resolve ambiguities
@@ -599,34 +599,34 @@
   (interval %1 %3 true)
 
   "from <time-of-day> - <time-of-day> (interval)"
-  [#"(?i)(niż|niz|od)" {:form :time-of-day} #"((but )?before)|\-|do|po|aż do|az do|aż po|az po" {:form :time-of-day}]
+  [#"(?iu)(niż|niz|od)" {:form :time-of-day} #"((but )?before)|\-|do|po|aż do|az do|aż po|az po" {:form :time-of-day}]
   (interval %2 %4 true)
 
   "between <time-of-day> and <time-of-day> (interval)"
-  [#"(?i)(po|po )?miedzy|między" {:form :time-of-day} #"a|i" {:form :time-of-day}]
+  [#"(?iu)(po|po )?miedzy|między" {:form :time-of-day} #"a|i" {:form :time-of-day}]
   (interval %2 %4 true)
 
   ; Specific for within duration... Would need to be reworked
   "within <duration>"
-  [#"(?i)(w )?ci(a|ą)gu|zakresie|obrębie|obrebie" (dim :duration)]
+  [#"(?iu)(w )?ci(a|ą)gu|zakresie|obrębie|obrebie" (dim :duration)]
   (interval (cycle-nth :second 0) (in-duration (:value %2)) false)
 
   "by <time>"; if time is interval, take the start of the interval (by tonight = by 6pm)
-  [#"(?i)(a[zż] )?do" (dim :time)]
+  [#"(?iu)(a[zż] )?do" (dim :time)]
   (interval (cycle-nth :second 0) %2 false)
 
   "by the end of <time>"; in this case take the end of the time (by the end of next week = by the end of next sunday)
-  [#"(?i)do (ko[ńn]ca )?(tego)?" (dim :time)]
+  [#"(?iu)do (ko[ńn]ca )?(tego)?" (dim :time)]
   (interval (cycle-nth :second 0) %2 true)
 
   ; One-sided Intervals
 
   "until <time-of-day>"
-  [#"(?i)(a[żz] )?do|przed" (dim :time)]
+  [#"(?iu)(a[żz] )?do|przed" (dim :time)]
   (merge %2 {:direction :before})
 
   "after <time-of-day>"
-  [#"(?i)po" (dim :time)]
+  [#"(?iu)po" (dim :time)]
   (merge %2 {:direction :after})
 
   ;; In this special case, the upper limit is exclusive
@@ -636,7 +636,7 @@
   (interval %1 %3 :exclusive)
 
   "from <hour-of-day> - <hour-of-day> (interval)"
-  [#"(?i)od" {:form :time-of-day} #"-|to|th?ru|through|until" #(and (= :time-of-day (:form %))
+  [#"(?iu)od" {:form :time-of-day} #"-|to|th?ru|through|until" #(and (= :time-of-day (:form %))
   									              (not (:latent %)))]
   (interval %2 %4 :exclusive)
 
