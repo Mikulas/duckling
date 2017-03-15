@@ -55,11 +55,11 @@
   (cycle-nth (:grain %2) 0)
 
   "last <cycle>"
-  [#"(?i)předchoz(ímu|ích|íma|ího|ími|ím|í)|předcházejíc(ímu|ích|íma|ího|ími|ím|í)|předešl(ého|ých|ému|ýma|ými|ým|ém|ou|á|é|í|ý)|před|minul(ého|ých|ému|ýma|ými|ým|ém|ou|á|é|í|ý)" (dim :cycle)]
+  [#"(?i)předchoz(ímu|ích|íma|ího|ími|ím|í)|předcházejíc(ímu|ích|íma|ího|ími|ím|í)|předešl(ého|ých|ému|ýma|ými|ým|ém|ou|á|é|í|ý)|před|minul(ého|ých|ému|ýma|ými|ým|ém|ou|á|é|í|ý)|posledn(ímu|ích|íma|ího|ími|ím|í)" (dim :cycle)]
   (cycle-nth (:grain %2) -1)
 
   "before last <cycle>"
-  [#"(?i)předpředchoz(ímu|ích|íma|ího|ími|ím|í)|předminul(ého|ých|ému|ýma|ými|ým|ém|ou|á|é|í|ý)" (dim :cycle)]
+  [#"(?i)předpředchoz(ímu|ích|íma|ího|ími|ím|í)|předminul(ého|ých|ému|ýma|ými|ým|ém|ou|á|é|í|ý)|předposledn(ímu|ích|íma|ího|ími|ím|í)" (dim :cycle)]
   (cycle-nth (:grain %2) -2)
 
   "next <cycle>"
@@ -111,7 +111,7 @@
  (cycle-nth-after-not-immediate (:grain %2) (dec (:value %1)) %4)
 
  "<ordinal> <cycle> <time>"
-[(dim :ordinal) (dim :cycle) (dim :time)]
+ [(dim :ordinal) (dim :cycle) (dim :time)]
  (cycle-nth-after-not-immediate (:grain %2) (dec (:value %1)) %3)
 
   ;; "the <ordinal> <cycle> of <time>"

@@ -307,21 +307,28 @@
   "středa tento týden"
   (datetime 2013 2 13 :day-of-week 3)
 
+  ; "poslední pondělí"
+  "minulé pondělí"
+  (datetime 2013 2 11 :day-of-week 1)
+
  "pozítří"
  (datetime 2013 2 14)
 
   "předevčírem"
   (datetime 2013 2 10)
 
-  "poslední pondělí v březnu"
-  "poslední březnové pondělí"
-  "poslední březnový pondělek"
-  (datetime 2013 3 25 :day-of-week 1)
+  ; "poslední pondělí v březnu"
+  ; "poslední březnové pondělí"
+  ; "poslední březnový pondělek"
+  ; (datetime 2013 3 25 :day-of-week 1)
 
- "poslední neděle v březnu 2014"
- "poslední březnová neděle v roce 2014"
- "poslední březnová neděle roku 2014"
-  (datetime 2014 3 30 :day-of-week 7)
+  ; "poslední květnový pátek"
+  ; (datetime 2013 5 25 :day-of-week 1)
+
+ ; "poslední neděle v březnu 2014"
+ ; "poslední březnová neděle v roce 2014"
+ ; "poslední březnová neděle roku 2014"
+ ;  (datetime 2014 3 30 :day-of-week 7)
 
  "třetí den října"
  "třetí den v říjnu"
@@ -331,124 +338,124 @@
  "první týden října 2014"
  (datetime 2014 10 6 :grain :week)
 
- "poslední den v říjnu 2015"
- "poslední den října 2015"
- "poslední říjnový den 2015"
- (datetime 2015 10 31)
+;  "poslední den v říjnu 2015"
+;  "poslední den října 2015"
+;  "poslední říjnový den 2015"
+;  (datetime 2015 10 31)
 
- "poslední týden v září 2014"
- "poslední týden září 2014"
- "poslední zářijový týden roku 2014"
- (datetime 2014 9 22 :grain :week)
+;  "poslední týden v září 2014"
+;  "poslední týden září 2014"
+;  "poslední zářijový týden roku 2014"
+;  (datetime 2014 9 22 :grain :week)
 
 
   ;; nth of
-  "první úterý v říjnu"
-  "první říjnové úterý"
-  (datetime 2013 10 1)
+ ;  "první úterý v říjnu"
+ ;  "první říjnové úterý"
+ ;  (datetime 2013 10 1)
 
- "třetí úterý v září 2014"
- "třetí zářijové úterý 2014"
- "o třetím zářijovém úterý 2014"
-  (datetime 2014 9 16)
+ ; "třetí úterý v září 2014"
+ ; "třetí zářijové úterý 2014"
+ ; "o třetím zářijovém úterý 2014"
+ ;  (datetime 2014 9 16)
 
- "první středa v říjnu 2014"
- "první říjnová středa 2014"
- "první říjnové středy 2014"
- (datetime 2014 10 1)
+ ; "první středa v říjnu 2014"
+ ; "první říjnová středa 2014"
+ ; "první říjnové středy 2014"
+ ; (datetime 2014 10 1)
 
- "druhá středa v říjnu 2014"
- "druhou říjnovou středu 2014"
- (datetime 2014 10 8)
+ ; "druhá středa v říjnu 2014"
+ ; "druhou říjnovou středu 2014"
+ ; (datetime 2014 10 8)
 
-;; Hours
+; ;; Hours
 
- "ve 3 ráno"
- "3 v noci"
- "3 večer"
- "3 po půlnoci"
- "3 z rána"
- "o třetí ráno"
- "o třetí v noci"
- "třetí raní"
- (datetime 2013 2 13 3)
+;  "ve 3 ráno"
+;  "3 v noci"
+;  "3 večer"
+;  "3 po půlnoci"
+;  "3 z rána"
+;  "o třetí ráno"
+;  "o třetí v noci"
+;  "třetí raní"
+;  (datetime 2013 2 13 3)
 
- "3:18 ráno"
- "3:18 po půlnoci"
- (datetime 2013 2 12 3 18)
+;  "3:18 ráno"
+;  "3:18 po půlnoci"
+;  (datetime 2013 2 12 3 18)
 
- "o třetí"
- "o 3. po poledni"
- "3 po poledni"
- "3 po obědě"
- "3 odpoledne"
- "3 odpolední"
- "tři odpoledne"
- "o třetí odpoledne"
- "třetí hodina"
- "patnáctá hodina"
- "o patnácté"
- "o 15té"
- "o třetí"
- "3h"
- (datetime 2013 2 12 15 :hour 3 :meridiem :pm)
+;  "o třetí"
+;  "o 3. po poledni"
+;  "3 po poledni"
+;  "3 po obědě"
+;  "3 odpoledne"
+;  "3 odpolední"
+;  "tři odpoledne"
+;  "o třetí odpoledne"
+;  "třetí hodina"
+;  "patnáctá hodina"
+;  "o patnácté"
+;  "o 15té"
+;  "o třetí"
+;  "3h"
+;  (datetime 2013 2 12 15 :hour 3 :meridiem :pm)
 
- "6 odpoledne"
- "6 večer"
- "šestá odpoledne"
- "o šesté odpolední"
- "o šesté večerní"
- "o 18té"
- "šest odpoledne"
- "šestá hodina"
- "šestá večerní"
- "osmnáctá hodina"
- "o osmnácté"
- "18h"
- "18.00"
- "18:00"
- "1800"
- (datetime 2013 2 12 18 :hour 6 :meridiem :pm)
+;  "6 odpoledne"
+;  "6 večer"
+;  "šestá odpoledne"
+;  "o šesté odpolední"
+;  "o šesté večerní"
+;  "o 18té"
+;  "šest odpoledne"
+;  "šestá hodina"
+;  "šestá večerní"
+;  "osmnáctá hodina"
+;  "o osmnácté"
+;  "18h"
+;  "18.00"
+;  "18:00"
+;  "1800"
+;  (datetime 2013 2 12 18 :hour 6 :meridiem :pm)
 
- "7 po poledni"
- "7 odpoledne"
- "sedmá odpolední"
- "sedm odpoledne"
- "o sedmé odpolední"
- "o sedmé večer"
- "o devatenácté"
- "sedmá hodina"
- "devatenáctá hodina"
- "7h"
- "19:00"
- "19.00"
- "1900"
- (datetime 2013 2 12 19 :hour 7 :meridiem :pm)
+;  "7 po poledni"
+;  "7 odpoledne"
+;  "sedmá odpolední"
+;  "sedm odpoledne"
+;  "o sedmé odpolední"
+;  "o sedmé večer"
+;  "o devatenácté"
+;  "sedmá hodina"
+;  "devatenáctá hodina"
+;  "7h"
+;  "19:00"
+;  "19.00"
+;  "1900"
+;  (datetime 2013 2 12 19 :hour 7 :meridiem :pm)
 
- "8 večer"
- "8 odpoledne"
- "osm v noci"
- "osm večer"
- "8. hodina"
- "osmá hodina"
- "8h"
- "20:00"
- "20.00"
- "2000"
- (datetime 2013 2 12 20 :hour 8 :meridiem :pm)
+;  "8 večer"
+;  "8 odpoledne"
+;  "osm v noci"
+;  "osm večer"
+;  "8. hodina"
+;  "osmá hodina"
+;  "8h"
+;  "20:00"
+;  "20.00"
+;  "2000"
+;  (datetime 2013 2 12 20 :hour 8 :meridiem :pm)
 
- "devátá večer"
- "9. odpoledne"
- "9 večer"
- "9 v noci"
- "21. hodina"
- "9h"
- "9.hodina"
- "devátá večerní hodina"
- "21:00"
- "21.00"
- "2100"
- (datetime 2013 2 12 21 :hour 9 :meridiem :pm)
+;  "devátá večer"
+;  "9. odpoledne"
+;  "9 večer"
+;  "9 v noci"
+;  "21. hodina"
+;  "9h"
+;  "9.hodina"
+;  "devátá večerní hodina"
+;  "21:00"
+;  "21.00"
+;  "2100"
+;  (datetime 2013 2 12 21 :hour 9 :meridiem :pm)
 
 ;  "dziesiąta wieczorem"
 ;  "dziesiata popołudniu"

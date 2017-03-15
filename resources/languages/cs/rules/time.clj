@@ -29,80 +29,129 @@
   ;; Named things
 
   "named-day"
-  #"(?iu)ponděl(íma|ích|ími|ím|í|kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)|pon?\.?"
+  #"(?iu)ponděln(ímu|ích|íma|ího|ími|ím|í)|ponděl(íma|ích|ími|ím|í|kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)|pon?\.?"
   (day-of-week 1)
 
   "named-day"
-  #"(?iu)úter(ýma|ých|ým|ý|kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)|út\.?"
+  #"(?iu)útern(ímu|ích|íma|ího|ími|ím|í)|úter(ýma|ých|ým|ý|kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)|út\.?"
   (day-of-week 2)
 
   "named-day"
-  #"(?iu)stř(edách|edami|edama|edám|edě|edou|eda|edo|edu|edy|ed)|st\.?"
+  #"(?iu)středečn(ímu|ích|íma|ího|ími|ím|í)|stř(edách|edami|edama|edám|edě|edou|eda|edo|edu|edy|ed)|st\.?"
   (day-of-week 3)
 
   "named-day"
-  #"(?iu)čtvrt(kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)|čtv?\.?"
+  #"(?iu)čtvrtečn(ímu|ích|íma|ího|ími|ím|í)|čtvrt(kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)|čtv?\.?"
   (day-of-week 4)
 
   "named-day"
-  #"(?iu)pát(cích|kách|kům|kama|kem|ků|kum|ka|ek|ku|ky)|pát?\.?"
+  #"(?iu)pátečn(ímu|ích|íma|ího|ími|ím|í)|pát(cích|kách|kům|kama|kem|ků|kum|ka|ek|ku|ky)|pát?\.?"
   (day-of-week 5)
 
   "named-day"
-  #"(?iu)sob(otách|otami|otama|otám|otě|otou|ota|oto|otu|oty|ot)|sob?\.?"
+  #"(?iu)sobotn(ímu|ích|íma|ího|ími|ím|í)|sob(otách|otami|otama|otám|otě|otou|ota|oto|otu|oty|ot)|sob?\.?"
   (day-of-week 6)
 
   "named-day"
-  #"(?iu)nedě(lích|lema|lemi|lím|lí|le|li|l)|ne\.?"
+  #"(?iu)neděln(ímu|ích|íma|ího|ími|ím|í)|nedě(lích|lema|lemi|lím|lí|le|li|l)|ne\.?"
   (day-of-week 7)
 
   "named-month"
-  #"(?iu)led(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
+  #"(?iu)lednov(ou|ými|é|á|ý|í)|led(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
   (month 1)
 
   "named-month"
-  #"(?iu)úno(rům|rama|rech|rum|rem|rů|ra|re|ru|ry|r)"
+  #"(?iu)únorov(ou|ými|é|á|ý|í)|úno(rům|rama|rech|rum|rem|rů|ra|re|ru|ry|r)"
   (month 2)
 
   "named-month"
-  #"(?iu)břez(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
+  #"(?iu)březnov(ou|ými|é|á|ý|í)|břez(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
   (month 3)
 
   "named-month"
-  #"(?iu)dub(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
+  #"(?iu)dubnov(ou|ými|é|á|ý|í)|dub(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
   (month 4)
 
   "named-month"
-  #"(?iu)květ(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
+  #"(?iu)květnov(ou|ými|é|á|ý|í)|květ(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
   (month 5)
 
   "named-month"
-  #"(?iu)červ(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
+  #"(?iu)červnov(ou|ými|é|á|ý|í)|červ(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
   (month 6)
 
   "named-month"
-  #"(?iu)červen(cích|cům|cema|cum|ců|cem|ec|ce|ci)"
+  #"(?iu)červencov(ou|ými|é|á|ý|í)|červen(cích|cům|cema|cum|ců|cem|ec|ce|ci)"
   (month 7)
 
   "named-month"
-  #"(?iu)srp(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
+  #"(?iu)srpnov(ou|ými|é|á|ý|í)|srp(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
   (month 8)
 
   "named-month"
-  #"(?iu)zář(íma|ích|ími|ím|í)"
+  #"(?iu)žářij?ov(ou|ými|é|á|ý|í)|zář(íma|ích|ími|ím|í)"
   (month 9)
 
   "named-month"
-  #"(?iu)říj(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
+  #"(?iu)říjnov(ou|ými|é|á|ý|í)|říj(nama|nech|nům|num|nů|nem|na|ne|en|nu|ny)"
   (month 10)
 
   "named-month"
-  #"(?iu)listop(adama|adům|adech|adem|adum|adů|ade|adu|ady|ad)"
+  #"(?iu)listopadov(ou|ými|é|á|ý|í)|listop(adama|adům|adech|adem|adum|adů|ade|adu|ady|ad)"
   (month 11)
 
   "named-month"
-  #"(?iu)prosin(cích|cům|cema|cum|ců|cem|ec|ce|ci)"
+  #"(?iu)prosincov(ou|ými|é|á|ý|í)|prosin(cích|cům|cema|cum|ců|cem|ec|ce|ci)"
   (month 12)
+
+  ;; month adjectives
+  "month adjective"
+  #"(?iu)lednov(ou|ými|é|á|ý|í)"
+  {:form :month :month 1 :month-adjective true}
+
+  "month adjective"
+  #"(?iu)únorov(ou|ými|é|á|ý|í)"
+  {:form :month :month 2 :month-adjective true}
+
+  "month adjective"
+  #"(?iu)březnov(ou|ými|é|á|ý|í)"
+  {:form :month :month 3 :month-adjective true}
+
+  "month adjective"
+  #"(?iu)dubnov(ou|ými|é|á|ý|í)"
+  {:form :month :month 4 :month-adjective true}
+
+  "month adjective"
+  #"(?iu)květnov(ou|ými|é|á|ý|í)"
+  {:form :month :month 5 :month-adjective true}
+
+  "month adjective"
+  #"(?iu)červnov(ou|ými|é|á|ý|í)"
+  {:form :month :month 6 :month-adjective true}
+
+  "month adjective"
+  #"(?iu)červencov(ou|ými|é|á|ý|í)"
+  {:form :month :month 7 :month-adjective true}
+
+  "month adjective"
+  #"(?iu)srpnov(ou|ými|é|á|ý|í)"
+  {:form :month :month 8 :month-adjective true}
+
+  "month adjective"
+  #"(?iu)žářij?ov(ou|ými|é|á|ý|í)"
+  {:form :month :month 9 :month-adjective true}
+
+  "month adjective"
+  #"(?iu)říjnov(ou|ými|é|á|ý|í)"
+  {:form :month :month 10 :month-adjective true}
+
+  "month adjective"
+  #"(?iu)listopadov(ou|ými|é|á|ý|í)"
+  {:form :month :month 11 :month-adjective true}
+
+  "month adjective"
+  #"(?iu)prosincov(ou|ými|é|á|ý|í)"
+  {:form :month :month 12 :month-adjective true}
 
   ; Holiday TODO: check online holidays
   ; or define dynamic rule (last thursday of october..)
