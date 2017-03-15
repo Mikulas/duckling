@@ -182,10 +182,10 @@
 
 ;  ;; ;   ;; Cycles
 
-;  "tento týden"
-;  "tenhle týden"
-;  "v tomto týdnu"
-;  (datetime 2013 2 11 :grain :week)
+ "tento týden"
+ "tenhle týden"
+ "v tomto týdnu"
+ (datetime 2013 2 11 :grain :week)
 
 ;  "minulý týden"
 ;  "v minulém týdnu"

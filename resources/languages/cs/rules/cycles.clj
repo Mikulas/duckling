@@ -11,55 +11,55 @@
 
 (
   "second (cycle)"
-  #"(?i)sekund(y|zie|(e|ę)|om|ami|ach|o|a)?"
+  #"(?i)sekun(dách|dami|dama|dám|dě|dou|da|do|du|dy|d)"
   {:dim :cycle
    :grain :second}
 
   "minute (cycle)"
-  #"(?i)minut(y|cie|(e|ę)|om|o|ami|ach|(a|ą))?"
+  #"(?i)minu(tách|tami|tama|tám|tě|tou|ta|to|tu|ty|t)"
   {:dim :cycle
    :grain :minute}
 
   "hour (cycle)"
-  #"(?i)godzin(y|(e|ę)|ie|om|o|ami|ach|(a|ą))?"
+  #"(?i)hodi(nách|nami|nama|nám|ně|nou|na|no|nu|ny|n)"
   {:dim :cycle
    :grain :hour}
 
   "day (cycle)"
-  #"(?i)dzie(n|ń|ni(a|ą))|dni(owi|a|ą)?"
+  #"(?i)d(enama|enům|nové|enech|nům|nech|nův|ním|enů|enum|enem|ene|eny|enu|nem|ní|nů|en|ny|nu|ne|ni)"
   {:dim :cycle
    :grain :day}
 
   "week (cycle)"
-  #"(?i)tydzie(n|ń|)|tygod(ni(owi|u|a|em))|tygodn(iach|iami|iom|ie|i)|tyg\.?"
+  #"(?i)t(ejdnové|ýdnové|ýdnům|ýdnův|ejdnův|ejdnům|ejdnech|ýdnech|ýdnů|ejdnem|ejdní|ejdnů|ýdnem|ýdní|ejdne|ýdny|ýdnu|ýden|ýdni|ejdni|ejdny|ejdnu|ýdne)"
   {:dim :cycle
    :grain :week}
 
   "month (cycle)"
-  #"(?i)miesi(a|ą)c(owi|em|u|e|om|ami|ach|a)?"
+  #"(?i)měsí(cích|cema|cům|cem|cum|ců|ce|ci|c)"
   {:dim :cycle
    :grain :month}
 
   "quarter (cycle)"
-  #"(?i)kwarta(l|ł)(u|owi|em|e|(o|ó)w|om|ach|ami|y)?"
+  #"(?i)kvartá(lama|lům|lech|lem|lum|lů|le|lu|ly|l)|čtvrtlet(íma|ích|ími|ím|í)"
   {:dim :cycle
    :grain :quarter}
 
   "year (cycle)"
-  #"(?i)rok(u|owi|iem)?|lat(ami|ach|a|om)?"
+  #"(?i)(rokách|létům|létama|létech|rocích|rokama|rokům|rokův|letům|letech|létum|rokem|roků|rokum|léty|léta|lety|leta|lét|roce|roku|roky|roka|let|rok)"
   {:dim :cycle
    :grain :year}
 
   "this <cycle>"
-  [#"(?i)te(mu|n|go|j)|tym|t(a|ą)|nadchodz(a|ą)c(ym|y|ego|emu|(a|ą)|ej)|obecn(ym|y|emu|ego|nym|(a|ą)|ej)" (dim :cycle)]
+  [#"(?i)t(ěmihle|ěmahle|ěchhle|ěmhle|ohohle|omuhle|ímhle|ímdle|ýhle|éhle|ýdle|oudle|enhle|ěhle|ouhle|omhle|ahle|yhle|uhle|ohle|odle|ihle|omle)|t(ěmito|ěchto|ěmato|ohoto|omuto|ímto|ěmto|ento|omto|outo|éto|ato|ito|oto|uto|yto)" (dim :cycle)]
   (cycle-nth (:grain %2) 0)
 
   "last <cycle>"
-  [#"(?i)ostatni(ego|ch|emu|mi|m|(a|ą)|ej|e)?|(po ?)?przedni(ego|ch|emu|mi|m|e|(a|ą)|ej)?" (dim :cycle)]
+  [#"(?i)předchoz(ímu|ích|íma|ího|ími|ím|í)|předešl(ého|ých|ému|ýma|ými|ým|ém|ou|á|é|í|ý)|minul(ého|ých|ému|ýma|ými|ým|ém|ou|á|é|í|ý)" (dim :cycle)]
   (cycle-nth (:grain %2) -1)
 
   "next <cycle>"
-  [#"(?i)kolejn(ym|y|ego|emu|(a|ą)|ej|e)|nast(e|ę)pn(ym|y|ego|emu|(a|ą)|ej|e)|przysz(l|ł)(ego|emu|ym|(a|ą)|ej|ych|i|ymi|y|e)|za" (dim :cycle)]
+  [#"(?i)příšt(ímu|ích|íma|ího|ími|ím|í)|nadcházejíc(ímu|ích|íma|ího|ími|ím|í)" (dim :cycle)]
   (cycle-nth (:grain %2) 1)
 
   ;; "the <cycle> after <time>"
@@ -75,19 +75,19 @@
   ;; (cycle-nth-after (:grain %2) -1 %4)
 
   "<cycle> before <time>"
-  [(dim :cycle) #"(?i)przed" (dim :time)]
+  [(dim :cycle) #"(?i)před" (dim :time)]
   (cycle-nth-after (:grain %1) -1 %3)
 
   "last n <cycle>"
-  [#"(?i)ostatni(ego|ch|emu|mi|m|(a|ą)|ej|e)?|(po ?)?przedni(ego|ch|emu|mi|m|e|(a|ą)|ej)?" (integer 1 9999) (dim :cycle)]
+  [#"(?i)předchoz(ímu|ích|íma|ího|ími|ím|í)|předešl(ého|ých|ému|ýma|ými|ým|ém|ou|á|é|í|ý)|minul(ého|ých|ému|ýma|ými|ým|ém|ou|á|é|í|ý)" (integer 1 9999) (dim :cycle)]
   (cycle-n-not-immediate (:grain %3) (- (:value %2)))
 
   "next n <cycle>"
-  [#"(?i)kolejn(ym|y|ego|emu|(a|ą)|ej|e)|nast(e|ę)pn(ym|y|ego|emu|(a|ą)|ej|e)" (integer 1 9999) (dim :cycle)]
+  [#"(?i)příšt(ímu|ích|íma|ího|ími|ím|í)|nadcházejíc(ímu|ích|íma|ího|ími|ím|í)" (integer 1 9999) (dim :cycle)]
   (cycle-n-not-immediate (:grain %3) (:value %2))
 
  "<ordinal> <cycle> of <time>"
- [(dim :ordinal) (dim :cycle) #"(?i)w(e)?|z(e)?" (dim :time)]
+ [(dim :ordinal) (dim :cycle) #"(?i)v(e)?|z(e)?" (dim :time)]
  (cycle-nth-after-not-immediate (:grain %2) (dec (:value %1)) %4)
 
  "<ordinal> <cycle> <time>"
@@ -99,18 +99,18 @@
   ;; (cycle-nth-after-not-immediate (:grain %3) (dec (:value %2)) %5)
 
   "the <cycle> of <time>"
-  [#"(?i)the" (dim :cycle) #"(?i)of" (dim :time)]
-  (cycle-nth-after-not-immediate (:grain %2) 0 %4)
+  [(dim :cycle) #"(?i)z" (dim :time)]
+  (cycle-nth-after-not-immediate (:grain %1) 0 %3)
 
   ; the 2 following rules may need a different helper
 
   "<ordinal> <cycle> after <time>"
-  [(dim :ordinal) (dim :cycle) #"(?i)after" (dim :time)]
+  [(dim :ordinal) (dim :cycle) #"(?i)po" (dim :time)]
   (cycle-nth-after-not-immediate (:grain %2) (dec (:value %1)) %4)
 
-  "the <ordinal> <cycle> after <time>"
-  [#"(?i)the" (dim :ordinal) (dim :cycle) #"(?i)after" (dim :time)]
-  (cycle-nth-after-not-immediate (:grain %3) (dec (:value %2)) %5)
+  ; "the <ordinal> <cycle> after <time>"
+  ; [#"(?i)the" (dim :ordinal) (dim :cycle) #"(?i)after" (dim :time)]
+  ; (cycle-nth-after-not-immediate (:grain %3) (dec (:value %2)) %5)
 
 
   ; quarters are a little bit different, you can say "3rd quarter" alone

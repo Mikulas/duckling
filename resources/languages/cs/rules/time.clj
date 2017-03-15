@@ -108,7 +108,7 @@
   ; or define dynamic rule (last thursday of october..)
 
  ;  "christmas"
- ;  #"(?iu)((Ś|ś|s)wi(e|ę)ta)? ?bo(z|ż)(ym|ego|e) narodzeni(e|a|u)"
+ ;  #"(?iu)((Ś|ś|s)wi(e|ę)ta)? ?bo(z|ž)(ym|ego|e) narodzeni(e|a|u)"
  ; (month-day 12 25)
 
   "christmas eve"
@@ -295,22 +295,22 @@
   [(dim :ordinal #(<= 1 (:value %) 31)) {:form :month} #"(\d{2,4})"]
   (intersect %2 (day-of-month (:value %1)) (year (Integer/parseInt(first (:groups %3)))))
 
-  "the ides of <named-month>" ; the ides of march 13th for most months, but on the 15th for March, May, July, and October
-  [#"(?iu)the ides? of" {:form :month}]
-  (intersect %2 (day-of-month (if (#{3 5 7 10} (:month %2)) 15 13)))
+  ; "the ides of <named-month>" ; the ides of march 13th for most months, but on the 15th for March, May, July, and October
+  ; [#"(?iu)the ides? of" {:form :month}]
+  ; (intersect %2 (day-of-month (if (#{3 5 7 10} (:month %2)) 15 13)))
 
   ;; Hours and minutes (absolute time)
   "<integer> (latent time-of-day)"
   (integer 0 23)
   (assoc (hour (:value %1) true) :latent true)
 
-  "at <time-of-day>" ; o godzinie
-  [#"(?iu)o|na|@" {:form :time-of-day}]
+  "at <time-of-day>" ; o páté, v deset, na čtvrtou (hodinu)
+  [#"(?iu)o|na|v|@" {:form :time-of-day}]
   (dissoc %2 :latent)
 
 
   "<time-of-day> o'clock"
-  [{:form :time-of-day} #"(?iu)godzina"]
+  [{:form :time-of-day} #"(?iu)hod(inách|inami|inama|inám|ině|inou|ina|ino|inu|iny|in)"]
   (dissoc %1 :latent)
 
   "hh:mm"
@@ -350,51 +350,26 @@
           (apply interval p))
         (assoc :form :time-of-day)))
 
-  "<time-of-day> rano"
-  [{:form :time-of-day} #"(?iu)(z )?ran(o|a|u|em)"]
+  "<time-of-day> před polednem/ráno/dopoledne"
+  [{:form :time-of-day} #"(?iu)(před polednem|(z )?rá(nama|nům|nech|num|nem|na|no|nu|ny|n)|dopoledn(ách|ích|ím|ema|em|í|e|i|y))"]
  (let [[p meridiem]
         [[(hour 0) (hour 12) false] :am]]
     (-> (intersect %1 (apply interval p))
         (assoc :form :time-of-day)))
 
- "<time-of-day> popołudniu/wieczorem/w nocy"
- [{:form :time-of-day} #"(?iu)(w )?noc(y|(a|ą))|(po ?)?po(l|ł)udni(em|e|a|u)|wiecz(o|ó)r(i|u|a|owi|em|rze)"]
+ "<time-of-day> po poledni/odpoledne/na večer/v noci"
+ [{:form :time-of-day} #"(?iu)(po poledni|odpoledn(ách|ích|ím|ema|em|í|e|i|y)|(na )?več(erům|erama|erech|erum|erem|erů|era|ere|eru|ery|ír|er)|(v )?no(cích|cemi|cema|cím|cech|cem|cí|ce|ci|c))"]
  (let [[p meridiem]
        [[(hour 12) (hour 0) false] :pm]]
    (-> (intersect %1 (apply interval p))
        (assoc :form :time-of-day)))
 
- ;;  "<time-of-day> popołudniu/wieczorem/w nocy"
- ;; [{:form :time-of-day} #"(?iu)(w )?noc(y|(a|ą))|(po ?)?po(l|ł)udni(em|e|a|u)|wiecz(o|ó)r(i|u|a|owi|em|rze)"]
- ;; (let [[p meridiem]
- ;;       [[(hour 0) (hour 12) true] :pm]]
- ;;   (-> (intersect %1 (apply interval p))
- ;;       (assoc :form :time-of-day)))
-
-
- ;; "<ordinal> popołudniu/wieczorem/w nocy"
- ;; [(dim :ordinal #(<= 1 (:value %) 12)) #"(?iu)(po ?)?po(l|ł)udni(em|e|a|u)|wiecz(o|ó)r(i|u|a|owi|em|rze)|(w )?noc(y|(a|ą))?"]
- ;; (let [[p meridiem]
- ;;       [[(hour 12) (hour 0) false] :pm]]
- ;;   (-> (intersect (:value %1) (apply interval p))
- ;;       (assoc :form :time-of-day)))
-
  "<ordinal> (as hour)"
  [(dim :ordinal #(<= 1 (:value %) 24))]
  (hour (:value %1) true)
 
-
-  ;; "<time-of-day> am|pm"
-  ;; [{:form :time-of-day} #"(?iu)(in the )?([ap])(\s|\.)?m?\.?"]
-  ;; ;; TODO set_am fn in helpers => add :ampm field
-  ;; (let [[p meridiem] (if (= "a" (-> %2 :groups second .toLowerCase))
-  ;;                      [[(hour 0) (hour 12) false] :am]
-  ;;                      [[(hour 12) (hour 0) false] :pm])]
-  ;;   (-> (intersect %1 (apply interval p))
-  ;;       (assoc :form :time-of-day)))
-
   "noon"
-  #"(?iu)po(l|ł)udni(em|e|a|u)" ;;TODO REPLACE
+  #"(?iu)poledn(ách|ích|ím|ema|em|í|e|i|y)"
   (hour 12 false)
 
   ;; "midnight|EOD|end of day"
@@ -402,11 +377,11 @@
   ;; (hour 0 false)
 
   "quarter (relative minutes)"
-  #"(?iu)kwadrans(ie|owi|em|a)?"
+  #"(?iu)čtvr(tě|ti|t)"
   {:relative-minutes 15}
 
   "half (relative minutes)"
-  #"p(o|ó)(l|ł)"
+  #"půl"
   {:relative-minutes 30}
 
   "number (as relative minutes)"
@@ -418,7 +393,7 @@
   (hour-relativemin (:full-hour %1) (:relative-minutes %2) true)
 
   "relative minutes to|till|before <integer> (hour-of-day)"
-  [#(:relative-minutes %) #"(?iu)do|przed" (dim :time :full-hour)]
+  [#(:relative-minutes %) #"(?iu)do|před" (dim :time :full-hour)]
   (hour-relativemin (:full-hour %3) (- (:relative-minutes %1)) true)
 
   "relative minutes after|past <integer> (hour-of-day)"
@@ -443,27 +418,27 @@
   ; Part of day (morning, evening...). They are intervals.
 
   "morning" ;; TODO "3am this morning" won't work since morning starts at 4...
-  [#"(?iu)rano|poran(ek|ku|ka)|z rana|(s|ś)witem"]
+  [#"(?iu)rá(nama|nům|nech|num|nem|na|no|nu|ny|n)"]
   (assoc (interval (hour 4 false) (hour 12 false) false) :form :part-of-day :latent true)
 
   "afternoon"
-  [#"(?iu)po(l|ł)udni(em|e|a|u)"]
+  [#"(?iu)odpoledn(ách|ích|ím|ema|em|í|e|i|y)"]
   (assoc (interval (hour 12 false) (hour 19 false) false) :form :part-of-day :latent true)
 
   "evening|night"
-  [#"(?iu)wiecz(o|ó)r(em|owi|ze|a|u)?|noc(ą)?"]
+  [#"(?iu)več(erům|erama|erech|erum|erem|erů|era|ere|eru|ery|ír|er)|no(cích|cemi|cema|cím|cech|cem|cí|ce|ci|c)"]
   (assoc (interval (hour 18 false) (hour 0 false) false) :form :part-of-day :latent true)
 
   "lunch"
-  [#"(?iu)(na )?la?u?nc(z|h)|obiad"]
+  [#"(?iu)obě(dama|dům|dech|dum|dem|dě|dů|da|de|du|dy|d)"]
   (assoc (interval (hour 12 false) (hour 14 false) false) :form :part-of-day :latent true)
 
   "in|during the <part-of-day>" ;; removes latent
-  [#"(?iu)(w|na) ?(czas(ie)?)" {:form :part-of-day}]
+  [#"(?iu)(v|na) ?(čase?)" {:form :part-of-day}]
   (dissoc %2 :latent)
 
   "this <part-of-day>"
-  [#"(?iu)ten|tego|ta|to" {:form :part-of-day}]
+  [#"(?iu)t(ěmihle|ěmahle|ěchhle|ěmhle|ohohle|omuhle|ímhle|ímdle|ýhle|éhle|ýdle|oudle|enhle|ěhle|ouhle|omhle|ahle|yhle|uhle|ohle|odle|ihle|omle)" {:form :part-of-day}]
   (assoc (intersect (cycle-nth :day 0) %2) :form :part-of-day) ;; removes :latent
 
   ;; "tonight"
@@ -497,25 +472,25 @@
   ; Other intervals: week-end, seasons
 
   "week-end" ; from Friday 6pm to Sunday midnight
-  #"(?iu)((wek|week|wik)(\s|-)?end|wkend)"
+  #"(?iu)víken(dama|dům|dech|dem|dum|dů|de|du|dy|d)"
   (interval (intersect (day-of-week 5) (hour 18 false))
             (intersect (day-of-week 1) (hour 0 false))
             false)
 
   "season"
-  #"(?iu)lato|lata|latu|latem|lecie" ;could be smarter and take the exact hour into account... also some years the day can change
+  #"(?iu)l(étům|étama|étech|étum|étem|étě|éta|éto|étu|éty|etě|ét)"
   (interval (month-day 6 21) (month-day 9 23) false)
 
   "season"
-  #"(?iu)jesień|jesien|jesieni|jesienią|jesienia"
+  #"(?iu)podzi(mům|mama|mech|mum|mem|mů|ma|me|mu|my|m)"
   (interval (month-day 9 23) (month-day 12 21) false)
 
   "season"
-  #"(?iu)zima|zimy|zimie|zimę|zime|zimą|zima|zimie|zimo"
+  #"(?iu)zi(mách|mami|mama|mám|mě|mou|ma|mo|mu|my|m)"
   (interval (month-day 12 21) (month-day 3 20) false)
 
   "season"
-  #"(?iu)wiosna|wiosny|wiośnie|wiosnie|wiosnę|wiosne|wiosną|wiosna|wiośnie|wiosnie|wiosno"
+  #"(?iu)ja(rama|rech|rům|rum|rem|ře|ra|ro|ru|ry|r)"
   (interval (month-day 3 20) (month-day 6 21) false)
 
 
@@ -537,25 +512,25 @@
   ;-  shouldn't remove latency, except maybe -ish
 
   "<time-of-day> approximately" ; 7ish
-  [{:form :time-of-day} #"(?iu)o?ko(l|ł)o|mniej wi(e|ę)cej"]
+  [{:form :time-of-day} #"(?iu)((nebo )?něco )?kolem|zhruba|(nebo )?podobně"]
   (-> %1
     (dissoc :latent)
     (merge {:precision "approximate"}))
 
   "<time-of-day> sharp" ; sharp
-  [{:form :time-of-day} #"(?iu)r(o|ó)wno|dok(l|ł)adnie"]
+  [{:form :time-of-day} #"(?iu)přesně"]
   (-> %1
     (dissoc :latent)
     (merge {:precision "exact"}))
 
   "about <time-of-day>" ; about
-  [#"(?iu)o?ko(l|ł)o|mniej wi(e|ę)cej|tak o" {:form :time-of-day}]
+  [#"v?okolo|o|plus ?m[ií]nus|zhruba|tak o" {:form :time-of-day}]
   (-> %2
     (dissoc :latent)
     (merge {:precision "approximate"}))
 
   "exactly <time-of-day>" ; sharp
-  [#"(?iu)(r(o|ó)wno|dok(l|ł)adnie)( o)?" {:form :time-of-day} ]
+  [#"(?iu)přesně( v)?" {:form :time-of-day} ]
   (-> %2
     (dissoc :latent)
     (merge {:precision "exact"}))
@@ -564,7 +539,7 @@
   ; Intervals
 
   "<month> dd-dd (interval)"
-  [{:form :month} #"(3[01]|[12]\d|0?[1-9])" #"\-|do|po|aż do|az do|aż po|az po" #"(3[01]|[12]\d|0?[1-9])"]
+  [{:form :month} #"(3[01]|[12]\d|0?[1-9])" #"\-|do|po|a[žz] do|a[žz] po" #"(3[01]|[12]\d|0?[1-9])"]
   (interval (intersect %1 (day-of-month (Integer/parseInt (-> %2 :groups first))))
             (intersect %1 (day-of-month (Integer/parseInt (-> %4 :groups first))))
             true)
@@ -572,48 +547,48 @@
   ; Blocked for :latent time. May need to accept certain latents only, like hours
 
   "<datetime> - <datetime> (interval)"
-  [(dim :time #(not (:latent %))) #"\-|(p|d)o|a(ż|z) (p|d)o" (dim :time #(not (:latent %)))]
+  [(dim :time #(not (:latent %))) #"\-|do|po|a[žz] do|a[žz] po" (dim :time #(not (:latent %)))]
   (interval %1 %3 true)
 
   "from <datetime> - <datetime> (interval)"
-  [#"(?iu)od|p(o|ó)(z|ź)niej ni(z|ż)" (dim :time) #"\-|do|po|aż do|az do|aż po|az po|ale przed" (dim :time)]
+  [#"(?iu)od" (dim :time) #"\-|do|po|a[žz] [pd]o|(ale )?před" (dim :time)]
   (interval %2 %4 true)
 
   "between <datetime> and <datetime> (interval)"
-  [#"(?iu)(po|po )?mi(e|ę)dzy" (dim :time) #"a|i" (dim :time)]
+  [#"(?iu)mezi" (dim :time) #"a" (dim :time)]
   (interval %2 %4 true)
 
   ; Specific for time-of-day, to help resolve ambiguities
 
   "<time-of-day> - <time-of-day> (interval)"
-  [#(and (= :time-of-day (:form %)) (not (:latent %))) #"\-|:|do|po|aż do|az do|aż po|az po" {:form :time-of-day}] ; Prevent set alarm 1 to 5pm
+  [#(and (= :time-of-day (:form %)) (not (:latent %))) #"\-|:|do|po|až do|az do|až po|az po" {:form :time-of-day}] ; Prevent set alarm 1 to 5pm
   (interval %1 %3 true)
 
   "from <time-of-day> - <time-of-day> (interval)"
-  [#"(?iu)(niż|niz|od)" {:form :time-of-day} #"((but )?before)|\-|do|po|aż do|az do|aż po|az po" {:form :time-of-day}]
+  [#"(?iu)od" {:form :time-of-day} #"((ale )?před)|\-|do|po|až do|az do|až po|az po" {:form :time-of-day}]
   (interval %2 %4 true)
 
   "between <time-of-day> and <time-of-day> (interval)"
-  [#"(?iu)(po|po )?miedzy|między" {:form :time-of-day} #"a|i" {:form :time-of-day}]
+  [#"(?iu)mezi" {:form :time-of-day} #"a|i" {:form :time-of-day}]
   (interval %2 %4 true)
 
-  ; Specific for within duration... Would need to be reworked
-  "within <duration>"
-  [#"(?iu)(w )?ci(a|ą)gu|zakresie|obrębie|obrebie" (dim :duration)]
-  (interval (cycle-nth :second 0) (in-duration (:value %2)) false)
+  ; ; Specific for within duration... Would need to be reworked
+  ; "within <duration>"
+  ; [#"(?iu)(w )?ci(a|ą)gu|zakresie|obrębie|obrebie" (dim :duration)]
+  ; (interval (cycle-nth :second 0) (in-duration (:value %2)) false)
 
   "by <time>"; if time is interval, take the start of the interval (by tonight = by 6pm)
-  [#"(?iu)(a[zż] )?do" (dim :time)]
+  [#"(?iu)(a[zž] )?do" (dim :time)]
   (interval (cycle-nth :second 0) %2 false)
 
   "by the end of <time>"; in this case take the end of the time (by the end of next week = by the end of next sunday)
-  [#"(?iu)do (ko[ńn]ca )?(tego)?" (dim :time)]
+  [#"(?iu)do (konce )?(tohoto|této)?" (dim :time)]
   (interval (cycle-nth :second 0) %2 true)
 
   ; One-sided Intervals
 
   "until <time-of-day>"
-  [#"(?iu)(a[żz] )?do|przed" (dim :time)]
+  [#"(?iu)(a[žz] )?do|před" (dim :time)]
   (merge %2 {:direction :before})
 
   "after <time-of-day>"
@@ -622,12 +597,12 @@
 
   ;; In this special case, the upper limit is exclusive
   "<hour-of-day> - <hour-of-day> (interval)"
-  [{:form :time-of-day} #"-|do|aż po|po" #(and (= :time-of-day (:form %))
+  [{:form :time-of-day} #"-|do|až po|po" #(and (= :time-of-day (:form %))
   									  (not (:latent %)))]
   (interval %1 %3 :exclusive)
 
   "from <hour-of-day> - <hour-of-day> (interval)"
-  [#"(?iu)od" {:form :time-of-day} #"-|to|th?ru|through|until" #(and (= :time-of-day (:form %))
+  [#"(?iu)od" {:form :time-of-day} #"-|do" #(and (= :time-of-day (:form %))
   									              (not (:latent %)))]
   (interval %2 %4 :exclusive)
 
