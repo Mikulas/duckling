@@ -256,155 +256,155 @@
  ;; Ordinal numbers
 
  "first ordinal"
- #"(?i)první(m|ma|ch|mi|ho|mu)?"
+ #"(?i)prvn(íma|ích|ími|ího|ímu|ím|í)"
  {:dim :ordinal
   :ordinal-digit true
   :value 1}
 
  "second ordinal"
- #"(?i)dru(hý|zí|hou|hym|hé|hej|há|hým|hejm|hém|hýma|hého|hejch|hejma|hých|hému|hýmu|hými|hýho)"
+ #"(?i)dru(hýho|hýma|hými|hýmu|hému|hých|hejma|hejch|hého|hém|hejm|hým|zí|há|hej|hé|hym|hou|hý)"
  {:dim :ordinal
   :ordinal-digit true
   :value 2}
 
  "third ordinal"
- #"(?i)třetí(m|ma|ch|mi|ho|mu)?"
+ #"(?i)třet(íma|ích|ími|ího|ímu|ím|í)"
  {:dim :ordinal
   :ordinal-digit true
   :value 3}
 
  "fourth ordinal"
- #"(?i)čtvrt(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)čtvrt(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :ordinal-digit true
   :value 4}
 
  "fifth ordinal"
- #"(?i)pát(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)pát(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :ordinal-digit true
   :value 5}
 
  "sixth ordinal"
- #"(?i)šest(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)šest(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :ordinal-digit true
   :value 6}
 
  "seventh ordinal"
- #"(?i)sedm(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)sedm(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :ordinal-digit true
   :value 7}
 
  "8th ordinal"
- #"(?i)osm(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)osm(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :ordinal-digit true
   :value 8}
 
  "9th ordinal"
- #"(?i)devát(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)devát(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :ordinal-digit true
   :value 9}
 
  "10th ordinal"
- #"(?i)desát(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)desát(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :value 10}
 
  "11th ordinal"
- #"(?i)jedenáct(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)jedenáct(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :value 11}
 
  "12th ordinal"
- #"(?i)dvanáct(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)dvanáct(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :value 12}
 
  "13th ordinal"
- #"(?i)třináct(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)třináct(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :value 13}
 
  "14th ordinal"
- #"(?i)čtrnáct(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)čtrnáct(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :value 14}
 
  "15th ordinal"
- #"(?i)patnáct(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)patnáct(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :value 15}
 
  "16th ordinal"
- #"(?i)šestnáct(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)šestnáct(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :value 16}
 
  "17th ordinal"
- #"(?i)sedu?mnáct(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)sedu?mnáct(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :value 17}
 
  "18th ordinal"
- #"(?i)osu?mnáct(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)osu?mnáct(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :value 18}
 
  "19th ordinal"
- #"(?i)devatenáct(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)devatenáct(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :value 19}
 
  ;; ordinal tens
 
  "20th ordinal"
- #"(?i)dvacát(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)dvacát(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 20}
 
  "30th ordinal"
- #"(?i)třicát(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)třicát(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 30}
 
  "40th ordinal"
- #"(?i)čtyřicát(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)čtyřicát(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 40}
 
  "50th ordinal"
- #"(?i)padesát(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)padesát(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 50}
 
  "60th ordinal"
- #"(?i)šedesát(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)šedesát(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 60}
 
  "70th ordinal"
- #"(?i)sedmdesát(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)sedu?mdesát(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 70}
 
  "80th ordinal"
- #"(?i)osu?mdesát(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)osu?mdesát(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 80}
 
  "90th ordinal"
- #"(?i)devadesát(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)devadesát(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 90}
@@ -419,60 +419,60 @@
  ;; higher ordinals
 
  "100th ordinal"
- #"(?i)st(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)st(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
   :value 100}
 
  "1000th ordinal"
- #"(?i)tisíct(ej|ym|ou|á|é|í|ý|ém|ejm|ým|ých|ého|ému|ýmu|ejma|ýma|ejch|ými|ýho)"
+ #"(?i)tisícá?t(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
  {:dim :ordinal
-  :value 100}
+  :value 1000}
 
  ;; no space digit prefix eg třiatřicet
 
- "one and ordinal-tens no space"
- [#"(?i)jedena" (dim :ordinal (:ordinal-tens true))]
- {:dim :ordinal
-  :value (+ 1 (get %2 :value))}
+ ; "one and ordinal-tens no space"
+ ; [#"(?i)jedena" (dim :ordinal (:ordinal-tens true))]
+ ; {:dim :ordinal
+ ;  :value (+ 1 (get %2 :value))}
 
- "two and ordinal-tens no space"
- [#"(?i)dvaa"(dim :ordinal (:ordinal-tens true))]
- {:dim :ordinal
-  :value (+ 2 (get %2 :value))}
+ ; "two and ordinal-tens no space"
+ ; [#"(?i)dvaa"(dim :ordinal (:ordinal-tens true))]
+ ; {:dim :ordinal
+ ;  :value (+ 2 (get %2 :value))}
 
- "three and ordinal-tens no space"
- [#"(?i)třia"(dim :ordinal (:ordinal-tens true))]
- {:dim :ordinal
-  :value (+ 3 (get %2 :value))}
+ ; "three and ordinal-tens no space"
+ ; [#"(?i)třia"(dim :ordinal (:ordinal-tens true))]
+ ; {:dim :ordinal
+ ;  :value (+ 3 (get %2 :value))}
 
- "four and ordinal-tens no space"
- [#"(?i)čtyřia"(dim :ordinal (:ordinal-tens true))]
- {:dim :ordinal
-  :value (+ 4 (get %2 :value))}
+ ; "four and ordinal-tens no space"
+ ; [#"(?i)čtyřia"(dim :ordinal (:ordinal-tens true))]
+ ; {:dim :ordinal
+ ;  :value (+ 4 (get %2 :value))}
 
- "five and ordinal-tens no space"
- [#"(?i)pěta"(dim :ordinal (:ordinal-tens true))]
- {:dim :ordinal
-  :value (+ 5 (get %2 :value))}
+ ; "five and ordinal-tens no space"
+ ; [#"(?i)pěta"(dim :ordinal (:ordinal-tens true))]
+ ; {:dim :ordinal
+ ;  :value (+ 5 (get %2 :value))}
 
- "six and ordinal-tens no space"
- [#"(?i)šesta"(dim :ordinal (:ordinal-tens true))]
- {:dim :ordinal
-  :value (+ 6 (get %2 :value))}
+ ; "six and ordinal-tens no space"
+ ; [#"(?i)šesta"(dim :ordinal (:ordinal-tens true))]
+ ; {:dim :ordinal
+ ;  :value (+ 6 (get %2 :value))}
 
- "seven and ordinal-tens no space"
- [#"(?i)sedu?ma"(dim :ordinal (:ordinal-tens true))]
- {:dim :ordinal
-  :value (+ 7 (get %2 :value))}
+ ; "seven and ordinal-tens no space"
+ ; [#"(?i)sedu?ma"(dim :ordinal (:ordinal-tens true))]
+ ; {:dim :ordinal
+ ;  :value (+ 7 (get %2 :value))}
 
- "eight and ordinal-tens no space"
- [#"(?i)osu?ma"(dim :ordinal (:ordinal-tens true))]
- {:dim :ordinal
-  :value (+ 8 (get %2 :value))}
+ ; "eight and ordinal-tens no space"
+ ; [#"(?i)osu?ma"(dim :ordinal (:ordinal-tens true))]
+ ; {:dim :ordinal
+ ;  :value (+ 8 (get %2 :value))}
 
- "nine and ordinal-tens no space"
- [#"(?i)devěta"(dim :ordinal (:ordinal-tens true))]
- {:dim :ordinal
-  :value (+ 9 (get %2 :value))}
+ ; "nine and ordinal-tens no space"
+ ; [#"(?i)devěta"(dim :ordinal (:ordinal-tens true))]
+ ; {:dim :ordinal
+ ;  :value (+ 9 (get %2 :value))}
 
 )
