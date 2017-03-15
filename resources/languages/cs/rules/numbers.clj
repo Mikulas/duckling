@@ -411,10 +411,10 @@
 
  ;; ordinal tens with digits eg šedesátý osmý
 
- ; "decimal ordinals with digits"
- ; [(:ordinal-tens true) #"(?i) " (:ordinal-digit true)]
- ; {:dim :ordinal
- ;  :value (+ (get %1 :value) (get %3 :value))}
+ "decimal ordinals with digits"
+ [(dim :ordinal #(:ordinal-tens %)) (dim :ordinal #(:ordinal-digit %))]
+ {:dim :ordinal
+  :value (+ (get %1 :value) (get %2 :value))}
 
  ;; higher ordinals
 

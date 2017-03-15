@@ -117,4 +117,10 @@
   "15-tý"
   "15tý"
   (ordinal 15)
+
+  "sedmdesátý"
+  (ordinal 70)
+
+  "osmdesátá devátá"
+  (ordinal 89)
 )
