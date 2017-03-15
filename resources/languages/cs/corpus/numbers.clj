@@ -116,6 +116,7 @@
   "patnáctá"
   "15-tý"
   "15tý"
+  "15."
   (ordinal 15)
 
   "sedmdesátý"

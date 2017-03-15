@@ -428,6 +428,14 @@
  {:dim :ordinal
   :value 1000}
 
+ ;; Numerical ordinals
+ "numerical ordinal"
+ #"(?i)(\d+)\."
+ {:dim :ordinal
+  :value (-> (:groups %1)
+             first
+             Integer/parseInt)}
+
  ;; no space digit prefix eg třiatřicet
 
  ; "one and ordinal-tens no space"
