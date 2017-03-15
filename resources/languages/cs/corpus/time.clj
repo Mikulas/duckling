@@ -49,9 +49,11 @@
   (datetime 2013 2 2 :day-of-week 2 :day 2 :month 2)
 
   "Úterý"
-  "tohle úterý"
   "út"
   (datetime 2013 2 19)
+
+  "tohle úterý"
+  (datetime 2013 2 12)
 
   "čtvrtek"
   "tento čtvrtek"
@@ -187,250 +189,266 @@
  "v tomto týdnu"
  (datetime 2013 2 11 :grain :week)
 
-;  "minulý týden"
-;  "v minulém týdnu"
-;  "předchozí týden"
-;  "v předchozím týdnu"
-;  "týden před"
-;  (datetime 2013 2 4 :grain :week)
+ "minulý týden"
+ "v minulém týdnu"
+ "předchozí týden"
+ "v předchozím týdnu"
+ "týden před"
+ "před týdnem"
+ (datetime 2013 2 4 :grain :week)
 
-;  "příští týden"
-;  "následující týden"
-;  "týden po"
-;  (datetime 2013 2 18 :grain :week)
+ "příští týden"
+ "následující týden"
+ "týden po"
+ (datetime 2013 2 18 :grain :week)
 
-;  "minulý měsíc"
-;  "minulého měsíce"
-;  "předchozí měsíc"
-;  "předchozího měsíce"
-;  "po předchozím měsíce"
-;  (datetime 2013 1)
+ "minulý měsíc"
+ "minulého měsíce"
+ "předchozí měsíc"
+ "předchozího měsíce"
+ "po předchozím měsíce"
+ (datetime 2013 1)
 
-;  "následující měsíc"
-;  "nadcházející měsíc"
-;  (datetime 2013 3)
+ "následující měsíc"
+ "nadcházející měsíc"
+ (datetime 2013 3)
 
-;  "tohle čtvrtletí"
-;  "tento kvartál"
-;  (datetime 2013 1 1 :grain :quarter)
+ "tohle čtvrtletí"
+ "tento kvartál"
+ (datetime 2013 1 1 :grain :quarter)
 
-;  "následující čtvrtletí"
-;  "v následujícím čtvrtletí"
-;  "v příštím kvartálu"
-;  "následující kvartál"
-;  (datetime 2013 4 1 :grain :quarter)
+ "následující čtvrtletí"
+ "v následujícím čtvrtletí"
+ "v příštím kvartálu"
+ "následující kvartál"
+ (datetime 2013 4 1 :grain :quarter)
 
-;  "třetí čtvrtletí"
-;  "třetí kvartál"
-;  (datetime 2013 7 1 :grain :quarter)
+ "třetí čtvrtletí"
+ "třetí kvartál"
+ (datetime 2013 7 1 :grain :quarter)
 
-;  "4. kvartál 2018"
-;  "4. čtvrtletí 2018"
-;  (datetime 2018 10 1 :grain :quarter)
+ "4. kvartál 2018"
+ "4. čtvrtletí 2018"
+ (datetime 2018 10 1 :grain :quarter)
 
-;  "předloni"
-;  "předpředchozí rok"
-;  "dva roky zpět"
-;  "dva roky zpátky"
-;  (datetime 2011)
+ ; "předloni"
+ ; "předpředchozí rok"
+ ; "dva roky zpět"
+ ; "dva roky zpátky"
+ ; "před dvěma lety"
+ ; (datetime 2011)
 
-;  "předchozí rok"
-;  "minulý rok"
-;  "loni"
-;  "rok zpět"
-;  "rok zpátky"
-;  (datetime 2012)
+ ; "před pěti lety"
+ ; "před pěti roky"
+ ; (datetime 2008)
 
-;  "tento rok"
-;  "letos"
-;  (datetime 2013)
+ "předchozí rok"
+ "minulý rok"
+ "loni"
+ "rok zpět"
+ "rok zpátky"
+ (datetime 2012)
 
-;  "příští rok"
-;  "následující rok"
-;  "nadcházející rok"
-;  "příští rok"
-;  (datetime 2014)
+ ; "jeden rok zpět"
+ ; (datetime-interval [2012 1 1] [2013 1 1])
 
-;  "neděle minulý týden"
-;  "neděle v minulém týdnu"
-;  "minulá neděle"
-;  "poslední neděle"
-;  (datetime 2013 2 10 :day-of-week 7)
+ ; "za rok"
+ ; (datetime 2014)
 
-;  "minulé úterý"
-;  "poslední úterý"
-;  (datetime 2013 2 5 :day-of-week 2)
+ ; "za dva roky"
+ ; "za 2 roky"
+ ; (datetime 2015)
 
-;  "příští úterý" ; today is tuesday, next tuesday is after a week
-;  (datetime 2013 2 19 :day-of-week 2)
+ "tento rok"
+ "letos"
+ (datetime 2013)
 
-;  "příští středa" ; today is tuesday, next wednesday is tomorrow
-;  (datetime 2013 2 13 :day-of-week 3)
+ "příští rok"
+ "následující rok"
+ "nadcházející rok"
+ "příští rok"
+ (datetime 2014)
 
-;  "středa příští týden"
-;  "středa v příštím týdnu"
-;  "středa za týden"
-;  (datetime 2013 2 20 :day-of-week 3)
+ "neděle minulý týden"
+ "neděle v minulém týdnu"
+ "minulá neděle"
+ "poslední neděle"
+ (datetime 2013 2 10 :day-of-week 7)
 
-;  "pátek příští týden"
-;  (datetime 2013 2 22 :day-of-week 5)
+ "minulé úterý"
+ "poslední úterý"
+ (datetime 2013 2 5 :day-of-week 2)
 
-;  "pondělí tento týden"
-;  (datetime 2013 2 11 :day-of-week 1)
+ "příští úterý" ; today is tuesday, next tuesday is after a week
+ (datetime 2013 2 19 :day-of-week 2)
 
-;  "úterý tento týden"
-;  "úterek v tomto týdni"
-;  "tento úterek"
-;  "toto úterý"
-;   (datetime 2013 2 12 :day-of-week 2)
+ "příští středa" ; today is tuesday, next wednesday is tomorrow
+ (datetime 2013 2 13 :day-of-week 3)
 
-;   "tahle středa"
-;   "tato středa"
-;   "středa tento týden"
-;   (datetime 2013 2 13 :day-of-week 3)
+ "středa příští týden"
+ "středa v příštím týdnu"
+ "středa za týden"
+ (datetime 2013 2 20 :day-of-week 3)
 
-;  "pozítří"
-;  (datetime 2013 2 14)
+ "pátek příští týden"
+ (datetime 2013 2 22 :day-of-week 5)
 
-;   "předevčírem"
-;   (datetime 2013 2 10)
+ "pondělí tento týden"
+ (datetime 2013 2 11 :day-of-week 1)
 
-;   "poslední pondělí v březnu"
-;   "poslední březnové pondělí"
-;   "poslední březnový pondělek"
-;   (datetime 2013 3 25 :day-of-week 1)
+ "úterý tento týden"
+ "úterek v tomto týdni"
+ "tento úterek"
+ "toto úterý"
+  (datetime 2013 2 12 :day-of-week 2)
 
-;  "poslední neděle v březnu 2014"
-;  "poslední březnová neděle v roce 2014"
-;  "poslední březnová neděle roku 2014"
-;   (datetime 2014 3 30 :day-of-week 7)
+  "tahle středa"
+  "tato středa"
+  "středa tento týden"
+  (datetime 2013 2 13 :day-of-week 3)
 
-;  "třetí den října"
-;  "třetí den v říjnu"
-;  (datetime 2013 10 3)
+ "pozítří"
+ (datetime 2013 2 14)
 
-;  "první týden v říjnu 2014"
-;  "první týden října 2014"
-;  (datetime 2014 10 6 :grain :week)
+  "předevčírem"
+  (datetime 2013 2 10)
 
-;  "poslední den v říjnu 2015"
-;  "poslední den října 2015"
-;  "poslední říjnový den 2015"
-;  (datetime 2015 10 31)
+  "poslední pondělí v březnu"
+  "poslední březnové pondělí"
+  "poslední březnový pondělek"
+  (datetime 2013 3 25 :day-of-week 1)
 
-;  "poslední týden v září 2014"
-;  "poslední týden září 2014"
-;  "poslední zářijový týden roku 2014"
-;  (datetime 2014 9 22 :grain :week)
+ "poslední neděle v březnu 2014"
+ "poslední březnová neděle v roce 2014"
+ "poslední březnová neděle roku 2014"
+  (datetime 2014 3 30 :day-of-week 7)
+
+ "třetí den října"
+ "třetí den v říjnu"
+ (datetime 2013 10 3)
+
+ "první týden v říjnu 2014"
+ "první týden října 2014"
+ (datetime 2014 10 6 :grain :week)
+
+ "poslední den v říjnu 2015"
+ "poslední den října 2015"
+ "poslední říjnový den 2015"
+ (datetime 2015 10 31)
+
+ "poslední týden v září 2014"
+ "poslední týden září 2014"
+ "poslední zářijový týden roku 2014"
+ (datetime 2014 9 22 :grain :week)
 
 
-;   ;; nth of
-;   "první úterý v říjnu"
-;   "první říjnové úterý"
-;   (datetime 2013 10 1)
+  ;; nth of
+  "první úterý v říjnu"
+  "první říjnové úterý"
+  (datetime 2013 10 1)
 
-;  "třetí úterý v září 2014"
-;  "třetí zářijové úterý 2014"
-;  "o třetím zářijovém úterý 2014"
-;   (datetime 2014 9 16)
+ "třetí úterý v září 2014"
+ "třetí zářijové úterý 2014"
+ "o třetím zářijovém úterý 2014"
+  (datetime 2014 9 16)
 
-;  "první středa v říjnu 2014"
-;  "první říjnová středa 2014"
-;  "první říjnové středy 2014"
-;  (datetime 2014 10 1)
+ "první středa v říjnu 2014"
+ "první říjnová středa 2014"
+ "první říjnové středy 2014"
+ (datetime 2014 10 1)
 
-;  "druhá středa v říjnu 2014"
-;  "druhou říjnovou středu 2014"
-;  (datetime 2014 10 8)
+ "druhá středa v říjnu 2014"
+ "druhou říjnovou středu 2014"
+ (datetime 2014 10 8)
 
-; ;; Hours
+;; Hours
 
-;  "ve 3 ráno"
-;  "3 v noci"
-;  "3 večer"
-;  "3 po půlnoci"
-;  "3 z rána"
-;  "o třetí ráno"
-;  "o třetí v noci"
-;  "třetí raní"
-;  (datetime 2013 2 13 3)
+ "ve 3 ráno"
+ "3 v noci"
+ "3 večer"
+ "3 po půlnoci"
+ "3 z rána"
+ "o třetí ráno"
+ "o třetí v noci"
+ "třetí raní"
+ (datetime 2013 2 13 3)
 
-;  "3:18 ráno"
-;  "3:18 po půlnoci"
-;  (datetime 2013 2 12 3 18)
+ "3:18 ráno"
+ "3:18 po půlnoci"
+ (datetime 2013 2 12 3 18)
 
-;  "o třetí"
-;  "o 3. po poledni"
-;  "3 po poledni"
-;  "3 po obědě"
-;  "3 odpoledne"
-;  "3 odpolední"
-;  "tři odpoledne"
-;  "o třetí odpoledne"
-;  "třetí hodina"
-;  "patnáctá hodina"
-;  "o patnácté"
-;  "o 15té"
-;  "o třetí"
-;  "3h"
-;  (datetime 2013 2 12 15 :hour 3 :meridiem :pm)
+ "o třetí"
+ "o 3. po poledni"
+ "3 po poledni"
+ "3 po obědě"
+ "3 odpoledne"
+ "3 odpolední"
+ "tři odpoledne"
+ "o třetí odpoledne"
+ "třetí hodina"
+ "patnáctá hodina"
+ "o patnácté"
+ "o 15té"
+ "o třetí"
+ "3h"
+ (datetime 2013 2 12 15 :hour 3 :meridiem :pm)
 
-;  "6 odpoledne"
-;  "6 večer"
-;  "šestá odpoledne"
-;  "o šesté odpolední"
-;  "o šesté večerní"
-;  "o 18té"
-;  "šest odpoledne"
-;  "šestá hodina"
-;  "šestá večerní"
-;  "osmnáctá hodina"
-;  "o osmnácté"
-;  "18h"
-;  "18.00"
-;  "18:00"
-;  "1800"
-;  (datetime 2013 2 12 18 :hour 6 :meridiem :pm)
+ "6 odpoledne"
+ "6 večer"
+ "šestá odpoledne"
+ "o šesté odpolední"
+ "o šesté večerní"
+ "o 18té"
+ "šest odpoledne"
+ "šestá hodina"
+ "šestá večerní"
+ "osmnáctá hodina"
+ "o osmnácté"
+ "18h"
+ "18.00"
+ "18:00"
+ "1800"
+ (datetime 2013 2 12 18 :hour 6 :meridiem :pm)
 
-;  "7 po poledni"
-;  "7 odpoledne"
-;  "sedmá odpolední"
-;  "sedm odpoledne"
-;  "o sedmé odpolední"
-;  "o sedmé večer"
-;  "o devatenácté"
-;  "sedmá hodina"
-;  "devatenáctá hodina"
-;  "7h"
-;  "19:00"
-;  "19.00"
-;  "1900"
-;  (datetime 2013 2 12 19 :hour 7 :meridiem :pm)
+ "7 po poledni"
+ "7 odpoledne"
+ "sedmá odpolední"
+ "sedm odpoledne"
+ "o sedmé odpolední"
+ "o sedmé večer"
+ "o devatenácté"
+ "sedmá hodina"
+ "devatenáctá hodina"
+ "7h"
+ "19:00"
+ "19.00"
+ "1900"
+ (datetime 2013 2 12 19 :hour 7 :meridiem :pm)
 
-;  "8 večer"
-;  "8 odpoledne"
-;  "osm v noci"
-;  "osm večer"
-;  "8. hodina"
-;  "osmá hodina"
-;  "8h"
-;  "20:00"
-;  "20.00"
-;  "2000"
-;  (datetime 2013 2 12 20 :hour 8 :meridiem :pm)
+ "8 večer"
+ "8 odpoledne"
+ "osm v noci"
+ "osm večer"
+ "8. hodina"
+ "osmá hodina"
+ "8h"
+ "20:00"
+ "20.00"
+ "2000"
+ (datetime 2013 2 12 20 :hour 8 :meridiem :pm)
 
-;  "devátá večer"
-;  "9. odpoledne"
-;  "9 večer"
-;  "9 v noci"
-;  "21. hodina"
-;  "9h"
-;  "9.hodina"
-;  "devátá večerní hodina"
-;  "21:00"
-;  "21.00"
-;  "2100"
-;  (datetime 2013 2 12 21 :hour 9 :meridiem :pm)
+ "devátá večer"
+ "9. odpoledne"
+ "9 večer"
+ "9 v noci"
+ "21. hodina"
+ "9h"
+ "9.hodina"
+ "devátá večerní hodina"
+ "21:00"
+ "21.00"
+ "2100"
+ (datetime 2013 2 12 21 :hour 9 :meridiem :pm)
 
 ;  "dziesiąta wieczorem"
 ;  "dziesiata popołudniu"

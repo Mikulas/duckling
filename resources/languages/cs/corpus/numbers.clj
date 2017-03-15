@@ -20,6 +20,9 @@
   "dva"
   (number 2)
 
+  "pěti"
+  (number 5)
+
   "33"
   "třicet tři"
   ;"třiatřicet"

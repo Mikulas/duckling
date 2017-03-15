@@ -149,7 +149,7 @@
 
  "day-before-yesterday (single-word)"
  #"(?iu)předevčír(em|u)?"
- (cycle-nth :day 2)
+ (cycle-nth :day -2)
 
   "yesterday"
   #"(?iu)včera|včerejš(kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)|před dnem|den (zpátky|zpět)|předchozí den|den před(chozí)?"
@@ -247,6 +247,19 @@
   "year (latent)"
   (integer 2101 10000)
   (assoc (year (:value %1)) :latent true)
+
+  ; Relative years
+  "this year"
+  #"(?i)letos"
+  (cycle-nth :year 0)
+
+  "last year"
+  #"(?i)loni|rok (zpět|zpátky)"
+  (cycle-nth :year -1)
+
+  "2 years ago"
+  #"(?i)předloni"
+  (cycle-nth :year -2)
 
     ; Day of month appears in the following context:
   ; - the nth
@@ -492,7 +505,6 @@
   "season"
   #"(?iu)ja(rama|rech|rům|rum|rem|ře|ra|ro|ru|ry|r)"
   (interval (month-day 3 20) (month-day 6 21) false)
-
 
   ; Time zones
 
