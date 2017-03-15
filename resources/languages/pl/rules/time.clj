@@ -194,7 +194,7 @@
 
  "day-before-yesterday (single-word)"
  #"(?i)przedwczoraj"
- (cycle-nth :day 2)
+ (cycle-nth :day -2)
 
   "yesterday"
   #"(?i)wczoraj(szym|szy)?|wczrj|wczor"
