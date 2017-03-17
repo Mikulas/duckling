@@ -290,7 +290,10 @@
   (year (:value %1))
 
   "year (latent)"
-  (integer -10000 999)
+  (integer -10000 -100)
+  (assoc (year (:value %1)) :latent true)
+  "year (latent)"
+  (integer 50 999)
   (assoc (year (:value %1)) :latent true)
 
   "year (latent)"
