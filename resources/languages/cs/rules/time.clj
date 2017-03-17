@@ -189,11 +189,11 @@
   (cycle-nth :day 0)
 
   "tomorrow"
-  #"(?iu)zejtra|zítra|zítř(kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)|((za|o) )?den po(zději)?"
+  #"(?iu)zejtra|zítra|zítř(kách|cích|kům|kama|kem|ků|kum|ka|ek|ku|ky)"
  (cycle-nth :day 1)
 
  "day-after-tomorrow (single-word)"
- #"(?iu)pozítří|pozítř(cích|kách|kama|kům|kem|ků|kum|ek|ku|ky)|((za|o) )?(dva|2) dny po(zději)?"
+ #"(?iu)pozítří|pozítř(cích|kách|kama|kům|kem|ků|kum|ek|ku|ky)"
  (cycle-nth :day 2)
 
  "day-before-yesterday (single-word)"

@@ -46,7 +46,7 @@
    :grain :quarter}
 
   "year (cycle)"
-  #"(?i)(rokách|létům|létama|létech|rocích|rokama|rokům|rokův|letům|letech|létum|rokem|roků|rokum|léty|léta|lety|leta|lét|roce|roku|roky|roka|let|rok)"
+  #"(?i)(rokách|rocích|rokama|rokům|rokův|rokem|roků|rokum|roce|roku|roky|roka|rok|létům|létama|létech|letům|letech|létum|léty|léta|lety|leta|lét|let)"
   {:dim :cycle
    :grain :year}
 
