@@ -28,7 +28,7 @@
  {:dim :number :integer true :value 0 :grain 1}
 
  "one"
- #"(?i)(jednič(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|jed(na|en|noho|nomu|nom|ním|ny|něch|něm|němi|ni)|jediný)"
+ #"(?i)(jednič(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|jed(na|en|noho|nomu|nom|ním|ny|něch|něm|němi|ni|nu)|jediný)"
  {:dim :number :integer true :value 1 :grain 1}
 
  "two"

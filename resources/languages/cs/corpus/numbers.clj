@@ -14,6 +14,7 @@
   "1"
   "jeden"
   "jediný"
+  "jednu"
   (number 1)
 
   "2"
