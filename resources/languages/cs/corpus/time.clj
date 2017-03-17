@@ -458,18 +458,24 @@
  "2000"
  (datetime 2013 2 12 20 0 :hour 8 :minute 0 :meridiem :pm)
 
-;  "devátá večer"
-;  "9. odpoledne"
-;  "9 večer"
-;  "9 v noci"
-;  "21. hodina"
-;  "9h"
-;  "9.hodina"
-;  "devátá večerní hodina"
-;  "21:00"
-;  "21.00"
-;  "2100"
-;  (datetime 2013 2 12 21 :hour 9 :meridiem :pm)
+ "9 v noci"
+ "9.hodina"
+ (datetime 2013 2 11 21 :hour 9 :meridiem :pm)
+
+ "devátého večer"
+ (datetime-interval [2013 3 9 17] [2013 3 10 0])
+
+ "devátá večer"
+ "9. odpoledne"
+ "9 večer"
+ "21. hodina"
+ "devátá večerní hodina"
+ (datetime 2013 2 12 21 :hour 9 :meridiem :pm)
+
+ "21:00"
+ "21.00"
+ "2100"
+ (datetime 2013 2 12 21 0 :hour 9 :minute 0 :meridiem :pm)
 
 ;  "dziesiąta wieczorem"
 ;  "dziesiata popołudniu"
