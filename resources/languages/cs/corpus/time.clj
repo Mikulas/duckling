@@ -377,74 +377,84 @@
  (datetime 2013 2 13 3)
 
  "3 v noci"
- "3 večer"
  "3 po půlnoci"
  "o třetí v noci"
  (datetime 2013 2 12 3)
 
-;  "3:18 ráno"
-;  "3:18 po půlnoci"
-;  (datetime 2013 2 12 3 18)
+ "3:18 ráno"
+ "3:18 po půlnoci"
+ (datetime 2013 2 12 3 18)
 
-;  "o třetí"
-;  "o 3. po poledni"
-;  "3 po poledni"
-;  "3 po obědě"
-;  "3 odpoledne"
-;  "3 odpolední"
-;  "tři odpoledne"
-;  "o třetí odpoledne"
-;  "třetí hodina"
-;  "patnáctá hodina"
-;  "o patnácté"
-;  "o 15té"
-;  "o třetí"
-;  "3h"
-;  (datetime 2013 2 12 15 :hour 3 :meridiem :pm)
+ "o třetí"
+ "o 3. po poledni"
+ "3 po poledni"
+ "3 po obědě"
+ "3 odpoledne"
+ "3 odpolední"
+ "tři odpoledne"
+ "o třetí odpoledne"
+ "třetí hodina"
+ "patnáctá hodina"
+ "o patnácté"
+ "o 15té"
+ "3h odpo"
+ (datetime 2013 2 12 15 :hour 3 :meridiem :pm)
 
-;  "6 odpoledne"
-;  "6 večer"
-;  "šestá odpoledne"
-;  "o šesté odpolední"
-;  "o šesté večerní"
-;  "o 18té"
-;  "šest odpoledne"
-;  "šestá hodina"
-;  "šestá večerní"
-;  "osmnáctá hodina"
-;  "o osmnácté"
-;  "18h"
-;  "18.00"
-;  "18:00"
-;  "1800"
-;  (datetime 2013 2 12 18 :hour 6 :meridiem :pm)
+ "šestá hodina"
+ (datetime 2013 2 12 6 :hour 6)
 
-;  "7 po poledni"
-;  "7 odpoledne"
-;  "sedmá odpolední"
-;  "sedm odpoledne"
-;  "o sedmé odpolední"
-;  "o sedmé večer"
-;  "o devatenácté"
-;  "sedmá hodina"
-;  "devatenáctá hodina"
-;  "7h"
-;  "19:00"
-;  "19.00"
-;  "1900"
-;  (datetime 2013 2 12 19 :hour 7 :meridiem :pm)
+ "6 odpoledne"
+ "6 večer"
+ "šestá odpoledne"
+ "o šesté odpolední"
+ "o šesté večerní"
+ "o 18té"
+ "šest odpoledne"
+ "šestá večerní"
+ "osmnáctá hodina"
+ "o osmnácté"
+ "18h"
+ (datetime 2013 2 12 18 :hour 6 :meridiem :pm)
 
-;  "8 večer"
-;  "8 odpoledne"
-;  "osm v noci"
-;  "osm večer"
-;  "8. hodina"
-;  "osmá hodina"
-;  "8h"
-;  "20:00"
-;  "20.00"
-;  "2000"
-;  (datetime 2013 2 12 20 :hour 8 :meridiem :pm)
+ "18.00"
+ "18:00"
+ "1800"
+ (datetime 2013 2 12 18 0 :hour 6 :minute 0 :meridiem :pm)
+
+ "7 po poledni"
+ "7 odpoledne"
+ "sedmá odpolední"
+ "sedm odpoledne"
+ "o sedmé odpolední"
+ "o sedmé večer"
+ "o devatenácté"
+ "devatenáctá hodina"
+ "7h večer"
+ (datetime 2013 2 12 19 :hour 7 :meridiem :pm)
+
+ "sedmá hodina"
+ (datetime 2013 2 12 7 :hour 7)
+
+ "19:00"
+ "19.00"
+ "1900"
+ (datetime 2013 2 12 19 0 :hour 7 :minute 0 :meridiem :pm)
+
+ "8 večer"
+ "8 odpoledne"
+ "osm v noci"
+ "osm večer"
+ "8h večer"
+ (datetime 2013 2 12 20 :hour 8 :meridiem :pm)
+
+ "8. hodina"
+ "osmá hodina"
+ (datetime 2013 2 12 8 :hour 8)
+
+ "20:00"
+ "20.00"
+ "2000"
+ (datetime 2013 2 12 20 0 :hour 8 :minute 0 :meridiem :pm)
 
 ;  "devátá večer"
 ;  "9. odpoledne"
