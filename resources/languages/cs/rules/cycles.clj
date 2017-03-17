@@ -111,7 +111,7 @@
  (cycle-nth-after-not-immediate (:grain %2) (dec (:value %1)) %4)
 
  "<ordinal> <cycle> <time>"
- [(dim :ordinal) (dim :cycle) (dim :time)]
+ [(dim :ordinal) (dim :cycle #(not= :quarter (:grain %))) (dim :time)]
  (cycle-nth-after-not-immediate (:grain %2) (dec (:value %1)) %3)
 
   ;; "the <ordinal> <cycle> of <time>"
@@ -140,6 +140,6 @@
   (cycle-nth-after :quarter (dec (:value %1)) (cycle-nth :year 0))
 
   "<ordinal> quarter <year>"
-  [(dim :ordinal) (dim :cycle #(= :quarter (:grain %))) (dim :time)]
+  [(dim :ordinal) (dim :cycle #(= :quarter (:grain %))) (dim :time #(not (:military-time %)))]
   (cycle-nth-after :quarter (dec (:value %1)) %3)
 )
