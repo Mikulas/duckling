@@ -279,6 +279,7 @@
 
   "3:18am"
   "3:18a"
+  "0318"
   (datetime 2013 2 12 3 18)
 
   "at 3pm"
@@ -328,12 +329,14 @@
 
   "a quarter to noon"
   "11:45am"
+  "1145"
   "15 to noon" ; Ambiguous with interval
   (datetime 2013 2 12 11 45 :hour 11 :minute 45)
 
   "8 tonight"
   "eight tonight"
   "8 this evening"
+  "2000"
   (datetime 2013 2 12 20)
 
   ;; Mixing date and time
