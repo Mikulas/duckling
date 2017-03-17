@@ -370,15 +370,17 @@
 
 ; ;; Hours
 
-;  "ve 3 ráno"
-;  "3 v noci"
-;  "3 večer"
-;  "3 po půlnoci"
-;  "3 z rána"
-;  "o třetí ráno"
-;  "o třetí v noci"
-;  "třetí raní"
-;  (datetime 2013 2 13 3)
+ "ve 3 ráno"
+ "3 z rána"
+ "o třetí ráno"
+ "třetí ranní"
+ (datetime 2013 2 13 3)
+
+ "3 v noci"
+ "3 večer"
+ "3 po půlnoci"
+ "o třetí v noci"
+ (datetime 2013 2 12 3)
 
 ;  "3:18 ráno"
 ;  "3:18 po půlnoci"

@@ -413,18 +413,25 @@
         (assoc :form :time-of-day)))
 
   "<time-of-day> před polednem/ráno/dopoledne"
-  [{:form :time-of-day} #"(?iu)(před polednem|(z )?rá(nama|nům|nech|num|nem|na|no|nu|ny|n)|dopoledn(ách|ích|ím|ema|em|í|e|i|y))"]
+  [{:form :time-of-day} #"(?iu)(před polednem|(z )?rá(nama|nům|nech|num|nem|na|no|nu|ny|n)|ranní|dopoledn(ách|ích|ím|ema|em|í|e|i|y))"]
  (let [[p meridiem]
         [[(hour 0) (hour 12) false] :am]]
     (-> (intersect %1 (apply interval p))
         (assoc :form :time-of-day)))
 
- "<time-of-day> po poledni/odpoledne/na večer/v noci"
- [{:form :time-of-day} #"(?iu)(po poledni|odpoledn(ách|ích|ím|ema|em|í|e|i|y)|(na )?več(erům|erama|erech|erum|erem|erů|era|ere|eru|ery|ír|er)|(v )?no(cích|cemi|cema|cím|cech|cem|cí|ce|ci|c))"]
- (let [[p meridiem]
-       [[(hour 12) (hour 0) false] :pm]]
-   (-> (intersect %1 (apply interval p))
-       (assoc :form :time-of-day)))
+ ; "<time-of-day> po poledni/odpoledne"
+ ; [{:form :time-of-day} #"(?iu)(po poledni|odpoledn(ách|ích|ím|ema|em|í|e|i|y))"]
+ ; (let [[p meridiem]
+ ;       [[(hour 12) (hour 0) false] :pm]]
+ ;   (-> (intersect %1 (apply interval p))
+ ;       (assoc :form :time-of-day)))
+
+ ; "<time-of-day> na večer/v noci"
+ ; [{:form :time-of-day} #"(?iu)(na )?več(erům|erama|erech|erum|erem|erů|era|ere|eru|ery|ír|er)|(v )?no(cích|cemi|cema|cím|cech|cem|cí|ce|ci|c)"]
+ ; (let [[p meridiem]
+ ;       [[(hour 6) (hour 12) false]]]
+ ;   (-> (intersect %1 (apply interval p))
+ ;       (assoc :form :time-of-day)))
 
  "<ordinal> (as hour)"
  [(dim :ordinal #(<= 1 (:value %) 24))]
@@ -479,17 +486,21 @@
 
   ; Part of day (morning, evening...). They are intervals.
 
-  "morning" ;; TODO "3am this morning" won't work since morning starts at 4...
-  [#"(?iu)rá(nama|nům|nech|num|nem|na|no|nu|ny|n)"]
-  (assoc (interval (hour 4 false) (hour 12 false) false) :form :part-of-day :latent true)
+  "morning"
+  [#"(?iu)rá(nama|nům|nech|num|nem|na|no|nu|ny|n)|po půlnoci"]
+  (assoc (interval (hour 0 false) (hour 12 false) false) :form :part-of-day :latent true)
 
   "afternoon"
   [#"(?iu)odpoledn(ách|ích|ím|ema|em|í|e|i|y)"]
   (assoc (interval (hour 12 false) (hour 19 false) false) :form :part-of-day :latent true)
 
-  "evening|night"
-  [#"(?iu)več(erům|erama|erech|erum|erem|erů|era|ere|eru|ery|ír|er)|no(cích|cemi|cema|cím|cech|cem|cí|ce|ci|c)"]
+  "evening"
+  [#"(?iu)več(erům|erama|erech|erum|erem|erů|era|ere|eru|ery|ír|er)"]
   (assoc (interval (hour 18 false) (hour 0 false) false) :form :part-of-day :latent true)
+
+  "night"
+  [#"(?iu)no(cích|cemi|cema|cím|cech|cem|cí|ce|ci|c)"]
+  (assoc (interval (hour 20 false) (hour 5 false) false) :form :part-of-day :latent true)
 
   "lunch"
   [#"(?iu)obě(dama|dům|dech|dum|dem|dě|dů|da|de|du|dy|d)"]
