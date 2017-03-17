@@ -369,6 +369,10 @@
   (integer 0 23)
   (assoc (hour (:value %1) true) :latent true)
 
+  "<integer> with hour postfix"
+  #"(?i)([1-9]|1[0-9]|2[0-4])\s*h(od|odin)?\b"
+  (hour (Integer/parseInt(first (:groups %1))) true)
+
   "at <time-of-day>" ; o páté, v deset, na čtvrtou (hodinu)
   [#"(?iu)o|na|v|@" {:form :time-of-day}]
   (dissoc %2 :latent)
@@ -393,7 +397,7 @@
 
 
   "hhmm (military)"
-  #"(?iu)((?:[01]?\d)|(?:2[0-3]))([0-5]\d)"
+  #"(?iu)((?:2[0-3])|(?:[01]?\d))([0-5]\d)"
   (-> (hour-minute (Integer/parseInt (first (:groups %1)))
                    (Integer/parseInt (second (:groups %1)))
                    false) ; not a 12-hour clock)
@@ -416,7 +420,7 @@
         (assoc :form :time-of-day)))
 
   "<time-of-day> před polednem/ráno/dopoledne"
-  [{:form :time-of-day} #"(?iu)(před polednem|(z )?rá(nama|nům|nech|num|nem|na|no|nu|ny|n)|ranní|dopoledn(ách|ích|ím|ema|em|í|e|i|y))"]
+  [{:form :time-of-day} #"(?iu)(před polednem|(z )?rá(nama|nům|nech|num|nem|na|no|nu|ny|n)|ranní|dopoledn(ách|ích|ím|ema|em|í|e|i|y)|dopo)"]
  (let [[p meridiem]
         [[(hour 0) (hour 12) false] :am]]
     (-> (intersect %1 (apply interval p))
@@ -458,7 +462,7 @@
 
   "number (as relative minutes)"
   (integer 1 59)
-  {:relative-minutes (:value %1)}
+  {:relative-minutes (:value %1) :latent true}
 
   "<hour-of-day> <integer> (as relative minutes)"
   [(dim :time :full-hour) #(:relative-minutes %)]
@@ -494,11 +498,11 @@
   (assoc (interval (hour 0 false) (hour 12 false) false) :form :part-of-day :latent true)
 
   "afternoon"
-  [#"(?iu)odpoledn(ách|ích|ím|ema|em|í|e|i|y)"]
+  [#"(?iu)odpoledn(ách|ích|ím|ema|em|í|e|i|y)|odpo|po oběd[uě]|po poledni"]
   (assoc (interval (hour 12 false) (hour 19 false) false) :form :part-of-day :latent true)
 
   "evening"
-  [#"(?iu)več(erům|erama|erech|erum|erem|erů|era|ere|eru|ery|ír|er)"]
+  [#"(?iu)več(erní|erům|erama|erech|erum|erem|erů|era|ere|eru|ery|ír|er)"]
   (assoc (interval (hour 18 false) (hour 0 false) false) :form :part-of-day :latent true)
 
   "night"
