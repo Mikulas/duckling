@@ -307,7 +307,10 @@
  #"(?i)(9-?|devá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :ordinal-digit true
-  :value 9}
+  :value 9
+  :gender-female
+    (boolean (re-find #"ou|a" (-> %2 :groups first .toLowerCase)))
+  }
 
  "10th ordinal"
  #"(?i)(10-?|desá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"

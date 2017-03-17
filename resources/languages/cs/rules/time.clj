@@ -442,7 +442,7 @@
  ;       (assoc :form :time-of-day)))
 
  "<ordinal> (as hour)"
- [(dim :ordinal #(<= 1 (:value %) 24))]
+ [(dim :ordinal #(and (:gender-female %) (<= 1 (:value %) 24)))]
  (hour (:value %1) true)
 
   "noon"
