@@ -583,21 +583,21 @@
 
 ; ;; ; ;; Involving periods/durations
 
- ; "za vteřinu"
- ; "za sekundu"
- ; "ve vteřině"
- ; "sekunda od teď"
- ; (datetime 2013 2 12 4 30 1)
+ "za vteřinu"
+ "za sekundu"
+ "ve vteřině"
+ "sekunda od teď"
+ (datetime 2013 2 12 4 30 1)
 
-;  "za minutę"
-;  "za jedną minutę"
-;  "przez minutę"
-;  (datetime 2013 2 12 4 31 0)
+ "v minutě"
+ "za jednu minutu"
+ "po minutě"
+ (datetime 2013 2 12 4 31 0)
 
-;  "w 2 minuty"
-;  "za jeszcze 2 minuty"
-;  "2 minuty od teraz"
-;  (datetime 2013 2 12 4 32 0)
+ "za 2 minuty"
+ "ve dvou minutách"
+ "2 minuty od teď"
+ (datetime 2013 2 12 4 32 0)
 
 ;  "w 60 minut"
 ;  (datetime 2013 2 12 5 30 0)
