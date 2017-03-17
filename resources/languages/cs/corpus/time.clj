@@ -440,9 +440,11 @@
  "1900"
  (datetime 2013 2 12 19 0 :hour 7 :minute 0 :meridiem :pm)
 
+ "osm v noci"
+ (datetime 2013 2 11 20 :hour 8 :meridiem :pm)
+
  "8 večer"
  "8 odpoledne"
- "osm v noci"
  "osm večer"
  "8h večer"
  (datetime 2013 2 12 20 :hour 8 :meridiem :pm)

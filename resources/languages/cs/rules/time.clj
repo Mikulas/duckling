@@ -445,7 +445,7 @@
  (hour (:value %1) true)
 
   "noon"
-  #"(?iu)poledn(ách|ích|ím|ema|em|í|e|i|y)"
+  #"(?iu)poledn(ách|ích|ím|ema|em|í|e|y)" ; removed "i" to ignore "po poledni"
   (hour 12 false)
 
   ;; "midnight|EOD|end of day"
@@ -499,15 +499,15 @@
 
   "afternoon"
   [#"(?iu)odpoledn(ách|ích|ím|ema|em|í|e|i|y)|odpo|po oběd[uě]|po poledni"]
-  (assoc (interval (hour 12 false) (hour 19 false) false) :form :part-of-day :latent true)
+  (assoc (interval (hour 12 false) (hour 23 false) false) :form :part-of-day :latent true)
 
   "evening"
   [#"(?iu)več(erní|erům|erama|erech|erum|erem|erů|era|ere|eru|ery|ír|er)"]
-  (assoc (interval (hour 18 false) (hour 0 false) false) :form :part-of-day :latent true)
+  (assoc (interval (hour 17 false) (hour 0 false) false) :form :part-of-day :latent true)
 
   "night"
   [#"(?iu)no(cích|cemi|cema|cím|cech|cem|cí|ce|ci|c)"]
-  (assoc (interval (hour 20 false) (hour 5 false) false) :form :part-of-day :latent true)
+  (assoc (interval (hour 19 false) (hour 5 false) false) :form :part-of-day :latent true)
 
   "lunch"
   [#"(?iu)obě(dama|dům|dech|dum|dem|dě|dů|da|de|du|dy|d)"]
