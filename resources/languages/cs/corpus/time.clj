@@ -684,13 +684,13 @@
 
 ; ;;   ; Seasons
 
-;   "to lato"
-;   "w to lato"
-;   (datetime-interval [2013 6 21] [2013 9 24])
+  "tohle léto"
+  "v létě"
+  (datetime-interval [2013 6 21] [2013 9 24])
 
-;   "ta zima"
-;   "tej zimy"
-;   (datetime-interval [2012 12 21] [2013 3 21])
+  "v zimě"
+  "na zimu"
+  (datetime-interval [2012 12 21] [2013 3 21])
 
 ; ;;   ; US holidays (http://www.timeanddate.com/holidays/us/)
 ;   "Wigilia Bożego Narodzenia"
@@ -736,9 +736,9 @@
 
 ;  ;;   ; Part of day (morning, afternoon...)
 
-;  "ten wieczór"
-;  "dzisiejszy wieczór"
-;  (datetime-interval [2013 2 12 18] [2013 2 13 00])
+ "večer"
+ "dnes večer"
+ (datetime-interval [2013 2 12 17] [2013 2 13 00])
 
 ;  "jutrzejszy wieczór"
 ;  "Środowy wieczór"
@@ -833,36 +833,37 @@
 
 ; ;;   ; Explicit intervals
 
-;  "Lipiec 13-15"
-;  "Lipca 13 do 15"
-;  ;; "Lipca 13tego do 15tego" ;;FIX gives hours instaed of dates
-;  "Lipiec 13 - Lipiec 15"
-;  (datetime-interval [2013 7 13] [2013 7 16])
+ "Červenec 13-15"
+ "od 13. do 15. Července"
+ "od 13 do 15 Července"
+ ;; "Lipca 13tego do 15tego" ;;FIX gives hours instaed of dates
+ "Červenec 13 - Červenec 15"
+ (datetime-interval [2013 7 13] [2013 7 16])
 
-;   "Sie 8 - Sie 12"
-;   (datetime-interval [2013 8 8] [2013 8 13])
+  "Srpen 8 - Srpen 12"
+  (datetime-interval [2013 8 8] [2013 8 13])
 
-;   "9:30 - 11:00"
-;   (datetime-interval [2013 2 12 9 30] [2013 2 12 11 1])
+  "9:30 - 11:00"
+  (datetime-interval [2013 2 12 9 30] [2013 2 12 11 1])
 
-;   "od 9:30 - 11:00 w Czwartek"
-;   "miedzy 9:30 a 11:00 w czwartek"
-;   "9:30 - 11:00 w czwartek"
-;   "pozniej niż 9:30 ale przed 11:00 w Czwartek"
-;   "Czwartek od 9:30 do 11:00"
-;   (datetime-interval [2013 2 14 9 30] [2013 2 14 11 1])
+  "od 9:30 - 11:00 ve čtvrtek"
+  "mezi 9:30 a 11:00 ve čtvrtek"
+  "9:30 - 11:00 ve čtvrtek"
+  "po 9:30 ale před 11:00 ve čtvrtek"
+  "čtvrtek od 9:30 do 11:00"
+  (datetime-interval [2013 2 14 9 30] [2013 2 14 11 1])
 
-;   "Czwartek od 9 rano do 11 rano"
-;   (datetime-interval [2013 2 14 9] [2013 2 14 12])
+  "čtvrtek od 9 ráno do 11 ráno"
+  (datetime-interval [2013 2 14 9] [2013 2 14 12])
 
-;   "11:30-1:30" ; go train this rule!
-;   "11:30-1:30"
-;   "11:30-1:30"
-;   "11:30-1:30"
-;   "11:30-1:30"
-;   "11:30-1:30"
-;   "11:30-1:30"
-;   (datetime-interval [2013 2 12 11 30] [2013 2 12 13 31])
+  "11:30-1:30" ; go train this rule!
+  "11:30-1:30"
+  "11:30-1:30"
+  "11:30-1:30"
+  "11:30-1:30"
+  "11:30-1:30"
+  "11:30-1:30"
+  (datetime-interval [2013 2 12 11 30] [2013 2 12 13 31])
 
 ; ;;   "1:30 PM on Sat, Sep 21"
 ; ;;   (datetime 2013 9 21 13 30)
@@ -936,8 +937,8 @@
 ; ;;   "after lunch"
 ; ;;   (datetime-interval [2013 2 12 13] [2013 2 12 17])
 
-;  "10:30"
-;  (datetime 2013 2 12 10 30)
+ "10:30"
+ (datetime 2013 2 12 10 30)
 
 ; ;;   "morning" ;; how should we deal with fb mornings?
 ; ;;   (datetime-interval [2013 2 12 4] [2013 2 12 12])

@@ -456,6 +456,14 @@
              first
              Integer/parseInt)}
 
+ ;  "numerical ordinal"
+ ; #"(?i)(\d+)"
+ ; {:dim :ordinal
+ ;  :value (-> (:groups %1)
+ ;             first
+ ;             Integer/parseInt)
+ ;  :latent true}
+
  ;; no space digit prefix eg třiatřicet
 
  ; "one and ordinal-tens no space"

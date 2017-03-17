@@ -634,6 +634,14 @@
   [(dim :time #(not (:latent %))) #"\-|do|po|a[žz] do|a[žz] po" (dim :time #(not (:latent %)))]
   (interval %1 %3 true)
 
+  "from <ordinal> - <ordinal> (interval)"
+  [#"(?iu)od" (dim :ordinal) #"\-|do|po|a[žz] [pd]o|(ale )?před" (dim :ordinal)]
+  (interval (day-of-month (:value %2)) (day-of-month (:value %4)) true)
+
+  "from <number> - <number> (interval)"
+  [#"(?iu)od" (dim :number) #"\-|do|po|a[žz] [pd]o|(ale )?před" (dim :number)]
+  (interval (day-of-month (:value %2)) (day-of-month (:value %4)) true)
+
   "from <datetime> - <datetime> (interval)"
   [#"(?iu)od" (dim :time) #"\-|do|po|a[žz] [pd]o|(ale )?před" (dim :time)]
   (interval %2 %4 true)
@@ -642,6 +650,10 @@
   [#"(?iu)mezi" (dim :time) #"a" (dim :time)]
   (interval %2 %4 true)
 
+  "<interval> month"
+  [(dim :time) {:form :month}]
+  (intersect %1 %2)
+
   ; Specific for time-of-day, to help resolve ambiguities
 
   "<time-of-day> - <time-of-day> (interval)"
@@ -649,7 +661,7 @@
   (interval %1 %3 true)
 
   "from <time-of-day> - <time-of-day> (interval)"
-  [#"(?iu)od" {:form :time-of-day} #"((ale )?před)|\-|do|po|až do|az do|až po|az po" {:form :time-of-day}]
+  [#"(?iu)(od|po)" {:form :time-of-day} #"((ale )?před)|\-|do|po|až do|az do|až po|az po" {:form :time-of-day}]
   (interval %2 %4 true)
 
   "between <time-of-day> and <time-of-day> (interval)"
@@ -681,12 +693,12 @@
 
   ;; In this special case, the upper limit is exclusive
   "<hour-of-day> - <hour-of-day> (interval)"
-  [{:form :time-of-day} #"-|do|až po|po" #(and (= :time-of-day (:form %))
+  [{:form :time-of-day} #"(?iu)-|do|až po|po" #(and (= :time-of-day (:form %))
   									  (not (:latent %)))]
   (interval %1 %3 :exclusive)
 
   "from <hour-of-day> - <hour-of-day> (interval)"
-  [#"(?iu)od" {:form :time-of-day} #"-|do" #(and (= :time-of-day (:form %))
+  [#"(?iu)od" {:form :time-of-day} #"-|až po|do|po" #(and (= :time-of-day (:form %))
   									              (not (:latent %)))]
   (interval %2 %4 :exclusive)
 
