@@ -617,52 +617,52 @@
  "za tři hodiny"
  (datetime 2013 2 12 7 30)
 
-;  "w 24 godziny"
-;  (datetime 2013 2 13 4 30)
+ "za 24 hodin"
+ (datetime 2013 2 13 4 30)
 
-;  "w jeden dzień"
-;  "dzień od dziś"
-;  (datetime 2013 2 13 4)
+ "za jeden den"
+ "den od teď"
+ "za den od teď"
+ (datetime 2013 2 13 4)
 
-;  "3 lata od dziś"
-;  ;;"za trzy lata od dzisiaj" Gives the correct result but produces two
-;  ;;identical winners
-;  (datetime 2016 2)
+ "3 roky od dnes"
+ "3 roky od dneška"
+ "3 léta ode dnes"
+ (datetime 2016 2)
 
-;  "w 7 dni"
-;  (datetime 2013 2 19 4)
+ "za 7 dní"
+ (datetime 2013 2 19 4)
 
-;  "w jeden tydzień"
-;  "w tydzień"
-;  (datetime 2013 2 19)
+ "za jeden týden"
+ ; "za týden"
+ (datetime 2013 2 19)
 
-;  "za około pół godziny" ;; FIXME precision is lost
-;  "za jakieś pół godziny"
-;  (datetime 2013 2 12 5 0 0) ;; :precision "approximate"
+ ; "za około pół godziny" ;; FIXME precision is lost
+ ; "za jakieś pół godziny"
+ ; (datetime 2013 2 12 5 0 0) ;; :precision "approximate"
 
-;   "7 dni temu"
-;   (datetime 2013 2 5 4)
+  "7 dní zpátky"
+  (datetime 2013 2 5 4)
 
-;   "14 dni temu"
-;   ;;"a fortnight ago"
-;   (datetime 2013 1 29 4)
+  "14 dní zpět"
+  (datetime 2013 1 29 4)
 
-;   "tydzien temu"
-;   "jeden tydzień temu"
-;   "1 tydzień temu"
-;   (datetime 2013 2 5)
+  ; "týden zpátky"
+  "jeden týden zpět"
+  "1 týden zpět"
+  (datetime 2013 2 5)
 
-;   "trzy tygodnie temu"
-;   (datetime 2013 1 22)
+  "před třemi týdny"
+  (datetime 2013 1 22)
 
-;   "trzy miesiące temu"
-;   (datetime 2012 11 12)
+  "tři měsíce zpět"
+  (datetime 2012 11 12)
 
-;   "dwa lata temu"
-;   (datetime 2011 2)
+  "dva roky zpět"
+  (datetime 2011 2)
 
-;   "7 dni potem"
-;   (datetime 2013 2 19 4)
+  "7 dní později"
+  (datetime 2013 2 19 4)
 
 ;   "14 dni później"
 ;   ;;"a fortnight hence"

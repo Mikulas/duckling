@@ -81,8 +81,12 @@
  (merge (in-duration (:value %2)) {:direction :after})
 
   "<duration> from now"
-  [(dim :duration) #"(?iu)od (teraz|teď|nyní)"]
+  [(dim :duration) #"(?iu)ode? (dneška|dnes|teraz|teď|nyní)"]
   (in-duration (:value %1))
+
+  "<duration> from now"
+  [#"(?iu)za" (dim :duration) #"(?iu)ode? (dneška|dnes|teraz|teď|nyní)"]
+  (in-duration (:value %2))
 
   "<duration> ago"
   [#"(?iu)před" (dim :duration)]
