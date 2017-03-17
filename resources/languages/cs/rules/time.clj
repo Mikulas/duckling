@@ -325,7 +325,7 @@
   ;; (day-of-month (:value %2))
 
   "<day-of-month> (ordinal)" ; this one is latent
-  [(dim :ordinal #(<= 1 (:value %) 31))]
+  [(dim :ordinal #(and (:date-inflection %) (<= 1 (:value %) 31)))]
   (assoc (day-of-month (:value %1)) :latent true)
 
   ;; "the <day-of-month> (non ordinal)" ; this one is latent
@@ -468,6 +468,10 @@
   "<hour-of-day> <integer> (as relative minutes)"
   [(dim :time :full-hour) #(:relative-minutes %)]
   (hour-relativemin (:full-hour %1) (:relative-minutes %2) true)
+
+  "relative minutes <integer> (hour-of-day)"
+  [#(and (:relative-minutes %) (not (:latent %))) (dim :time :full-hour)]
+  (hour-relativemin (:full-hour %2) (- (:relative-minutes %1)) true)
 
   "relative minutes to|till|before <integer> (hour-of-day)"
   [#(:relative-minutes %) #"(?iu)do|před" (dim :time :full-hour)]

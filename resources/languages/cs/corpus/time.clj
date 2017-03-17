@@ -532,21 +532,17 @@
 ;  ;; "3:15p"
 ;  (datetime 2013 2 12 15 15 :hour 3 :minute 15 :meridiem :pm)
 
-;  "20 po 3"
-;  "3:20"
-;  "3:20 w poludnie"
-;  "trzecia dwadzieścia"
-;  (datetime 2013 2 12 15 20 :hour 3 :minute 20 :meridiem :pm)
+ "20 po 3"
+ "3:20"
+ "3:20 odpoledne"
+ "tři dvacet"
+ (datetime 2013 2 12 15 20 :hour 3 :minute 20 :meridiem :pm)
 
-;  ;;   "at half past three pm"
-;  "w pół do szesnastej"
-;  "pol po trzeciej"
-;  "15:30"
-;  ;;   "3:30pm"
-;  ;;   "3:30PM"
-;  ;;   "330 p.m."
-;  ;;   "3:30 p m"
-;  (datetime 2013 2 12 15 30 :hour 3 :minute 30 :meridiem :pm)
+ ;;   "at half past three pm"
+ "v půl šestnácté"
+ "o půl čtvrté"
+ "15:30"
+ (datetime 2013 2 12 15 30 :hour 3 :minute 30 :meridiem :pm)
 
 ;   "3:30"
 ; ;;   "half three"
