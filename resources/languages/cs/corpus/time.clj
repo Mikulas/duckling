@@ -374,7 +374,7 @@
  "3 z rána"
  "o třetí ráno"
  "třetí ranní"
- (datetime 2013 2 13 3)
+ (datetime 2013 2 12 3 :hour 3)
 
  "3 v noci"
  "3 po půlnoci"

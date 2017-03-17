@@ -419,12 +419,12 @@
           (apply interval p))
         (assoc :form :time-of-day)))
 
-  "<time-of-day> před polednem/ráno/dopoledne"
-  [{:form :time-of-day} #"(?iu)(před polednem|(z )?rá(nama|nům|nech|num|nem|na|no|nu|ny|n)|ranní|dopoledn(ách|ích|ím|ema|em|í|e|i|y)|dopo)"]
- (let [[p meridiem]
-        [[(hour 0) (hour 12) false] :am]]
-    (-> (intersect %1 (apply interval p))
-        (assoc :form :time-of-day)))
+ ;  "<time-of-day> před polednem/ráno/dopoledne"
+ ;  [{:form :time-of-day} #"(?iu)(před polednem|(z )?rá(nama|nům|nech|num|nem|na|no|nu|ny|n)|ranní|dopoledn(ách|ích|ím|ema|em|í|e|i|y)|dopo)"]
+ ; (let [[p meridiem]
+ ;        [[(hour 0) (hour 12) false] :am]]
+ ;    (-> (intersect %1 (apply interval p))
+ ;        (assoc :form :time-of-day)))
 
  ; "<time-of-day> po poledni/odpoledne"
  ; [{:form :time-of-day} #"(?iu)(po poledni|odpoledn(ách|ích|ím|ema|em|í|e|i|y))"]
@@ -494,7 +494,7 @@
   ; Part of day (morning, evening...). They are intervals.
 
   "morning"
-  [#"(?iu)rá(nama|nům|nech|num|nem|na|no|nu|ny|n)|po půlnoci"]
+  [#"(?iu)(z )?rá(nama|nům|nech|num|nem|na|no|nu|ny|n)|po půlnoci"]
   (assoc (interval (hour 0 false) (hour 12 false) false) :form :part-of-day :latent true)
 
   "afternoon"
