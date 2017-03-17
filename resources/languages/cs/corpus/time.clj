@@ -599,24 +599,23 @@
  "2 minuty od teď"
  (datetime 2013 2 12 4 32 0)
 
-;  "w 60 minut"
-;  (datetime 2013 2 12 5 30 0)
+ "za 60 minut"
+ (datetime 2013 2 12 5 30 0)
 
-;  "w pół godziny"
-;  (datetime 2013 2 12 5 0 0)
+ "za půl hodiny"
+ (datetime 2013 2 12 5 0 0)
 
-;  "w 2.5 godziny"
-;  "w 2 i pół godziny"
-;  (datetime 2013 2 12 7 0 0)
+ "za 2.5 hodiny"
+ "za dvě a půl hodiny"
+ (datetime 2013 2 12 7 0 0)
 
-;  "w godzinę"
-;  "w 1h"
-;  "w przeciągu godziny"
-;  (datetime 2013 2 12 5 30)
+ "za hodinu"
+ "za jednu hodinu"
+ "za 1h"
+ (datetime 2013 2 12 5 30)
 
-
-;  "w kilka godzin"
-;  (datetime 2013 2 12 7 30)
+ "za tři hodiny"
+ (datetime 2013 2 12 7 30)
 
 ;  "w 24 godziny"
 ;  (datetime 2013 2 13 4 30)

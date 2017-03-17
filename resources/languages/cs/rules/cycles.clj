@@ -67,7 +67,7 @@
   (cycle-nth (:grain %2) 1)
 
   "next <cycle>"
-  [#"(?i)za" (dim :cycle #(not (= :year (:grain %))))]
+  [#"(?i)za" (dim :cycle #(= :week (:grain %)))]
   (cycle-nth (:grain %2) 1)
 
   ;; "the <cycle> after <time>"

@@ -77,7 +77,7 @@
  ; (assoc (in-duration (:value %1)) :latent true)
 
  "after <duration>"
- [#"(?iu)po|za" (dim :duration)]
+ [#"(?iu)po|za|ve?" (dim :duration)]
  (merge (in-duration (:value %2)) {:direction :after})
 
   "<duration> from now"
