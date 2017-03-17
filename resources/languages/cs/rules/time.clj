@@ -494,7 +494,7 @@
   ; Part of day (morning, evening...). They are intervals.
 
   "morning"
-  [#"(?iu)(z )?rá(nama|nům|nech|num|nem|na|no|nu|ny|n)|po půlnoci"]
+  [#"(?iu)(z )?rá(nama|nům|nech|num|nem|na|no|nu|ny|n)|ranní|po půlnoci"]
   (assoc (interval (hour 0 false) (hour 12 false) false) :form :part-of-day :latent true)
 
   "afternoon"
