@@ -551,11 +551,11 @@
 ;   "15:23:24"
 ;  (datetime 2013 2 12 15 23 24 :hour 15 :minute 23 :second 24)
 
-;  "kwadrans do południa"
-;  "kwadrans przed południem"
-;  "kwadrans do 12stej"
-;  "11:45"
-;  (datetime 2013 2 12 11 45 :hour 11 :minute 45)
+ "čtvrt do poledne"
+ "čtvrt hodiny před polednem"
+ "čtvrt do dvanácté"
+ "11:45"
+ (datetime 2013 2 12 11 45 :hour 11 :minute 45)
 
 ;   ;;"8 dziś wieczorem" FIX Should produce both the interval and time?
 ;   "8 wieczorem"

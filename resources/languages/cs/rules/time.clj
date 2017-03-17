@@ -454,11 +454,11 @@
   ;; (hour 0 false)
 
   "quarter (relative minutes)"
-  #"(?iu)čtvr(tě|ti|t)"
+  #"(?iu)čtvr(tě|ti|t)( hodiny)?"
   {:relative-minutes 15}
 
   "half (relative minutes)"
-  #"půl"
+  #"půl( hodiny)?"
   {:relative-minutes 30}
 
   "number (as relative minutes)"
