@@ -548,8 +548,8 @@
 ; ;;   "half three"
 ;  (datetime 2013 2 12 15 30 :hour 3 :minute 30)
 
-;   "15:23:24"
-;  (datetime 2013 2 12 15 23 24 :hour 15 :minute 23 :second 24)
+  "15:23:24"
+ (datetime 2013 2 12 15 23 24 :hour 15 :minute 23 :second 24)
 
  "čtvrt do poledne"
  "čtvrt hodiny před polednem"
@@ -557,31 +557,30 @@
  "11:45"
  (datetime 2013 2 12 11 45 :hour 11 :minute 45)
 
-;   ;;"8 dziś wieczorem" FIX Should produce both the interval and time?
-;   "8 wieczorem"
-;   "8 tego wieczora"
-;   (datetime 2013 2 12 20)
+  "8 večer včera"
+  (datetime 2013 2 11 20)
 
 ;   ;; Mixing date and time
 
-;  "o 7:30 popołudniu Piatek, 20 Wrzesień"
-;  "o 7:30 popołudniu Piatek, Wrzesień 20"
-;  (datetime 2013 9 20 19 30 :hour 7 :minute 30 :meridiem :pm)
+ "o 7:30 večer pátek, 20. září"
+ "o 7:30 večer pátek, září 20"
+ (datetime 2013 9 20 19 30 :hour 7 :minute 30 :meridiem :pm)
 
-;   "o 9 rano w Sobote"
-;   "w Sobote na 9 rano"
-;   (datetime 2013 2 16 9 :day-of-week 6 :hour 9 :meridiem :am)
+  "o 9 ráno v sobotu"
+  "v sobotu na 9tou ráno"
+  (datetime 2013 2 16 9 :day-of-week 6 :hour 9 :meridiem :am)
 
-;   "Pia, Lip 18, 2014 19:00"
-;   (datetime 2014 7 18 19 0 :day-of-week 5 :hour 7 :meridiem :pm)
+  "Pá, Červenec 18, 2014 19:00"
+  (datetime 2014 7 18 19 0 :day-of-week 5 :hour 7 :meridiem :pm)
 
 
-; ;; ; ;; Involving periods
+; ;; ; ;; Involving periods/durations
 
-;  "w sekundę"
-;  "za sekundę"
-;  "sekunde od teraz"
-;  (datetime 2013 2 12 4 30 1)
+ ; "za vteřinu"
+ ; "za sekundu"
+ ; "ve vteřině"
+ ; "sekunda od teď"
+ ; (datetime 2013 2 12 4 30 1)
 
 ;  "za minutę"
 ;  "za jedną minutę"
