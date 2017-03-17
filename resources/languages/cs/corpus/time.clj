@@ -23,11 +23,11 @@
   (datetime 2013 2 11)
 
   "zítra"
-  ; "o den později" ; ENABLE WITH DURATION
+  "o den později"
   (datetime 2013 2 13)
 
   "pozítří"
-  ; "o dva dny později"  ; ENABLE WITH DURATION
+  "o dva dny později"
   (datetime 2013 2 14)
 
   "pondělí"
@@ -252,12 +252,13 @@
  ; "jeden rok zpět"
  ; (datetime-interval [2012 1 1] [2013 1 1])
 
- ; "za rok" ; ENABLE WITH DURATION
- ; (datetime 2014 02)
+ "za rok"
+ "za jeden rok"
+ (datetime 2014 02)
 
- ; "za dva roky" ; ENABLE WITH DURATION
- ; "za 2 roky"
- ; (datetime 2015 02)
+ "za dva roky"
+ "za 2 roky"
+ (datetime 2015 02)
 
  "tento rok"
  "letos"

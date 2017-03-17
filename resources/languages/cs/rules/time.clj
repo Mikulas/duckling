@@ -370,7 +370,7 @@
   (assoc (hour (:value %1) true) :latent true)
 
   "<integer> with hour postfix"
-  #"(?i)([1-9]|1[0-9]|2[0-4])\s*h(od|odin)?\b"
+  #"(?i)([1-9]|1[0-9]|2[0-4])h(od|odin)?\b"
   (hour (Integer/parseInt(first (:groups %1))) true)
 
   "at <time-of-day>" ; o páté, v deset, na čtvrtou (hodinu)
@@ -608,7 +608,7 @@
     (merge {:precision "exact"}))
 
   "about <time-of-day>" ; about
-  [#"v?okolo|kolem|o|plus ?m[ií]nus|zhruba|tak o" {:form :time-of-day}]
+  [#"(?iu)v?okolo|kolem|o|plus ?m[ií]nus|zhruba|tak o" {:form :time-of-day}]
   (-> %2
     (dissoc :latent)
     (merge {:precision "approximate"}))

@@ -63,7 +63,11 @@
   (cycle-nth (:grain %2) -2)
 
   "next <cycle>"
-  [#"(?i)za|příšt(ímu|ích|íma|ího|ími|ím|í)|následujíc(ímu|ích|íma|ího|ími|ím|í)|nadcházejíc(ímu|ích|íma|ího|ími|ím|í)" (dim :cycle)]
+  [#"(?i)příšt(ímu|ích|íma|ího|ími|ím|í)|následujíc(ímu|ích|íma|ího|ími|ím|í)|nadcházejíc(ímu|ích|íma|ího|ími|ím|í)" (dim :cycle)]
+  (cycle-nth (:grain %2) 1)
+
+  "next <cycle>"
+  [#"(?i)za" (dim :cycle #(not (= :year (:grain %))))]
   (cycle-nth (:grain %2) 1)
 
   ;; "the <cycle> after <time>"
