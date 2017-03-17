@@ -259,108 +259,124 @@
  #"(?i)(1-?|prvn)(íma|ích|ími|ího|ímu|ím|í)"
  {:dim :ordinal
   :ordinal-digit true
-  :value 1}
+  :value 1
+  :date-inflection (boolean (re-find #"(ího|ím)$" (-> %1 :groups second .toLowerCase)))}
 
  "second ordinal"
  #"(?i)(2-?|dru)(hýho|hýma|hými|hýmu|hému|hých|hejma|hejch|hého|hém|hejm|hým|zí|há|hej|hé|hym|hou|hý)"
  {:dim :ordinal
   :ordinal-digit true
-  :value 2}
+  :value 2
+  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "third ordinal"
  #"(?i)(3-?|tře)(tíma|tích|tími|tího|tímu|tím|tí)"
  {:dim :ordinal
   :ordinal-digit true
-  :value 3}
+  :value 3
+  :date-inflection (boolean (re-find #"(ího|ím)$" (-> %1 :groups second .toLowerCase)))}
 
  "fourth ordinal"
  #"(?i)(4-?|čtvr)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :ordinal-digit true
-  :value 4}
+  :value 4
+  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "fifth ordinal"
  #"(?i)(5-?|pá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :ordinal-digit true
-  :value 5}
+  :value 5
+  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "sixth ordinal"
  #"(?i)(6-?|šes)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :ordinal-digit true
-  :value 6}
+  :value 6
+  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "seventh ordinal"
  #"(?i)(7-?|sedu?)(mýho|mých|mými|mejch|mýma|mejma|mýmu|mému|mého|mým|mejm|mém|mym|mý|mí|mé|má|mou|mej)"
  {:dim :ordinal
   :ordinal-digit true
-  :value 7}
+  :value 7
+  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "8th ordinal"
  #"(?i)(8-?|osu?)(mýho|mých|mými|mejch|mýma|mejma|mýmu|mému|mého|mým|mejm|mém|mym|mý|mí|mé|má|mou|mej)"
  {:dim :ordinal
   :ordinal-digit true
-  :value 8}
+  :value 8
+  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "9th ordinal"
  #"(?i)(9-?|devá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :ordinal-digit true
   :value 9
-  :gender-female
-    (boolean (re-find #"ou|a" (-> %2 :groups first .toLowerCase)))
-  }
+  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "10th ordinal"
  #"(?i)(10-?|desá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
-  :value 10}
+  :value 10
+  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "11th ordinal"
  #"(?i)(11-?|jedenác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
-  :value 11}
+  :value 11
+  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "12th ordinal"
  #"(?i)(12-?|dvanác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
-  :value 12}
+  :value 12
+  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "13th ordinal"
  #"(?i)(13-?|třinác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
-  :value 13}
+  :value 13
+  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "14th ordinal"
  #"(?i)(14-?|čtrnác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
-  :value 14}
+  :value 14
+  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "15th ordinal"
  #"(?i)(15-?|patnác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
-  :value 15}
+  :value 15
+  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "16th ordinal"
  #"(?i)(16-?|šestnác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
-  :value 16}
+  :value 16
+  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "17th ordinal"
  #"(?i)(17-?|sedu?mnác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
-  :value 17}
+  :value 17
+  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "18th ordinal"
  #"(?i)(18-?|osu?mnác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
-  :value 18}
+  :value 18
+  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "19th ordinal"
  #"(?i)(19-?|devatenác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
-  :value 19}
+  :value 19
+  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  ;; ordinal tens
 
@@ -368,7 +384,8 @@
  #"(?i)(20-?|dvacá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
  {:dim :ordinal
   :ordinal-tens true
-  :value 20}
+  :value 20
+  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "30th ordinal"
  #"(?i)(30-?|třicá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"

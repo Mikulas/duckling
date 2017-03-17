@@ -458,8 +458,11 @@
  "2000"
  (datetime 2013 2 12 20 0 :hour 8 :minute 0 :meridiem :pm)
 
- "9 v noci"
  "9.hodina"
+ "kolem devátý"
+ (datetime 2013 2 12 9 :hour 9)
+
+ "9 v noci"
  (datetime 2013 2 11 21 :hour 9 :meridiem :pm)
 
  "devátého večer"

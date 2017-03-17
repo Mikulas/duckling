@@ -442,8 +442,8 @@
  ;       (assoc :form :time-of-day)))
 
  "<ordinal> (as hour)"
- [(dim :ordinal #(and (:gender-female %) (<= 1 (:value %) 24)))]
- (hour (:value %1) true)
+ [(dim :ordinal #(and (not (:date-inflection %)) (<= 1 (:value %) 24)))]
+ (assoc (hour (:value %1) true) :latent true)
 
   "noon"
   #"(?iu)poledn(ách|ích|ím|ema|em|í|e|y)" ; removed "i" to ignore "po poledni"
@@ -503,7 +503,7 @@
   (assoc (interval (hour 12 false) (hour 23 false) false) :form :part-of-day :latent true)
 
   "evening"
-  [#"(?iu)več(erní|erům|erama|erech|erum|erem|erů|era|ere|eru|ery|ír|er)"]
+  [#"(?iu)več(erní|erům|erama|erech|erum|erem|erů|era|ere|eru|ery|ír|er)( hodina)?"]
   (assoc (interval (hour 17 false) (hour 0 false) false) :form :part-of-day :latent true)
 
   "night"
@@ -604,7 +604,7 @@
     (merge {:precision "exact"}))
 
   "about <time-of-day>" ; about
-  [#"v?okolo|o|plus ?m[ií]nus|zhruba|tak o" {:form :time-of-day}]
+  [#"v?okolo|kolem|o|plus ?m[ií]nus|zhruba|tak o" {:form :time-of-day}]
   (-> %2
     (dissoc :latent)
     (merge {:precision "approximate"}))
