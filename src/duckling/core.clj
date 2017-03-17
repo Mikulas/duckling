@@ -133,7 +133,7 @@
       (let [pos (:pos tok)
             end (:end tok)]
         (if pos
-          (printf "%s %s%s%s %2d | %-9s | %-25s | P = %04.4f | %.20s\n"
+          (printf "%s %s%s%s %2d | %-9s | %-25s | P = %04.4f | %.200s\n"
                   (if (some #{(:index tok)} winners-indices) "W" " ")
                   (apply str (repeat pos \space))
                   (apply str (repeat (- end pos) \-))
