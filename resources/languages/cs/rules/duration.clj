@@ -72,6 +72,10 @@
  [#"(?iu)ve?" (dim :duration)]
  (in-duration (:value %2))
 
+ ; "<duration> as latent time"
+ ; [(dim :duration)]
+ ; (assoc (in-duration (:value %1)) :latent true)
+
  "after <duration>"
  [#"(?iu)po|za" (dim :duration)]
  (merge (in-duration (:value %2)) {:direction :after})
@@ -79,6 +83,10 @@
   "<duration> from now"
   [(dim :duration) #"(?iu)od (teraz|teď|nyní)"]
   (in-duration (:value %1))
+
+  "<duration> ago"
+  [#"(?iu)před" (dim :duration)]
+  (duration-ago (:value %2))
 
   "<duration> ago"
   [(dim :duration) #"(?iu)zpátky|zpět"]

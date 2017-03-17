@@ -23,12 +23,14 @@
   (datetime 2013 2 11)
 
   "zítra"
-  "o den později"
   (datetime 2013 2 13)
+  "o den později"
+  (datetime 2013 2 13 4)
 
   "pozítří"
-  "o dva dny později"
   (datetime 2013 2 14)
+  "o dva dny později"
+  (datetime 2013 2 14 4)
 
   "pondělí"
   "příští pondělí"
@@ -231,34 +233,38 @@
  "4. čtvrtletí 2018"
  (datetime 2018 10 1 :grain :quarter)
 
- ; "předloni"
- ; "předpředchozí rok"
- ; "dva roky zpět"
- ; "dva roky zpátky"
- ; "před dvěma lety"
- ; (datetime 2011)
+ "předloni"
+ "předpředchozí rok"
+ (datetime 2011)
 
- ; "před pěti lety"
- ; "před pěti roky"
- ; (datetime 2008)
+ "dva roky zpět"
+ "dva roky zpátky"
+ "před dvěma lety"
+ (datetime 2011 2)
+
+ "před pěti lety"
+ "před pěti roky"
+ (datetime 2008 2)
 
  "předchozí rok"
  "minulý rok"
  "loni"
+ (datetime 2012)
+
  "rok zpět"
  "rok zpátky"
  (datetime 2012)
 
- ; "jeden rok zpět"
- ; (datetime-interval [2012 1 1] [2013 1 1])
+ "jeden rok zpět"
+ (datetime 2012 2)
 
  "za rok"
  "za jeden rok"
- (datetime 2014 02)
+ (datetime 2014 2)
 
  "za dva roky"
  "za 2 roky"
- (datetime 2015 02)
+ (datetime 2015 2)
 
  "tento rok"
  "letos"

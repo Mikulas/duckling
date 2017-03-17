@@ -94,21 +94,21 @@
   [(dim :cycle) #"(?i)před" (dim :time)]
   (cycle-nth-after (:grain %1) -1 %3)
 
-  "last n <cycle>"
-  [#"(?i)předchoz(ímu|ích|íma|ího|ími|ím|í)|předešl(ého|ých|ému|ýma|ými|ým|ém|ou|á|é|í|ý)|před|minul(ého|ých|ému|ýma|ými|ým|ém|ou|á|é|í|ý)" (integer 1 9999) (dim :cycle)]
-  (cycle-n-not-immediate (:grain %3) (- (:value %2)))
+  ; "last n <cycle>"
+  ; [#"(?i)předchoz(ímu|ích|íma|ího|ími|ím|í)|předešl(ého|ých|ému|ýma|ými|ým|ém|ou|á|é|í|ý)|před|minul(ého|ých|ému|ýma|ými|ým|ém|ou|á|é|í|ý)" (integer 1 9999) (dim :cycle)]
+  ; (cycle-n-not-immediate (:grain %3) (- (:value %2)))
 
-  "n <cycle> ago"
-  [(integer 1 9999) (dim :cycle) #"(?i)zpátky|zpět"]
-  (cycle-n-not-immediate (:grain %2) (- (:value %1)))
+  ; "n <cycle> ago"
+  ; [(integer 1 9999) (dim :cycle) #"(?i)zpátky|zpět"]
+  ; (cycle-n-not-immediate (:grain %2) (- (:value %1)))
 
-  "next n <cycle>"
-  [#"(?i)příšt(ímu|ích|íma|ího|ími|ím|í)|nadcházejíc(ímu|ích|íma|ího|ími|ím|í)" (integer 1 9999) (dim :cycle)]
-  (cycle-n-not-immediate (:grain %3) (:value %2))
+  ; "next n <cycle>"
+  ; [#"(?i)příšt(ímu|ích|íma|ího|ími|ím|í)|nadcházejíc(ímu|ích|íma|ího|ími|ím|í)" (integer 1 9999) (dim :cycle)]
+  ; (cycle-n-not-immediate (:grain %3) (:value %2))
 
-  "n <cycle> next"
-  [(integer 1 9999) (dim :cycle) #"(?i)po"]
-  (cycle-n-not-immediate (:grain %2) (:value %1))
+  ; "n <cycle> next"
+  ; [(integer 1 9999) (dim :cycle) #"(?i)po"]
+  ; (cycle-n-not-immediate (:grain %2) (:value %1))
 
  "<ordinal> <cycle> of <time>"
  [(dim :ordinal) (dim :cycle) #"(?i)v(e)?|z(e)?" (dim :time)]
