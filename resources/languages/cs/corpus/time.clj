@@ -52,10 +52,10 @@
 
   "Úterý"
   "út"
-  (datetime 2013 2 19)
-
   "tohle úterý"
-  (datetime 2013 2 12)
+  "tento úterek"
+  "toto úterý"
+  (datetime 2013 2 19)
 
   "čtvrtek"
   "tento čtvrtek"
@@ -305,8 +305,6 @@
 
  "úterý tento týden"
  "úterek v tomto týdni"
- "tento úterek"
- "toto úterý"
   (datetime 2013 2 12 :day-of-week 2)
 
   "tahle středa"
@@ -752,10 +750,9 @@
 ;    "wczorajszy wieczór"
 ;    (datetime-interval [2013 2 11 18] [2013 2 12 00])
 
-;  "ten week-end"
-;  "ten weekend"
-;  "ten wekend"
-;  (datetime-interval [2013 2 15 18] [2013 2 18 00])
+ "tenhle víkend"
+ "o víkendu"
+ (datetime-interval [2013 2 16 00] [2013 2 18 00])
 
 ;   "poniedziałkowy poranek"
 ;   (datetime-interval [2013 2 18 4] [2013 2 18 12])

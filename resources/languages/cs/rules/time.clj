@@ -560,9 +560,9 @@
 
   ; Other intervals: week-end, seasons
 
-  "week-end" ; from Friday 6pm to Sunday midnight
+  "week-end" ; from Saturday midnight to Sunday midnight
   #"(?iu)víken(dama|dům|dech|dem|dum|dů|de|du|dy|d)"
-  (interval (intersect (day-of-week 5) (hour 18 false))
+  (interval (intersect (day-of-week 6) (hour 0 false))
             (intersect (day-of-week 1) (hour 0 false))
             false)
 
