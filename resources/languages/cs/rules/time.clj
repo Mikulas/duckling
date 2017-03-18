@@ -502,6 +502,10 @@
   [#"(?iu)(z )?rá(nama|nům|nech|num|nem|na|no|nu|ny|n)|ranní|po půlnoci"]
   (assoc (interval (hour 0 false) (hour 12 false) false) :form :part-of-day :latent true)
 
+  "before noon (one word)"
+  [#"(?iu)dopoledn(ách|ích|ím|ema|em|í|e|i|y)|dopo"]
+  (assoc (interval (hour 7 false) (hour 12 false) false) :form :part-of-day :latent true)
+
   "afternoon"
   [#"(?iu)odpoledn(ách|ích|ím|ema|em|í|e|i|y)|odpo|po oběd[uě]|po poledni"]
   (assoc (interval (hour 12 false) (hour 23 false) false) :form :part-of-day :latent true)

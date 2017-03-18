@@ -853,6 +853,10 @@
   "čtvrtek od 9:30 do 11:00"
   (datetime-interval [2013 2 14 9 30] [2013 2 14 11 1])
 
+  "v neděli dopo"
+  "v neděli dopoledne"
+  (datetime-interval [2013 2 17 7] [2013 2 17 12])
+
   "čtvrtek od 9 ráno do 11 ráno"
   (datetime-interval [2013 2 14 9] [2013 2 14 12])
 
