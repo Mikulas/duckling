@@ -17,8 +17,8 @@
   [(dim :time #(not (:latent %))) #"," (dim :time #(not (:latent %)))] ; sequence of two tokens with a time fn
   (intersect %1 %3)
 
-  "on <date>" ; on Wed, March 23
-  [#"(?iu)ve?|na" (dim :time)]
+  "on <date>" ; ve středu, v úterý, na neděli, o víkendu
+  [#"(?iu)ve?|na|o" (dim :time)]
   %2 ; does NOT dissoc latent
 
   "on a named-day" ; on a sunday
