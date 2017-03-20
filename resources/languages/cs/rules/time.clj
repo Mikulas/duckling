@@ -157,7 +157,7 @@
   ; or define dynamic rule (last thursday of october..)
 
   "christmas eve"
-  #"(?iu)V[áa]n(oc[íi]ch|ocema|ocemi|oc[ůu]m|oce|oci|oc)|štěd(rému|rými|rých|rého|rýma|rým|ří|rém|rý|rou|rá|ré) d(enama|enům|nové|enech|nům|nech|nův|ním|enů|enum|enem|ene|eny|enu|nem|ní|nů|en|ny|nu|ne|ni)"
+  #"(?iu)V[áa]n(oc[íi]ch|ocema|ocemi|oc[ůu]m|oce|oci|oc)|[šs]t[ěe]d(r[ée]mu|r[ýy]mi|r[ýy]ch|r[ée]ho|r[ýy]ma|r[ýy]m|[řr][íi]|r[ée]m|r[ýy]|rou|r[áa]|r[ée]) d(enama|en[ůu]m|nov[ée]|enech|n[ůu]m|nech|n[ůu]v|n[íi]m|en[ůu]|enum|enem|ene|eny|enu|nem|n[íi]|n[ůu]|en|ny|nu|ne|ni)"
   (month-day 12 24)
 
   "new year's eve"
