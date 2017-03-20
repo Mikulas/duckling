@@ -177,7 +177,7 @@
   %1
 
   "now"
-  #"(?iu)te[ďd]|nyn[íi]|okam[žz]it[ěe]|hned|co nejd[řr][íi]ve?"
+  #"(?iu)te[ďd]|nyn[íi]|okam[žz]it[ěe]|hned|co nejd[řr][íi]ve?|[čc][íi]m d[řr][íi]ve?,? t[íi]m l[íiée]pe?"
   (cycle-nth :second 0)
 
   "today"

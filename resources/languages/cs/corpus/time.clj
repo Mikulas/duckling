@@ -10,6 +10,7 @@
   "co nejdříve"
   "okamžitě"
   "hned"
+  "čim dřív tim líp"
   (datetime 2013 2 12 4 30 00)
 
   "dnes"
