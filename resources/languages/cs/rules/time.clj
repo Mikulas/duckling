@@ -262,11 +262,11 @@
 
   ; Ordinals
  "nth <time> of <time>"
- [(dim :ordinal) (dim :time) #"(?iu)ve?|na|ze?" (dim :time)]
+ [(dim :ordinal) (dim :time) #"(?iu)ve?|ze?" (dim :time)]
  (pred-nth (intersect %4 %2) (dec (:value %1)))
 
  "nth <time> <time>"
- [(dim :ordinal) (dim :time) (dim :time)]
+ [(dim :ordinal) (dim :time #(not (:latent %))) (dim :time)]
  (pred-nth (intersect %3 %2) (dec (:value %1)))
 
   ;; "nth <time> of <time>"

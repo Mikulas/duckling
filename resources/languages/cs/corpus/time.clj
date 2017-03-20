@@ -720,6 +720,9 @@
 ;  "walentynki"
 ;   (datetime 2013 2 14)
 
+"devátá večer na štědrý den"
+(datetime 2013 12 24 21 :meridiem :pm)
+
 ; ;;   "memorial day"
 ; ;;   (datetime 2013 5 27)
 
