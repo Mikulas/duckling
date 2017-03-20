@@ -7,7 +7,7 @@ use Nette\Utils\Strings;
 foreach (Finder::findFiles('*.clj')->from(__DIR__ . '/rules') as $path => $_) {
 	$raw = file_get_contents($path);
 
-	$content = preg_replace_callback('~\p{L}~u', function($match) {
+	$content = preg_replace_callback('~(?<!\[)\p{L}~u', function($match) {
 		$char = $match[0];
 		$fold = Strings::toAscii($char);
 		if ($char === $fold) {
