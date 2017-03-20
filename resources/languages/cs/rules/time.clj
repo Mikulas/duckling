@@ -499,7 +499,7 @@
   ; Part of day (morning, evening...). They are intervals.
 
   "morning"
-  [#"(?iu)(z )?r[áa](nama|n[ůu]m|nech|num|nem|na|no|nu|ny|n)|rann[íi]|po p[ůu]lnoci"]
+  [#"(?iu)(z )?r[áa](nn[íi]|nama|n[ůu]m|nech|num|nem|na|no|nu|ny|n)|po p[ůu]lnoci"]
   (assoc (interval (hour 0 false) (hour 12 false) false) :form :part-of-day :latent true)
 
   "before noon (one word)"
