@@ -848,6 +848,8 @@
 ; ;;   ; Explicit intervals
 
  "mezi osmou a devátou"
+ "mezi osmou ráno a devátou"
+ "mezi osmou a devátou ráno"
  (datetime-interval [2013 2 12 8 0] [2013 2 12 9 1])
 
  "Červenec 13-15"

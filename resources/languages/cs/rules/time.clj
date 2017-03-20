@@ -443,7 +443,7 @@
 
  "<ordinal> (as hour)"
  [(dim :ordinal #(and (not (:date-inflection %)) (<= 1 (:value %) 24)))]
- (assoc (hour (:value %1) true) :latent true)
+ (assoc (hour (:value %1) true) :latent true :grain :hour)
 
   "noon"
   #"(?iu)poledn([áa]ch|[íi]ch|[íi]m|ema|em|[íi]|e|y)" ; removed "i" to ignore "po poledni"
@@ -555,11 +555,15 @@
 
   "<time> <part-of-day>" ; since "morning" "evening" etc. are latent, general time+time is blocked
   [(dim :time) {:form :part-of-day}]
-  (intersect %2 %1)
+  (assoc (intersect %2 %1) :grain (:grain %1))
 
   "<time> <part-of-day>"
   [#"(?iu)o" (dim :time) {:form :part-of-day}]
-  (intersect %3 %2)
+  (assoc (intersect %3 %2) :grain (:grain %1))
+
+  "<hour-interval> <part-of-day>"
+  [#(:hour-interval %) {:form :part-of-day}]
+  (intersect %2 %1)
 
   ;; "<part-of-day> of <time>" ; since "morning" "evening" etc. are latent, general time+time is blocked
   ;; [{:form :part-of-day} #"(?iu)of" (dim :time)]
@@ -664,18 +668,18 @@
   (interval %2 %4 true)
 
   "from <hour> - <datetime> (interval)" ; exclude ending hour from interval
-  [#"(?iu)od" (dim :time :full-hour) #"\-|do|po|a[žz] [pd]o|(ale )?p[řr]ed" (dim :time)]
-  (interval (intersect %2 (minute 0)) (intersect %4 (minute 0)) true)
+  [#"(?iu)od" (dim :time #(= :hour (:grain %))) #"\-|do|po|a[žz] [pd]o|(ale )?p[řr]ed" (dim :time)]
+  (assoc (interval (intersect %2 (minute 0)) (intersect %4 (minute 0)) true)
+    :hour-interval true)
 
   "between <datetime> and <datetime> (interval)"
   [#"(?iu)mezi" (dim :time #(not= :hour (:grain %))) #"a" (dim :time)]
   (interval %2 %4 true)
 
-  ; exclude ending hour from interval
-  ; and preventing day-span in "8am to 4pm on wednesday"
-  "between <hour> and <datetime> (interval)"
-  [#"(?iu)mezi" (dim :time :full-hour) #"a" (dim :time)]
-  (interval (intersect %2 (minute 0)) (intersect %4 (minute 0)) true)
+  "between <hour> and <datetime> (interval)" ; exclude ending hour from interval
+  [#"(?iu)mezi" (dim :time #(= :hour (:grain %))) #"a" (dim :time)]
+  (assoc (interval (intersect %2 (minute 0)) (intersect %4 (minute 0)) true)
+    :hour-interval true)
 
   "<interval> month"
   [(dim :time) {:form :month}]
