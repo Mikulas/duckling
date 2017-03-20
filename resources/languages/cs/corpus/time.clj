@@ -431,6 +431,7 @@
  "šestá večerní"
  "osmnáctá hodina"
  "o osmnácté"
+ "6 v podvečer"
  "18h"
  (datetime 2013 2 12 18 :hour 6 :meridiem :pm)
 

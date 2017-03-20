@@ -510,6 +510,10 @@
   [#"(?iu)odpoledn([áa]ch|[íi]ch|[íi]m|ema|em|[íi]|e|i|y)|odpo|po ob[ěe]d[u[ěe]]|po poledni"]
   (assoc (interval (hour 12 false) (hour 23 false) false) :form :part-of-day :latent true)
 
+  "sub-evening"
+  [#"(?iu)podve[čc](ern[íi]|er[ůu]m|erama|erech|erum|erem|er[ůu]|era|ere|eru|ery|[íi]r|er)( hodina)?"]
+  (assoc (interval (hour 16 false) (hour 21 false) false) :form :part-of-day :latent true)
+
   "evening"
   [#"(?iu)ve[čc](ern[íi]|er[ůu]m|erama|erech|erum|erem|er[ůu]|era|ere|eru|ery|[íi]r|er)( hodina)?"]
   (assoc (interval (hour 17 false) (hour 0 false) false) :form :part-of-day :latent true)

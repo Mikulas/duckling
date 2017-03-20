@@ -431,6 +431,7 @@
  "sesta vecerni"
  "osmnacta hodina"
  "o osmnacte"
+ "6 v podvecer"
  "18h"
  (datetime 2013 2 12 18 :hour 6 :meridiem :pm)
 
