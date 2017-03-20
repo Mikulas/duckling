@@ -856,7 +856,7 @@
  "mezi osmou a devátou"
  "mezi osmou ráno a devátou"
  "mezi osmou a devátou ráno"
- (datetime-interval [2013 2 12 8 0] [2013 2 12 9 1])
+ (datetime-interval [2013 2 12 8] [2013 2 12 9])
 
  "Červenec 13-15"
  "od 13. do 15. Července"
@@ -869,30 +869,24 @@
   (datetime-interval [2013 8 8] [2013 8 13])
 
   "9:30 - 11:00"
-  (datetime-interval [2013 2 12 9 30] [2013 2 12 11 1])
+  (datetime-interval [2013 2 12 9 30] [2013 2 12 11 0])
 
   "od 9:30 - 11:00 ve čtvrtek"
   "mezi 9:30 a 11:00 ve čtvrtek"
   "9:30 - 11:00 ve čtvrtek"
   "po 9:30 ale před 11:00 ve čtvrtek"
   "čtvrtek od 9:30 do 11:00"
-  (datetime-interval [2013 2 14 9 30] [2013 2 14 11 1])
+  (datetime-interval [2013 2 14 9 30] [2013 2 14 11 0])
 
   "v neděli dopo"
   "v neděli dopoledne"
   (datetime-interval [2013 2 17 7] [2013 2 17 12])
 
   "čtvrtek od 9 ráno do 11 ráno"
-  (datetime-interval [2013 2 14 9] [2013 2 14 12])
+  (datetime-interval [2013 2 14 9] [2013 2 14 11])
 
-  "11:30-1:30" ; go train this rule!
   "11:30-1:30"
-  "11:30-1:30"
-  "11:30-1:30"
-  "11:30-1:30"
-  "11:30-1:30"
-  "11:30-1:30"
-  (datetime-interval [2013 2 12 11 30] [2013 2 12 13 31])
+  (datetime-interval [2013 2 12 11 30] [2013 2 12 13 30])
 
 ; ;;   "1:30 PM on Sat, Sep 21"
 ; ;;   (datetime 2013 9 21 13 30)

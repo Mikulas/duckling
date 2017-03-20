@@ -654,31 +654,26 @@
 
   "<datetime> - <datetime> (interval)"
   [(dim :time #(not (:latent %))) #"\-|do|a[žz] do|a[žz] po" (dim :time #(not (:latent %)))]
-  (interval %1 %3 true)
+  (interval %1 %3
+    (contains? #{:year :month :week :day} (:grain %2)))
 
   "from <ordinal> - <ordinal> (interval)"
   [#"(?iu)od" (dim :ordinal) #"\-|do|po|a[žz] [pd]o|(ale )?p[řr]ed" (dim :ordinal)]
-  (interval (day-of-month (:value %2)) (day-of-month (:value %4)) true)
+  (interval (day-of-month (:value %2)) (day-of-month (:value %4))
+    (contains? #{:year :month :week :day} (:grain %2)))
 
   "from <number> - <number> (interval)"
   [#"(?iu)od" (dim :number) #"\-|do|po|a[žz] [pd]o|(ale )?p[řr]ed" (dim :number)]
-  (interval (day-of-month (:value %2)) (day-of-month (:value %4)) true)
+  (interval (day-of-month (:value %2)) (day-of-month (:value %4))
+    (contains? #{:year :month :week :day} (:grain %2)))
 
   "from <datetime> - <datetime> (interval)"
-  [#"(?iu)od" (dim :time #(not= :hour (:grain %))) #"\-|do|po|a[žz] [pd]o|(ale )?p[řr]ed" (dim :time)]
-  (interval %2 %4 true)
-
-  "from <hour> - <datetime> (interval)" ; exclude ending hour from interval
-  [#"(?iu)od" (dim :time #(= :hour (:grain %))) #"\-|do|po|a[žz] [pd]o|(ale )?p[řr]ed" (dim :time)]
-  (interval (intersect %2 (minute 0)) (intersect %4 (minute 0)) true)
+  [#"(?iu)od" (dim :time) #"\-|do|po|a[žz] [pd]o|(ale )?p[řr]ed" (dim :time)]
+  (interval %2 %4 (contains? #{:year :month :week :day} (:grain %2)))
 
   "between <datetime> and <datetime> (interval)"
-  [#"(?iu)mezi" (dim :time #(not= :hour (:grain %))) #"a" (dim :time)]
-  (interval %2 %4 true)
-
-  "between <hour> and <datetime> (interval)" ; exclude ending hour from interval
-  [#"(?iu)mezi" (dim :time #(= :hour (:grain %))) #"a" (dim :time)]
-  (interval (intersect %2 (minute 0)) (intersect %4 (minute 0)) true)
+  [#"(?iu)mezi" (dim :time) #"a" (dim :time)]
+  (interval %2 %4 (contains? #{:year :month :week :day} (:grain %2)))
 
   "<interval> month"
   [(dim :time) {:form :month}]

@@ -10,6 +10,7 @@
   "co nejdrive"
   "okamzite"
   "hned"
+  "cim driv tim lip"
   (datetime 2013 2 12 4 30 00)
 
   "dnes"
@@ -719,6 +720,12 @@
 ;  "walentynki"
 ;   (datetime 2013 2 14)
 
+"devata vecer na stedry den"
+(datetime 2013 12 24 21 :meridiem :pm)
+
+"mezi osmou rano a devatou vecer na stedry den"
+(datetime-interval [2013 12 24 8 :meridiem :am] [2013 12 24 21 :meridiem :pm])
+
 ; ;;   "memorial day"
 ; ;;   (datetime 2013 5 27)
 
@@ -847,7 +854,9 @@
 ; ;;   ; Explicit intervals
 
  "mezi osmou a devatou"
- (datetime-interval [2013 2 12 8 0] [2013 2 12 9 1])
+ "mezi osmou rano a devatou"
+ "mezi osmou a devatou rano"
+ (datetime-interval [2013 2 12 8] [2013 2 12 9])
 
  "Cervenec 13-15"
  "od 13. do 15. Cervence"
@@ -860,30 +869,24 @@
   (datetime-interval [2013 8 8] [2013 8 13])
 
   "9:30 - 11:00"
-  (datetime-interval [2013 2 12 9 30] [2013 2 12 11 1])
+  (datetime-interval [2013 2 12 9 30] [2013 2 12 11 0])
 
   "od 9:30 - 11:00 ve ctvrtek"
   "mezi 9:30 a 11:00 ve ctvrtek"
   "9:30 - 11:00 ve ctvrtek"
   "po 9:30 ale pred 11:00 ve ctvrtek"
   "ctvrtek od 9:30 do 11:00"
-  (datetime-interval [2013 2 14 9 30] [2013 2 14 11 1])
+  (datetime-interval [2013 2 14 9 30] [2013 2 14 11 0])
 
   "v nedeli dopo"
   "v nedeli dopoledne"
   (datetime-interval [2013 2 17 7] [2013 2 17 12])
 
   "ctvrtek od 9 rano do 11 rano"
-  (datetime-interval [2013 2 14 9] [2013 2 14 12])
+  (datetime-interval [2013 2 14 9] [2013 2 14 11])
 
-  "11:30-1:30" ; go train this rule!
   "11:30-1:30"
-  "11:30-1:30"
-  "11:30-1:30"
-  "11:30-1:30"
-  "11:30-1:30"
-  "11:30-1:30"
-  (datetime-interval [2013 2 12 11 30] [2013 2 12 13 31])
+  (datetime-interval [2013 2 12 11 30] [2013 2 12 13 30])
 
 ; ;;   "1:30 PM on Sat, Sep 21"
 ; ;;   (datetime 2013 9 21 13 30)
