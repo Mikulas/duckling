@@ -174,10 +174,13 @@
                    prefix
                    (if last? \` \|))))
         (println (format "%s (%s)" name p))
+        (clojure.pprint/pprint (dissoc token :rule :pos :end :pred :route))
+        (println "")
         (print-tokens (:route token)
           classifiers
           (inc depth)
-          (if (pos? depth) new-prefix ""))))))
+          (if (pos? depth) new-prefix ""))
+      ))))
 
 (defn play
   "Show processing details for one sentence. Defines a 'details' function."
