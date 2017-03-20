@@ -723,6 +723,9 @@
 "devátá večer na štědrý den"
 (datetime 2013 12 24 21 :meridiem :pm)
 
+"mezi osmou ráno a devátou večer na štědrý den"
+(datetime-interval [2013 12 24 8 :meridiem :am] [2013 12 24 21 :meridiem :pm])
+
 ; ;;   "memorial day"
 ; ;;   (datetime 2013 5 27)
 
