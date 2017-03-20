@@ -319,6 +319,9 @@
  "pozítří"
  (datetime 2013 2 14)
 
+ "popozítří"
+ (datetime 2013 2 15)
+
   "předevčírem"
   (datetime 2013 2 10)
 

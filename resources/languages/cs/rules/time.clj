@@ -196,6 +196,10 @@
  #"(?iu)poz[íi]t[řr][íi]|poz[íi]t[řr](c[íi]ch|k[áa]ch|kama|k[ůu]m|kem|k[ůu]|kum|ek|ku|ky)"
  (cycle-nth :day 2)
 
+ "two-days-after-tomorrow (single-word)"
+ #"(?iu)popoz[íi]t[řr][íi]|popoz[íi]t[řr](c[íi]ch|k[áa]ch|kama|k[ůu]m|kem|k[ůu]|kum|ek|ku|ky)"
+ (cycle-nth :day 3)
+
  "day-before-yesterday (single-word)"
  #"(?iu)p[řr]edev[čc][íi]r(em|u)?"
  (cycle-nth :day -2)
