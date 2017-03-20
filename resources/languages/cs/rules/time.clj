@@ -553,6 +553,10 @@
   [(dim :time) {:form :part-of-day}]
   (intersect %2 %1)
 
+  "<time> <part-of-day>"
+  [#"(?iu)o" (dim :time) {:form :part-of-day}]
+  (intersect %3 %2)
+
   ;; "<part-of-day> of <time>" ; since "morning" "evening" etc. are latent, general time+time is blocked
   ;; [{:form :part-of-day} #"(?iu)of" (dim :time)]
   ;; (intersect %1 %3)
