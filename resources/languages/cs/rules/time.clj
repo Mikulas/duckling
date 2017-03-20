@@ -627,7 +627,7 @@
   ; Intervals
 
   "<month> dd-dd (interval)"
-  [{:form :month} #"(3[01]|[12]\d|0?[1-9])" #"\-|do|po|a[[žz]z] do|a[[žz]z] po" #"(3[01]|[12]\d|0?[1-9])"]
+  [{:form :month} #"(3[01]|[12]\d|0?[1-9])" #"\-|do|po|a[žz] do|a[žz] po" #"(3[01]|[12]\d|0?[1-9])"]
   (interval (intersect %1 (day-of-month (Integer/parseInt (-> %2 :groups first))))
             (intersect %1 (day-of-month (Integer/parseInt (-> %4 :groups first))))
             true)
@@ -635,19 +635,19 @@
   ; Blocked for :latent time. May need to accept certain latents only, like hours
 
   "<datetime> - <datetime> (interval)"
-  [(dim :time #(not (:latent %))) #"\-|do|po|a[[žz]z] do|a[[žz]z] po" (dim :time #(not (:latent %)))]
+  [(dim :time #(not (:latent %))) #"\-|do|po|a[žz] do|a[žz] po" (dim :time #(not (:latent %)))]
   (interval %1 %3 true)
 
   "from <ordinal> - <ordinal> (interval)"
-  [#"(?iu)od" (dim :ordinal) #"\-|do|po|a[[žz]z] [pd]o|(ale )?p[řr]ed" (dim :ordinal)]
+  [#"(?iu)od" (dim :ordinal) #"\-|do|po|a[žz] [pd]o|(ale )?p[řr]ed" (dim :ordinal)]
   (interval (day-of-month (:value %2)) (day-of-month (:value %4)) true)
 
   "from <number> - <number> (interval)"
-  [#"(?iu)od" (dim :number) #"\-|do|po|a[[žz]z] [pd]o|(ale )?p[řr]ed" (dim :number)]
+  [#"(?iu)od" (dim :number) #"\-|do|po|a[žz] [pd]o|(ale )?p[řr]ed" (dim :number)]
   (interval (day-of-month (:value %2)) (day-of-month (:value %4)) true)
 
   "from <datetime> - <datetime> (interval)"
-  [#"(?iu)od" (dim :time) #"\-|do|po|a[[žz]z] [pd]o|(ale )?p[řr]ed" (dim :time)]
+  [#"(?iu)od" (dim :time) #"\-|do|po|a[žz] [pd]o|(ale )?p[řr]ed" (dim :time)]
   (interval %2 %4 true)
 
   "between <datetime> and <datetime> (interval)"
@@ -661,7 +661,10 @@
   ; Specific for time-of-day, to help resolve ambiguities
 
   "<time-of-day> - <time-of-day> (interval)"
-  [#(and (= :time-of-day (:form %)) (not (:latent %))) #"\-|:|do|po|a[žz] do|az do|a[žz] po|az po" {:form :time-of-day}] ; Prevent set alarm 1 to 5pm
+  [#(and (= :time-of-day (:form %)) (not (:latent %)))
+    #"\-|:|do|po|a[žz] do|az do|a[žz] po|az po"
+    #(and (= :time-of-day (:form %)) (not (:latent %)))
+  ]
   (interval %1 %3 true)
 
   "from <time-of-day> - <time-of-day> (interval)"
@@ -688,7 +691,7 @@
   ; One-sided Intervals
 
   "until <time-of-day>"
-  [#"(?iu)(a[[žz]z] )?do|p[řr]ed" (dim :time)]
+  [#"(?iu)(a[žz] )?do|p[řr]ed" (dim :time)]
   (merge %2 {:direction :before})
 
   "after <time-of-day>"
