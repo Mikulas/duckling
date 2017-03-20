@@ -832,6 +832,9 @@
 
 ; ;;   ; Explicit intervals
 
+ "mezi osmou a devátou"
+ (datetime-interval [2013 2 12 8 0] [2013 2 12 9 1])
+
  "Červenec 13-15"
  "od 13. do 15. Července"
  "od 13 do 15 Července"

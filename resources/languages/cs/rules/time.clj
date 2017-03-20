@@ -366,7 +366,7 @@
 
   ;; Hours and minutes (absolute time)
   "<integer> (latent time-of-day)"
-  (integer 0 23)
+  [(integer 0 23)]
   (assoc (hour (:value %1) true) :latent true)
 
   "<integer> with hour postfix"
@@ -651,12 +651,20 @@
   (interval (day-of-month (:value %2)) (day-of-month (:value %4)) true)
 
   "from <datetime> - <datetime> (interval)"
-  [#"(?iu)od" (dim :time) #"\-|do|po|a[žz] [pd]o|(ale )?p[řr]ed" (dim :time)]
+  [#"(?iu)od" (dim :time #(not= :hour (:grain %))) #"\-|do|po|a[žz] [pd]o|(ale )?p[řr]ed" (dim :time)]
   (interval %2 %4 true)
 
+  "from <hour> - <datetime> (interval)" ; exclude ending hour from interval
+  [#"(?iu)od" (dim :time :full-hour) #"\-|do|po|a[žz] [pd]o|(ale )?p[řr]ed" (dim :time)]
+  (interval (intersect %2 (minute 30)) (intersect %4 (minute 0)) true)
+
   "between <datetime> and <datetime> (interval)"
-  [#"(?iu)mezi" (dim :time) #"a" (dim :time)]
+  [#"(?iu)mezi" (dim :time #(not= :hour (:grain %))) #"a" (dim :time)]
   (interval %2 %4 true)
+
+  "between <hour> and <datetime> (interval)" ; exclude ending hour from interval
+  [#"(?iu)mezi" (dim :time :full-hour) #"a" (dim :time)]
+  (interval (intersect %2 (minute 0)) (intersect %4 (minute 0)) true)
 
   "<interval> month"
   [(dim :time) {:form :month}]
