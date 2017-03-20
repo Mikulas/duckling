@@ -11,59 +11,59 @@
 
 (
   "second (cycle)"
-  #"(?i)sekun(dách|dami|dama|dám|dě|dou|da|do|du|dy|d)"
+  #"(?i)sekun(d[áa]ch|dami|dama|d[áa]m|d[ěe]|dou|da|do|du|dy|d)"
   {:dim :cycle
    :grain :second}
 
   "minute (cycle)"
-  #"(?i)minu(tách|tami|tama|tám|tě|tou|ta|to|tu|ty|t)"
+  #"(?i)minu(t[áa]ch|tami|tama|t[áa]m|t[ěe]|tou|ta|to|tu|ty|t)"
   {:dim :cycle
    :grain :minute}
 
   "hour (cycle)"
-  #"(?i)hodi(nách|nami|nama|nám|ně|nou|na|no|nu|ny|n)"
+  #"(?i)hodi(n[áa]ch|nami|nama|n[áa]m|n[ěe]|nou|na|no|nu|ny|n)"
   {:dim :cycle
    :grain :hour}
 
   "day (cycle)"
-  #"(?i)d(enama|enům|nové|enech|nům|nech|nův|ním|enů|enum|enem|ene|eny|enu|nem|ní|nů|en|ny|nu|ne|ni)"
+  #"(?i)d(enama|en[ůu]m|nov[ée]|enech|n[ůu]m|nech|n[ůu]v|n[íi]m|en[ůu]|enum|enem|ene|eny|enu|nem|n[íi]|n[ůu]|en|ny|nu|ne|ni)"
   {:dim :cycle
    :grain :day}
 
   "week (cycle)"
-  #"(?i)t(ejdnové|ýdnové|ýdnům|ýdnův|ejdnův|ejdnům|ejdnech|ýdnech|ýdnů|ejdnem|ejdní|ejdnů|ýdnem|ýdní|ejdne|ýdny|ýdnu|ýden|ýdni|ejdni|ejdny|ejdnu|ýdne)"
+  #"(?i)t(ejdnov[ée]|[ýy]dnov[ée]|[ýy]dn[ůu]m|[ýy]dn[ůu]v|ejdn[ůu]v|ejdn[ůu]m|ejdnech|[ýy]dnech|[ýy]dn[ůu]|ejdnem|ejdn[íi]|ejdn[ůu]|[ýy]dnem|[ýy]dn[íi]|ejdne|[ýy]dny|[ýy]dnu|[ýy]den|[ýy]dni|ejdni|ejdny|ejdnu|[ýy]dne)"
   {:dim :cycle
    :grain :week}
 
   "month (cycle)"
-  #"(?i)měsí(cích|cema|cům|cem|cum|ců|ce|ci|c)"
+  #"(?i)m[ěe]s[íi](c[íi]ch|cema|c[ůu]m|cem|cum|c[ůu]|ce|ci|c)"
   {:dim :cycle
    :grain :month}
 
   "quarter (cycle)"
-  #"(?i)kvartá(lama|lům|lech|lem|lum|lů|le|lu|ly|l)|čtvrtlet(íma|ích|ími|ím|í)"
+  #"(?i)kvart[áa](lama|l[ůu]m|lech|lem|lum|l[ůu]|le|lu|ly|l)|[čc]tvrtlet([íi]ma|[íi]ch|[íi]mi|[íi]m|[íi])"
   {:dim :cycle
    :grain :quarter}
 
   "year (cycle)"
-  #"(?i)(rokách|rocích|rokama|rokům|rokův|rokem|roků|rokum|roce|roku|roky|roka|rok|létům|létama|létech|letům|letech|létum|léty|léta|lety|leta|lét|let)"
+  #"(?i)(rok[áa]ch|roc[íi]ch|rokama|rok[ůu]m|rok[ůu]v|rokem|rok[ůu]|rokum|roce|roku|roky|roka|rok|l[ée]t[ůu]m|l[ée]tama|l[ée]tech|let[ůu]m|letech|l[ée]tum|l[ée]ty|l[ée]ta|lety|leta|l[ée]t|let)"
   {:dim :cycle
    :grain :year}
 
   "this <cycle>"
-  [#"(?i)t(ěmihle|ěmahle|ěchhle|ěmhle|ohohle|omuhle|ímhle|ímdle|ýhle|éhle|ýdle|oudle|enhle|ěhle|ouhle|omhle|ahle|yhle|uhle|ohle|odle|ihle|omle)|t(ěmito|ěchto|ěmato|ohoto|omuto|ímto|ěmto|ento|omto|outo|éto|ato|ito|oto|uto|yto)" (dim :cycle)]
+  [#"(?i)t([ěe]mihle|[ěe]mahle|[ěe]chhle|[ěe]mhle|ohohle|omuhle|[íi]mhle|[íi]mdle|[ýy]hle|[ée]hle|[ýy]dle|oudle|enhle|[ěe]hle|ouhle|omhle|ahle|yhle|uhle|ohle|odle|ihle|omle)|t([ěe]mito|[ěe]chto|[ěe]mato|ohoto|omuto|[íi]mto|[ěe]mto|ento|omto|outo|[ée]to|ato|ito|oto|uto|yto)" (dim :cycle)]
   (cycle-nth (:grain %2) 0)
 
   "last <cycle>"
-  [#"(?i)předchoz(ímu|ích|íma|ího|ími|ím|í)|předcházejíc(ímu|ích|íma|ího|ími|ím|í)|předešl(ého|ých|ému|ýma|ými|ým|ém|ou|á|é|í|ý)|před|minul(ého|ých|ému|ýma|ými|ým|ém|ou|á|é|í|ý)|posledn(ímu|ích|íma|ího|ími|ím|í)" (dim :cycle)]
+  [#"(?i)p[řr]edchoz([íi]mu|[íi]ch|[íi]ma|[íi]ho|[íi]mi|[íi]m|[íi])|p[řr]edch[áa]zej[íi]c([íi]mu|[íi]ch|[íi]ma|[íi]ho|[íi]mi|[íi]m|[íi])|p[řr]ede[šs]l([ée]ho|[ýy]ch|[ée]mu|[ýy]ma|[ýy]mi|[ýy]m|[ée]m|ou|[áa]|[ée]|[íi]|[ýy])|p[řr]ed|minul([ée]ho|[ýy]ch|[ée]mu|[ýy]ma|[ýy]mi|[ýy]m|[ée]m|ou|[áa]|[ée]|[íi]|[ýy])|posledn([íi]mu|[íi]ch|[íi]ma|[íi]ho|[íi]mi|[íi]m|[íi])" (dim :cycle)]
   (cycle-nth (:grain %2) -1)
 
   "before last <cycle>"
-  [#"(?i)předpředchoz(ímu|ích|íma|ího|ími|ím|í)|předminul(ého|ých|ému|ýma|ými|ým|ém|ou|á|é|í|ý)|předposledn(ímu|ích|íma|ího|ími|ím|í)" (dim :cycle)]
+  [#"(?i)p[řr]edp[řr]edchoz([íi]mu|[íi]ch|[íi]ma|[íi]ho|[íi]mi|[íi]m|[íi])|p[řr]edminul([ée]ho|[ýy]ch|[ée]mu|[ýy]ma|[ýy]mi|[ýy]m|[ée]m|ou|[áa]|[ée]|[íi]|[ýy])|p[řr]edposledn([íi]mu|[íi]ch|[íi]ma|[íi]ho|[íi]mi|[íi]m|[íi])" (dim :cycle)]
   (cycle-nth (:grain %2) -2)
 
   "next <cycle>"
-  [#"(?i)příšt(ímu|ích|íma|ího|ími|ím|í)|následujíc(ímu|ích|íma|ího|ími|ím|í)|nadcházejíc(ímu|ích|íma|ího|ími|ím|í)" (dim :cycle)]
+  [#"(?i)p[řr][íi][šs]t([íi]mu|[íi]ch|[íi]ma|[íi]ho|[íi]mi|[íi]m|[íi])|n[áa]sleduj[íi]c([íi]mu|[íi]ch|[íi]ma|[íi]ho|[íi]mi|[íi]m|[íi])|nadch[áa]zej[íi]c([íi]mu|[íi]ch|[íi]ma|[íi]ho|[íi]mi|[íi]m|[íi])" (dim :cycle)]
   (cycle-nth (:grain %2) 1)
 
   "next <cycle>"
@@ -87,23 +87,23 @@
   ;; (cycle-nth-after (:grain %2) -1 %4)
 
   "<cycle> before"
-  [(dim :cycle) #"(?i)(před|zpět|zpátky)"]
+  [(dim :cycle) #"(?i)(p[řr]ed|zp[ěe]t|zp[áa]tky)"]
   (cycle-nth (:grain %1) -1)
 
   "<cycle> before <time>"
-  [(dim :cycle) #"(?i)před" (dim :time)]
+  [(dim :cycle) #"(?i)p[řr]ed" (dim :time)]
   (cycle-nth-after (:grain %1) -1 %3)
 
   ; "last n <cycle>"
-  ; [#"(?i)předchoz(ímu|ích|íma|ího|ími|ím|í)|předešl(ého|ých|ému|ýma|ými|ým|ém|ou|á|é|í|ý)|před|minul(ého|ých|ému|ýma|ými|ým|ém|ou|á|é|í|ý)" (integer 1 9999) (dim :cycle)]
+  ; [#"(?i)p[řr]edchoz([íi]mu|[íi]ch|[íi]ma|[íi]ho|[íi]mi|[íi]m|[íi])|p[řr]ede[šs]l([ée]ho|[ýy]ch|[ée]mu|[ýy]ma|[ýy]mi|[ýy]m|[ée]m|ou|[áa]|[ée]|[íi]|[ýy])|p[řr]ed|minul([ée]ho|[ýy]ch|[ée]mu|[ýy]ma|[ýy]mi|[ýy]m|[ée]m|ou|[áa]|[ée]|[íi]|[ýy])" (integer 1 9999) (dim :cycle)]
   ; (cycle-n-not-immediate (:grain %3) (- (:value %2)))
 
   ; "n <cycle> ago"
-  ; [(integer 1 9999) (dim :cycle) #"(?i)zpátky|zpět"]
+  ; [(integer 1 9999) (dim :cycle) #"(?i)zp[áa]tky|zp[ěe]t"]
   ; (cycle-n-not-immediate (:grain %2) (- (:value %1)))
 
   ; "next n <cycle>"
-  ; [#"(?i)příšt(ímu|ích|íma|ího|ími|ím|í)|nadcházejíc(ímu|ích|íma|ího|ími|ím|í)" (integer 1 9999) (dim :cycle)]
+  ; [#"(?i)p[řr][íi][šs]t([íi]mu|[íi]ch|[íi]ma|[íi]ho|[íi]mi|[íi]m|[íi])|nadch[áa]zej[íi]c([íi]mu|[íi]ch|[íi]ma|[íi]ho|[íi]mi|[íi]m|[íi])" (integer 1 9999) (dim :cycle)]
   ; (cycle-n-not-immediate (:grain %3) (:value %2))
 
   ; "n <cycle> next"

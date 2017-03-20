@@ -24,133 +24,133 @@
  ;;
 
  "zero"
- #"(?i)(nu(lách|lami|lama|lám|lou|la|le|lo|lu|ly|l)|nic|žádn(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej))"
+ #"(?i)(nu(l[áa]ch|lami|lama|l[áa]m|lou|la|le|lo|lu|ly|l)|nic|[žz][áa]dn([ýy]ho|[ýy]ch|[ýy]mi|ejch|[ýy]ma|ejma|[ýy]mu|[ée]mu|[ée]ho|[ýy]m|ejm|[ée]m|ym|[ýy]|[íi]|[ée]|[áa]|ou|ej))"
  {:dim :number :integer true :value 0 :grain 1}
 
  "one"
- #"(?i)(jednič(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|jed(na|en|noho|nomu|nom|ním|ny|něch|něm|němi|ni|nu)|jediný)"
+ #"(?i)(jedni[čc](k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky)|jed(na|en|noho|nomu|nom|n[íi]m|ny|n[ěe]ch|n[ěe]m|n[ěe]mi|ni|nu)|jedin[ýy])"
  {:dim :number :integer true :value 1 :grain 1}
 
  "two"
- #"(?i)(dvoj(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|dv(ouma|ěma|oum|ou|ě|a))"
+ #"(?i)(dvoj(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky)|dv(ouma|[ěe]ma|oum|ou|[ěe]|a))"
  {:dim :number :integer true :value 2 :grain 1}
 
  "three"
- #"(?i)(troj(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|tř(ema|emi|ech|em|í|i))"
+ #"(?i)(troj(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky)|t[řr](ema|emi|ech|em|[íi]|i))"
  {:dim :number :integer true :value 3 :grain 1}
 
  "four"
- #"(?i)(čtyřkách|štyrkách|čtyřkama|čtyřkám|čtyřkami|štyrkami|štyrkám|štyrkama|čtyřkou|štyrkou|čtyřka|čtyřky|čtyřce|čtyřku|čtyřko|čtyřek|štyrce|štyrek|štyrko|štyrku|štyrky|štyrka|čtyřech|čtyřmi|čtyřma|čtyřem|čtyrech|čtyři|čtyrem|čtyrmi|čtyrma|štyři|čtyry|čtyř|čtyr)"
+ #"(?i)([čc]ty[řr]k[áa]ch|[šs]tyrk[áa]ch|[čc]ty[řr]kama|[čc]ty[řr]k[áa]m|[čc]ty[řr]kami|[šs]tyrkami|[šs]tyrk[áa]m|[šs]tyrkama|[čc]ty[řr]kou|[šs]tyrkou|[čc]ty[řr]ka|[čc]ty[řr]ky|[čc]ty[řr]ce|[čc]ty[řr]ku|[čc]ty[řr]ko|[čc]ty[řr]ek|[šs]tyrce|[šs]tyrek|[šs]tyrko|[šs]tyrku|[šs]tyrky|[šs]tyrka|[čc]ty[řr]ech|[čc]ty[řr]mi|[čc]ty[řr]ma|[čc]ty[řr]em|[čc]tyrech|[čc]ty[řr]i|[čc]tyrem|[čc]tyrmi|[čc]tyrma|[šs]ty[řr]i|[čc]tyry|[čc]ty[řr]|[čc]tyr)"
  {:dim :number :integer true :value 4 :grain 1}
 
  "five"
- #"(?i)(pět(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|pěti?)"
+ #"(?i)(p[ěe]t(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky)|p[ěe]ti?)"
  {:dim :number :integer true :value 5 :grain 1}
 
  "six"
- #"(?i)(šest(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|šes(ti|t))"
+ #"(?i)([šs]est(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky)|[šs]es(ti|t))"
  {:dim :number :integer true :value 6 :grain 1}
 
  "seven"
- #"(?i)(sedmič(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|sed(um|mi|m))"
+ #"(?i)(sedmi[čc](k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky)|sed(um|mi|m))"
  {:dim :number :integer true :value 7 :grain 1}
 
  "eight"
- #"(?i)(v?osmič(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|v?osu?(mama|mami|mách|mám|mou|ma|em|mo|mu|my|mě|m))"
+ #"(?i)(v?osmi[čc](k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky)|v?osu?(mama|mami|m[áa]ch|m[áa]m|mou|ma|em|mo|mu|my|m[ěe]|m))"
  {:dim :number :integer true :value 8 :grain 1}
 
  "nine"
- #"(?i)(devít(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)|devět)"
+ #"(?i)(dev[íi]t(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)|dev[ěe]t)"
  {:dim :number :integer true :value 9 :grain 1}
 
  "ten"
- #"(?i)(desít(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|des(íti|eti|et))"
+ #"(?i)(des[íi]t(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky)|des([íi]ti|eti|et))"
  {:dim :number :integer true :value 10 :grain 1}
 
  "eleven"
- #"(?i)jedenáct(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
+ #"(?i)jeden[áa]ct(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 11 :grain 1}
 
  "twelve"
- #"(?i)dvanáct(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
+ #"(?i)dvan[áa]ct(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 12 :grain 1}
 
  "thirteen"
- #"(?i)třináct(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
+ #"(?i)t[řr]in[áa]ct(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 13 :grain 1}
 
  "fourteen"
- #"(?i)čtrnáct(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
+ #"(?i)[čc]trn[áa]ct(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 14 :grain 1}
 
  "fifteen"
- #"(?i)patnáct(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
+ #"(?i)patn[áa]ct(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 15 :grain 1}
 
  "sixteen"
- #"(?i)šestnáct(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
+ #"(?i)[šs]estn[áa]ct(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 16 :grain 1}
 
  "seventeen"
- #"(?i)sedmnáct(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
+ #"(?i)sedmn[áa]ct(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 17 :grain 1}
 
  "eighteen"
- #"(?i)osmnáct(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
+ #"(?i)osmn[áa]ct(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 18 :grain 1}
 
  "nineteen"
- #"(?i)devatenáct(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
+ #"(?i)devaten[áa]ct(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 19 :grain 1}
 
  ;; Numeric tens
 
  "twenty"
- #"(?i)(dvacít(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|dvac(et|eti|íti))"
+ #"(?i)(dvac[íi]t(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky)|dvac(et|eti|[íi]ti))"
  {:dim :number :integer true :value 20 :grain 1 :numeric-tens true}
 
  "thirty"
- #"(?i)(třicít(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|třic(et|eti|íti))"
+ #"(?i)(t[řr]ic[íi]t(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky)|t[řr]ic(et|eti|[íi]ti))"
  {:dim :number :integer true :value 30 :grain 1 :numeric-tens true}
 
  "fourty"
- #"(?i)(čtyřicít(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky)|čty(rycet|ryceti|řicet|řiceti|řicíti))"
+ #"(?i)([čc]ty[řr]ic[íi]t(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky)|[čc]ty(rycet|ryceti|[řr]icet|[řr]iceti|[řr]ic[íi]ti))"
  {:dim :number :integer true :value 40 :grain 1 :numeric-tens true}
 
  "fifty"
- #"(?i)padesát(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
+ #"(?i)pades[áa]t(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 50 :grain 1 :numeric-tens true}
 
  "sixty"
- #"(?i)šedesát(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
+ #"(?i)[šs]edes[áa]t(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 60 :grain 1 :numeric-tens true}
 
  "seventy"
- #"(?i)sedu?mdesát(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
+ #"(?i)sedu?mdes[áa]t(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 70 :grain 1 :numeric-tens true}
 
  "eighty"
- #"(?i)osu?mdesát(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
+ #"(?i)osu?mdes[áa]t(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 80 :grain 1 :numeric-tens true}
 
  "ninety"
- #"(?i)devadesát(kách|kám|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
+ #"(?i)devades[áa]t(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 90 :grain 1 :numeric-tens true}
 
  ;; Multipliers
 
  "hundred"
- #"(?i)s(tech|tům|tě|tem|et|to|ty|ta|tu)"
+ #"(?i)s(tech|t[ůu]m|t[ěe]|tem|et|to|ty|ta|tu)"
  {:dim :number :integer true :value 100 :grain 2}
 
  ;; Thousands
 
  "thousand"
- #"(?i)tisí(cích|cema|cům|cem|cum|ců|ce|ci|c)"
+ #"(?i)tis[íi](c[íi]ch|cema|c[ůu]m|cem|cum|c[ůu]|ce|ci|c)"
  {:dim :number :integer true :value 1000 :grain 3}
 
  "million"
- #"(?i)mili(ónům|ónech|ónama|onama|ónum|ónem|ónů|onech|onům|óny|onem|onů|ónu|onum|óne|onu|one|ón|ony|on)"
+ #"(?i)mili([óo]n[ůu]m|[óo]nech|[óo]nama|onama|[óo]num|[óo]nem|[óo]n[ůu]|onech|on[ůu]m|[óo]ny|onem|on[ůu]|[óo]nu|onum|[óo]ne|onu|one|[óo]n|ony|on)"
  {:dim :number :integer true :value 1000000 :grain 6}
 
  ;; Compound numbers
@@ -190,7 +190,7 @@
  ; {:dim :number :value (+ 1 (get %2 :value))}
 
  ; "three and  ordinal-tens no space"
- ; [#"(?i)třia" (dim :number (:numeric-tens true))]
+ ; [#"(?i)t[řr]ia" (dim :number (:numeric-tens true))]
  ; {:dim :number :value (+ 3 (get %2 :value))}
 
  ;;
@@ -206,7 +206,7 @@
              Double/parseDouble)}
 
  "number dot number"
- [(dim :number #(not (:number-prefixed %))) #"(?i)celá" (dim :number #(not (:number-suffixed %)))]
+ [(dim :number #(not (:number-prefixed %))) #"(?i)cel[áa]" (dim :number #(not (:number-suffixed %)))]
  {:dim :number
   :value (+
     (double (/
@@ -227,7 +227,7 @@
 
  ;; negative number
  "numbers prefix with -, negative or minus"
- [#"(?i)-|m[ií]nus\s?|záporn[ýéáo]\s?" (dim :number #(not (:number-prefixed %)))]
+ [#"(?i)-|m[i[íi]]nus\s?|z[áa]porn[[ýy][ée][áa]o]\s?" (dim :number #(not (:number-prefixed %)))]
  (let [multiplier -1
        value      (* (:value %2) multiplier)
        int?       (zero? (mod value 1)) ; often true, but we could have 1.1111K
@@ -256,180 +256,180 @@
  ;; Ordinal numbers
 
  "first ordinal"
- #"(?i)(1-?|prvn)(íma|ích|ími|ího|ímu|ím|í)"
+ #"(?i)(1-?|prvn)([íi]ma|[íi]ch|[íi]mi|[íi]ho|[íi]mu|[íi]m|[íi])"
  {:dim :ordinal
   :ordinal-digit true
   :value 1
-  :date-inflection (boolean (re-find #"(ího|ím)$" (-> %1 :groups second .toLowerCase)))}
+  :date-inflection (boolean (re-find #"([íi]ho|[íi]m)$" (-> %1 :groups second .toLowerCase)))}
 
  "second ordinal"
- #"(?i)(2-?|dru)(hýho|hýma|hými|hýmu|hému|hých|hejma|hejch|hého|hém|hejm|hým|zí|há|hej|hé|hym|hou|hý)"
+ #"(?i)(2-?|dru)(h[ýy]ho|h[ýy]ma|h[ýy]mi|h[ýy]mu|h[ée]mu|h[ýy]ch|hejma|hejch|h[ée]ho|h[ée]m|hejm|h[ýy]m|z[íi]|h[áa]|hej|h[ée]|hym|hou|h[ýy])"
  {:dim :ordinal
   :ordinal-digit true
   :value 2
-  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
+  :date-inflection (boolean (re-find #"([ée]mu|[ée]ho|[ýy]mu|[ýy]ho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "third ordinal"
- #"(?i)(3-?|tře)(tíma|tích|tími|tího|tímu|tím|tí)"
+ #"(?i)(3-?|t[řr]e)(t[íi]ma|t[íi]ch|t[íi]mi|t[íi]ho|t[íi]mu|t[íi]m|t[íi])"
  {:dim :ordinal
   :ordinal-digit true
   :value 3
-  :date-inflection (boolean (re-find #"(ího|ím)$" (-> %1 :groups second .toLowerCase)))}
+  :date-inflection (boolean (re-find #"([íi]ho|[íi]m)$" (-> %1 :groups second .toLowerCase)))}
 
  "fourth ordinal"
- #"(?i)(4-?|čtvr)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
+ #"(?i)(4-?|[čc]tvr)(t[ýy]ho|t[ýy]ch|t[ýy]mi|tejch|t[ýy]ma|tejma|t[ýy]mu|t[ée]mu|t[ée]ho|t[ýy]m|tejm|t[ée]m|tym|t[ýy]|t[íi]|t[ée]|t[áa]|tou|tej)"
  {:dim :ordinal
   :ordinal-digit true
   :value 4
-  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
+  :date-inflection (boolean (re-find #"([ée]mu|[ée]ho|[ýy]mu|[ýy]ho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "fifth ordinal"
- #"(?i)(5-?|pá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
+ #"(?i)(5-?|p[áa])(t[ýy]ho|t[ýy]ch|t[ýy]mi|tejch|t[ýy]ma|tejma|t[ýy]mu|t[ée]mu|t[ée]ho|t[ýy]m|tejm|t[ée]m|tym|t[ýy]|t[íi]|t[ée]|t[áa]|tou|tej)"
  {:dim :ordinal
   :ordinal-digit true
   :value 5
-  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
+  :date-inflection (boolean (re-find #"([ée]mu|[ée]ho|[ýy]mu|[ýy]ho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "sixth ordinal"
- #"(?i)(6-?|šes)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
+ #"(?i)(6-?|[šs]es)(t[ýy]ho|t[ýy]ch|t[ýy]mi|tejch|t[ýy]ma|tejma|t[ýy]mu|t[ée]mu|t[ée]ho|t[ýy]m|tejm|t[ée]m|tym|t[ýy]|t[íi]|t[ée]|t[áa]|tou|tej)"
  {:dim :ordinal
   :ordinal-digit true
   :value 6
-  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
+  :date-inflection (boolean (re-find #"([ée]mu|[ée]ho|[ýy]mu|[ýy]ho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "seventh ordinal"
- #"(?i)(7-?|sedu?)(mýho|mých|mými|mejch|mýma|mejma|mýmu|mému|mého|mým|mejm|mém|mym|mý|mí|mé|má|mou|mej)"
+ #"(?i)(7-?|sedu?)(m[ýy]ho|m[ýy]ch|m[ýy]mi|mejch|m[ýy]ma|mejma|m[ýy]mu|m[ée]mu|m[ée]ho|m[ýy]m|mejm|m[ée]m|mym|m[ýy]|m[íi]|m[ée]|m[áa]|mou|mej)"
  {:dim :ordinal
   :ordinal-digit true
   :value 7
-  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
+  :date-inflection (boolean (re-find #"([ée]mu|[ée]ho|[ýy]mu|[ýy]ho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "8th ordinal"
- #"(?i)(8-?|osu?)(mýho|mých|mými|mejch|mýma|mejma|mýmu|mému|mého|mým|mejm|mém|mym|mý|mí|mé|má|mou|mej)"
+ #"(?i)(8-?|osu?)(m[ýy]ho|m[ýy]ch|m[ýy]mi|mejch|m[ýy]ma|mejma|m[ýy]mu|m[ée]mu|m[ée]ho|m[ýy]m|mejm|m[ée]m|mym|m[ýy]|m[íi]|m[ée]|m[áa]|mou|mej)"
  {:dim :ordinal
   :ordinal-digit true
   :value 8
-  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
+  :date-inflection (boolean (re-find #"([ée]mu|[ée]ho|[ýy]mu|[ýy]ho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "9th ordinal"
- #"(?i)(9-?|devá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
+ #"(?i)(9-?|dev[áa])(t[ýy]ho|t[ýy]ch|t[ýy]mi|tejch|t[ýy]ma|tejma|t[ýy]mu|t[ée]mu|t[ée]ho|t[ýy]m|tejm|t[ée]m|tym|t[ýy]|t[íi]|t[ée]|t[áa]|tou|tej)"
  {:dim :ordinal
   :ordinal-digit true
   :value 9
-  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
+  :date-inflection (boolean (re-find #"([ée]mu|[ée]ho|[ýy]mu|[ýy]ho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "10th ordinal"
- #"(?i)(10-?|desá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
+ #"(?i)(10-?|des[áa])(t[ýy]ho|t[ýy]ch|t[ýy]mi|tejch|t[ýy]ma|tejma|t[ýy]mu|t[ée]mu|t[ée]ho|t[ýy]m|tejm|t[ée]m|tym|t[ýy]|t[íi]|t[ée]|t[áa]|tou|tej)"
  {:dim :ordinal
   :value 10
-  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
+  :date-inflection (boolean (re-find #"([ée]mu|[ée]ho|[ýy]mu|[ýy]ho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "11th ordinal"
- #"(?i)(11-?|jedenác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
+ #"(?i)(11-?|jeden[áa]c)(t[ýy]ho|t[ýy]ch|t[ýy]mi|tejch|t[ýy]ma|tejma|t[ýy]mu|t[ée]mu|t[ée]ho|t[ýy]m|tejm|t[ée]m|tym|t[ýy]|t[íi]|t[ée]|t[áa]|tou|tej)"
  {:dim :ordinal
   :value 11
-  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
+  :date-inflection (boolean (re-find #"([ée]mu|[ée]ho|[ýy]mu|[ýy]ho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "12th ordinal"
- #"(?i)(12-?|dvanác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
+ #"(?i)(12-?|dvan[áa]c)(t[ýy]ho|t[ýy]ch|t[ýy]mi|tejch|t[ýy]ma|tejma|t[ýy]mu|t[ée]mu|t[ée]ho|t[ýy]m|tejm|t[ée]m|tym|t[ýy]|t[íi]|t[ée]|t[áa]|tou|tej)"
  {:dim :ordinal
   :value 12
-  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
+  :date-inflection (boolean (re-find #"([ée]mu|[ée]ho|[ýy]mu|[ýy]ho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "13th ordinal"
- #"(?i)(13-?|třinác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
+ #"(?i)(13-?|t[řr]in[áa]c)(t[ýy]ho|t[ýy]ch|t[ýy]mi|tejch|t[ýy]ma|tejma|t[ýy]mu|t[ée]mu|t[ée]ho|t[ýy]m|tejm|t[ée]m|tym|t[ýy]|t[íi]|t[ée]|t[áa]|tou|tej)"
  {:dim :ordinal
   :value 13
-  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
+  :date-inflection (boolean (re-find #"([ée]mu|[ée]ho|[ýy]mu|[ýy]ho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "14th ordinal"
- #"(?i)(14-?|čtrnác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
+ #"(?i)(14-?|[čc]trn[áa]c)(t[ýy]ho|t[ýy]ch|t[ýy]mi|tejch|t[ýy]ma|tejma|t[ýy]mu|t[ée]mu|t[ée]ho|t[ýy]m|tejm|t[ée]m|tym|t[ýy]|t[íi]|t[ée]|t[áa]|tou|tej)"
  {:dim :ordinal
   :value 14
-  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
+  :date-inflection (boolean (re-find #"([ée]mu|[ée]ho|[ýy]mu|[ýy]ho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "15th ordinal"
- #"(?i)(15-?|patnác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
+ #"(?i)(15-?|patn[áa]c)(t[ýy]ho|t[ýy]ch|t[ýy]mi|tejch|t[ýy]ma|tejma|t[ýy]mu|t[ée]mu|t[ée]ho|t[ýy]m|tejm|t[ée]m|tym|t[ýy]|t[íi]|t[ée]|t[áa]|tou|tej)"
  {:dim :ordinal
   :value 15
-  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
+  :date-inflection (boolean (re-find #"([ée]mu|[ée]ho|[ýy]mu|[ýy]ho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "16th ordinal"
- #"(?i)(16-?|šestnác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
+ #"(?i)(16-?|[šs]estn[áa]c)(t[ýy]ho|t[ýy]ch|t[ýy]mi|tejch|t[ýy]ma|tejma|t[ýy]mu|t[ée]mu|t[ée]ho|t[ýy]m|tejm|t[ée]m|tym|t[ýy]|t[íi]|t[ée]|t[áa]|tou|tej)"
  {:dim :ordinal
   :value 16
-  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
+  :date-inflection (boolean (re-find #"([ée]mu|[ée]ho|[ýy]mu|[ýy]ho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "17th ordinal"
- #"(?i)(17-?|sedu?mnác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
+ #"(?i)(17-?|sedu?mn[áa]c)(t[ýy]ho|t[ýy]ch|t[ýy]mi|tejch|t[ýy]ma|tejma|t[ýy]mu|t[ée]mu|t[ée]ho|t[ýy]m|tejm|t[ée]m|tym|t[ýy]|t[íi]|t[ée]|t[áa]|tou|tej)"
  {:dim :ordinal
   :value 17
-  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
+  :date-inflection (boolean (re-find #"([ée]mu|[ée]ho|[ýy]mu|[ýy]ho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "18th ordinal"
- #"(?i)(18-?|osu?mnác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
+ #"(?i)(18-?|osu?mn[áa]c)(t[ýy]ho|t[ýy]ch|t[ýy]mi|tejch|t[ýy]ma|tejma|t[ýy]mu|t[ée]mu|t[ée]ho|t[ýy]m|tejm|t[ée]m|tym|t[ýy]|t[íi]|t[ée]|t[áa]|tou|tej)"
  {:dim :ordinal
   :value 18
-  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
+  :date-inflection (boolean (re-find #"([ée]mu|[ée]ho|[ýy]mu|[ýy]ho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "19th ordinal"
- #"(?i)(19-?|devatenác)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
+ #"(?i)(19-?|devaten[áa]c)(t[ýy]ho|t[ýy]ch|t[ýy]mi|tejch|t[ýy]ma|tejma|t[ýy]mu|t[ée]mu|t[ée]ho|t[ýy]m|tejm|t[ée]m|tym|t[ýy]|t[íi]|t[ée]|t[áa]|tou|tej)"
  {:dim :ordinal
   :value 19
-  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
+  :date-inflection (boolean (re-find #"([ée]mu|[ée]ho|[ýy]mu|[ýy]ho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  ;; ordinal tens
 
  "20th ordinal"
- #"(?i)(20-?|dvacá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
+ #"(?i)(20-?|dvac[áa])(t[ýy]ho|t[ýy]ch|t[ýy]mi|tejch|t[ýy]ma|tejma|t[ýy]mu|t[ée]mu|t[ée]ho|t[ýy]m|tejm|t[ée]m|tym|t[ýy]|t[íi]|t[ée]|t[áa]|tou|tej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 20
-  :date-inflection (boolean (re-find #"(ému|ého|ýmu|ýho|ej)$" (-> %1 :groups second .toLowerCase)))}
+  :date-inflection (boolean (re-find #"([ée]mu|[ée]ho|[ýy]mu|[ýy]ho|ej)$" (-> %1 :groups second .toLowerCase)))}
 
  "30th ordinal"
- #"(?i)(30-?|třicá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
+ #"(?i)(30-?|t[řr]ic[áa])(t[ýy]ho|t[ýy]ch|t[ýy]mi|tejch|t[ýy]ma|tejma|t[ýy]mu|t[ée]mu|t[ée]ho|t[ýy]m|tejm|t[ée]m|tym|t[ýy]|t[íi]|t[ée]|t[áa]|tou|tej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 30}
 
  "40th ordinal"
- #"(?i)(40-?|čtyřicá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
+ #"(?i)(40-?|[čc]ty[řr]ic[áa])(t[ýy]ho|t[ýy]ch|t[ýy]mi|tejch|t[ýy]ma|tejma|t[ýy]mu|t[ée]mu|t[ée]ho|t[ýy]m|tejm|t[ée]m|tym|t[ýy]|t[íi]|t[ée]|t[áa]|tou|tej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 40}
 
  "50th ordinal"
- #"(?i)(50-?|padesá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
+ #"(?i)(50-?|pades[áa])(t[ýy]ho|t[ýy]ch|t[ýy]mi|tejch|t[ýy]ma|tejma|t[ýy]mu|t[ée]mu|t[ée]ho|t[ýy]m|tejm|t[ée]m|tym|t[ýy]|t[íi]|t[ée]|t[áa]|tou|tej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 50}
 
  "60th ordinal"
- #"(?i)(60-?|šedesá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
+ #"(?i)(60-?|[šs]edes[áa])(t[ýy]ho|t[ýy]ch|t[ýy]mi|tejch|t[ýy]ma|tejma|t[ýy]mu|t[ée]mu|t[ée]ho|t[ýy]m|tejm|t[ée]m|tym|t[ýy]|t[íi]|t[ée]|t[áa]|tou|tej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 60}
 
  "70th ordinal"
- #"(?i)(70-?|sedu?mdesá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
+ #"(?i)(70-?|sedu?mdes[áa])(t[ýy]ho|t[ýy]ch|t[ýy]mi|tejch|t[ýy]ma|tejma|t[ýy]mu|t[ée]mu|t[ée]ho|t[ýy]m|tejm|t[ée]m|tym|t[ýy]|t[íi]|t[ée]|t[áa]|tou|tej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 70}
 
  "80th ordinal"
- #"(?i)(80-?|osu?mdesá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
+ #"(?i)(80-?|osu?mdes[áa])(t[ýy]ho|t[ýy]ch|t[ýy]mi|tejch|t[ýy]ma|tejma|t[ýy]mu|t[ée]mu|t[ée]ho|t[ýy]m|tejm|t[ée]m|tym|t[ýy]|t[íi]|t[ée]|t[áa]|tou|tej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 80}
 
  "90th ordinal"
- #"(?i)(90-?|devadesá)(týho|tých|tými|tejch|týma|tejma|týmu|tému|tého|tým|tejm|tém|tym|tý|tí|té|tá|tou|tej)"
+ #"(?i)(90-?|devades[áa])(t[ýy]ho|t[ýy]ch|t[ýy]mi|tejch|t[ýy]ma|tejma|t[ýy]mu|t[ée]mu|t[ée]ho|t[ýy]m|tejm|t[ée]m|tym|t[ýy]|t[íi]|t[ée]|t[áa]|tou|tej)"
  {:dim :ordinal
   :ordinal-tens true
   :value 90}
 
- ;; ordinal tens with digits eg šedesátý osmý
+ ;; ordinal tens with digits eg [šs]edes[áa]t[ýy] osm[ýy]
 
  "decimal ordinals with digits"
  [(dim :ordinal #(:ordinal-tens %)) (dim :ordinal #(:ordinal-digit %))]
@@ -439,12 +439,12 @@
  ;; higher ordinals
 
  "100th ordinal"
- #"(?i)st(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)st([ýy]ho|[ýy]ch|[ýy]mi|ejch|[ýy]ma|ejma|[ýy]mu|[ée]mu|[ée]ho|[ýy]m|ejm|[ée]m|ym|[ýy]|[íi]|[ée]|[áa]|ou|ej)"
  {:dim :ordinal
   :value 100}
 
  "1000th ordinal"
- #"(?i)tisícá?t(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)"
+ #"(?i)tis[íi]c[áa]?t([ýy]ho|[ýy]ch|[ýy]mi|ejch|[ýy]ma|ejma|[ýy]mu|[ée]mu|[ée]ho|[ýy]m|ejm|[ée]m|ym|[ýy]|[íi]|[ée]|[áa]|ou|ej)"
  {:dim :ordinal
   :value 1000}
 
@@ -464,7 +464,7 @@
  ;             Integer/parseInt)
  ;  :latent true}
 
- ;; no space digit prefix eg třiatřicet
+ ;; no space digit prefix eg t[řr]iat[řr]icet
 
  ; "one and ordinal-tens no space"
  ; [#"(?i)jedena" (dim :ordinal (:ordinal-tens true))]
@@ -477,22 +477,22 @@
  ;  :value (+ 2 (get %2 :value))}
 
  ; "three and ordinal-tens no space"
- ; [#"(?i)třia"(dim :ordinal (:ordinal-tens true))]
+ ; [#"(?i)t[řr]ia"(dim :ordinal (:ordinal-tens true))]
  ; {:dim :ordinal
  ;  :value (+ 3 (get %2 :value))}
 
  ; "four and ordinal-tens no space"
- ; [#"(?i)čtyřia"(dim :ordinal (:ordinal-tens true))]
+ ; [#"(?i)[čc]ty[řr]ia"(dim :ordinal (:ordinal-tens true))]
  ; {:dim :ordinal
  ;  :value (+ 4 (get %2 :value))}
 
  ; "five and ordinal-tens no space"
- ; [#"(?i)pěta"(dim :ordinal (:ordinal-tens true))]
+ ; [#"(?i)p[ěe]ta"(dim :ordinal (:ordinal-tens true))]
  ; {:dim :ordinal
  ;  :value (+ 5 (get %2 :value))}
 
  ; "six and ordinal-tens no space"
- ; [#"(?i)šesta"(dim :ordinal (:ordinal-tens true))]
+ ; [#"(?i)[šs]esta"(dim :ordinal (:ordinal-tens true))]
  ; {:dim :ordinal
  ;  :value (+ 6 (get %2 :value))}
 
@@ -507,7 +507,7 @@
  ;  :value (+ 8 (get %2 :value))}
 
  ; "nine and ordinal-tens no space"
- ; [#"(?i)devěta"(dim :ordinal (:ordinal-tens true))]
+ ; [#"(?i)dev[ěe]ta"(dim :ordinal (:ordinal-tens true))]
  ; {:dim :ordinal
  ;  :value (+ 9 (get %2 :value))}
 
