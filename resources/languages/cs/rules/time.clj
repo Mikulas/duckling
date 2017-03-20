@@ -612,7 +612,7 @@
     (merge {:precision "exact"}))
 
   "about <time-of-day>" ; about
-  [#"(?iu)v?okolo|kolem|o|plus ?m[i[íi]]nus|zhruba|tak o" {:form :time-of-day}]
+  [#"(?iu)v?okolo|kolem|plus ?m[i[íi]]nus|zhruba|tak o" {:form :time-of-day}]
   (-> %2
     (dissoc :latent)
     (merge {:precision "approximate"}))

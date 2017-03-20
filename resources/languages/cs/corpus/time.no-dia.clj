@@ -392,7 +392,6 @@
 
  "o treti"
  "o 3. po poledni"
- "3 po poledni"
  "3 po obede"
  "3 odpoledne"
  "3 odpoledni"
@@ -404,6 +403,9 @@
  "o 15te"
  "3h odpo"
  (datetime 2013 2 12 15 :hour 3 :meridiem :pm)
+
+  "3 hodiny po poledni"
+  (datetime 2013 2 12 15 0 :hour 3 :minute 0 :meridiem :pm)
 
  "sesta hodina"
  (datetime 2013 2 12 6 :hour 6)
@@ -426,7 +428,7 @@
  "1800"
  (datetime 2013 2 12 18 0 :hour 6 :minute 0 :meridiem :pm)
 
- "7 po poledni"
+ ;"7 po poledni" ; ambiguous: minutes or hours
  "7 odpoledne"
  "sedma odpoledni"
  "sedm odpoledne"
