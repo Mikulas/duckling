@@ -590,6 +590,11 @@
   #"(?iu)ja(rama|rech|r[ůu]m|rum|rem|[řr]e|ra|ro|ru|ry|r)"
   (interval (month-day 3 20) (month-day 6 21) false)
 
+  ; Other Named Intervals
+  "summer holidays"
+  #"(?iu)letn(ímu|ích|íma|ího|ími|ím|í) prázdn(inách|inama|inami|inám|iny|in)"
+  (interval (month-day 7 1) (month-day 8 31) false)
+
   ; Time zones
 
   "timezone"

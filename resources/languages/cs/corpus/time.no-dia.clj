@@ -770,6 +770,8 @@
 ;   "poniedzialkowy poranek"
 ;   (datetime-interval [2013 2 18 4] [2013 2 18 12])
 
+ "o letnich prazdninach"
+ (datetime-interval [2013 7 1] [2013 9 1])
 
 ;  ;;  TODO
 ;  ;; "luty 15tego o poranku"
