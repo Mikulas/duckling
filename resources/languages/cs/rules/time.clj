@@ -156,12 +156,8 @@
   ; Holiday TODO: check online holidays
   ; or define dynamic rule (last thursday of october..)
 
- ;  "christmas"
- ;  #"(?iu)(([ŚS]|[śs]|s)wi(e|[ęe])ta)? ?bo(z|[žz])(ym|ego|e) narodzeni(e|a|u)"
- ; (month-day 12 25)
-
   "christmas eve"
-  #"(?iu)V[áa]n(oc[íi]ch|ocema|ocemi|oc[ůu]m|oce|oci|oc)"
+  #"(?iu)V[áa]n(oc[íi]ch|ocema|ocemi|oc[ůu]m|oce|oci|oc)|štěd(rému|rými|rých|rého|rýma|rým|ří|rém|rý|rou|rá|ré) d(enama|enům|nové|enech|nům|nech|nův|ním|enů|enum|enem|ene|eny|enu|nem|ní|nů|en|ny|nu|ne|ni)"
   (month-day 12 24)
 
   "new year's eve"
