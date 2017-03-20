@@ -588,7 +588,7 @@
 
   ; Other Named Intervals
   "summer holidays"
-  #"(?iu)letn(ímu|ích|íma|ího|ími|ím|í) prázdn(inách|inama|inami|inám|iny|in)"
+  #"(?iu)letn([íi]mu|[íi]ch|[íi]ma|[íi]ho|[íi]mi|[íi]m|[íi]) pr[áa]zdn(in[áa]ch|inama|inami|in[áa]m|iny|in)"
   (interval (month-day 7 1) (month-day 8 31) false)
 
   ; Time zones
