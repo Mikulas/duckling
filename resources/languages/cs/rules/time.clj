@@ -665,13 +665,15 @@
 
   "from <hour> - <datetime> (interval)" ; exclude ending hour from interval
   [#"(?iu)od" (dim :time :full-hour) #"\-|do|po|a[žz] [pd]o|(ale )?p[řr]ed" (dim :time)]
-  (interval (intersect %2 (minute 30)) (intersect %4 (minute 0)) true)
+  (interval (intersect %2 (minute 0)) (intersect %4 (minute 0)) true)
 
   "between <datetime> and <datetime> (interval)"
   [#"(?iu)mezi" (dim :time #(not= :hour (:grain %))) #"a" (dim :time)]
   (interval %2 %4 true)
 
-  "between <hour> and <datetime> (interval)" ; exclude ending hour from interval
+  ; exclude ending hour from interval
+  ; and preventing day-span in "8am to 4pm on wednesday"
+  "between <hour> and <datetime> (interval)"
   [#"(?iu)mezi" (dim :time :full-hour) #"a" (dim :time)]
   (interval (intersect %2 (minute 0)) (intersect %4 (minute 0)) true)
 
