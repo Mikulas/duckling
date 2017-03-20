@@ -102,13 +102,13 @@
 (defn hour-minute [h m & [twelve-hour-clock?]]
   (assoc (intersect (hour h twelve-hour-clock?)
                     (minute m))
-         :form :time-of-day))
+         :form :time-of-day :grain :minute))
 
 (defn hour-minute-second [h m s & [twelve-hour-clock?]]
   (assoc (intersect (hour h twelve-hour-clock?)
                     (minute m)
                     (sec s))
-         :form :time-of-day))
+         :form :time-of-day :grain :second))
 
 ; twelve-hour clock is 12, 1, 2, 3, ... 11 (no 0)
 

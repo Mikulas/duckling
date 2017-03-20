@@ -334,31 +334,32 @@
 
   "<named-month> <day-of-month> (ordinal)" ; march 12th
   [{:form :month} (dim :ordinal #(<= 1 (:value %) 31))]
-  (intersect %1 (day-of-month (:value %2)))
+  (assoc (intersect %1 (day-of-month (:value %2))) :grain :day)
 
   "<named-month> <day-of-month> (non ordinal)" ; march 12
   [{:form :month} (integer 1 31)]
-  (intersect %1 (day-of-month (:value %2)))
+  (assoc (intersect %1 (day-of-month (:value %2))) :grain :day)
 
   "<day-of-month> (ordinal) of <named-month>"
   [(dim :ordinal #(<= 1 (:value %) 31)) #"(?iu)of|in" {:form :month}]
-  (intersect %3 (day-of-month (:value %1)))
+  (assoc (intersect %3 (day-of-month (:value %1))) :grain :day)
 
   "<day-of-month> (non ordinal) of <named-month>"
   [(integer 1 31) #"(?iu)of|in" {:form :month}]
-  (intersect %3 (day-of-month (:value %1)))
+  (assoc (intersect %3 (day-of-month (:value %1))) :grain :day)
 
   "<day-of-month> (non ordinal) <named-month>" ; 12 mars
   [(integer 1 31) {:form :month}]
-  (intersect %2 (day-of-month (:value %1)))
+  (assoc (intersect %2 (day-of-month (:value %1))) :grain :day)
 
   "<day-of-month>(ordinal) <named-month>" ; 12nd mars
   [(dim :ordinal #(<= 1 (:value %) 31)) {:form :month}]
-  (intersect %2 (day-of-month (:value %1)))
+  (assoc (intersect %2 (day-of-month (:value %1))) :grain :day)
 
   "<day-of-month>(ordinal) <named-month> year" ; 12nd mars 12
   [(dim :ordinal #(<= 1 (:value %) 31)) {:form :month} #"(\d{2,4})"]
-  (intersect %2 (day-of-month (:value %1)) (year (Integer/parseInt(first (:groups %3)))))
+  (assoc (intersect %2 (day-of-month (:value %1)) (year (Integer/parseInt(first (:groups %3)))))
+     :grain :day)
 
   ; "the ides of <named-month>" ; the ides of march 13th for most months, but on the 15th for March, May, July, and October
   ; [#"(?iu)the ides? of" {:form :month}]
@@ -485,15 +486,18 @@
 
   "yyyy-mm-dd"
   #"(\d{2,4})-(0?[1-9]|1[0-2])-(3[01]|[12]\d|0?[1-9])"
-  (parse-dmy (nth (:groups %1) 2) (second (:groups %1)) (first (:groups %1)) true)
+  (assoc (parse-dmy (nth (:groups %1) 2) (second (:groups %1)) (first (:groups %1)) true)
+    :grain :day)
 
   "dd/mm/yyyy"
   #"(3[01]|[12]\d|0?[1-9]) ?[./-] ?(0?[1-9]|1[0-2]) ?[.-/] ?(\d{2,4})"
-  (parse-dmy (first (:groups %1)) (second (:groups %1)) (nth (:groups %1) 2) true)
+  (assoc (parse-dmy (first (:groups %1)) (second (:groups %1)) (nth (:groups %1) 2) true)
+    :grain :day)
 
   "dd/mm"
   #"(3[01]|[12]\d|0?[1-9]) ?[/.] ?(0?[1-9]|1[0-2]) ?\.?"
-  (parse-dmy (first (:groups %1)) (second (:groups %1)) nil true)
+  (assoc (parse-dmy (first (:groups %1)) (second (:groups %1)) nil true)
+    :grain :day)
 
 
   ; Part of day (morning, evening...). They are intervals.
@@ -560,10 +564,6 @@
   "<time> <part-of-day>"
   [#"(?iu)o" (dim :time) {:form :part-of-day}]
   (assoc (intersect %3 %2) :grain (:grain %1))
-
-  "<hour-interval> <part-of-day>"
-  [#(:hour-interval %) {:form :part-of-day}]
-  (intersect %2 %1)
 
   ;; "<part-of-day> of <time>" ; since "morning" "evening" etc. are latent, general time+time is blocked
   ;; [{:form :part-of-day} #"(?iu)of" (dim :time)]
@@ -645,7 +645,8 @@
 
   "<month> dd-dd (interval)"
   [{:form :month} #"(3[01]|[12]\d|0?[1-9])" #"\-|do|po|a[žz] do|a[žz] po" #"(3[01]|[12]\d|0?[1-9])"]
-  (interval (intersect %1 (day-of-month (Integer/parseInt (-> %2 :groups first))))
+  (interval
+    (intersect %1 (day-of-month (Integer/parseInt (-> %2 :groups first))))
             (intersect %1 (day-of-month (Integer/parseInt (-> %4 :groups first))))
             true)
 
@@ -669,8 +670,7 @@
 
   "from <hour> - <datetime> (interval)" ; exclude ending hour from interval
   [#"(?iu)od" (dim :time #(= :hour (:grain %))) #"\-|do|po|a[žz] [pd]o|(ale )?p[řr]ed" (dim :time)]
-  (assoc (interval (intersect %2 (minute 0)) (intersect %4 (minute 0)) true)
-    :hour-interval true)
+  (interval (intersect %2 (minute 0)) (intersect %4 (minute 0)) true)
 
   "between <datetime> and <datetime> (interval)"
   [#"(?iu)mezi" (dim :time #(not= :hour (:grain %))) #"a" (dim :time)]
@@ -678,8 +678,7 @@
 
   "between <hour> and <datetime> (interval)" ; exclude ending hour from interval
   [#"(?iu)mezi" (dim :time #(= :hour (:grain %))) #"a" (dim :time)]
-  (assoc (interval (intersect %2 (minute 0)) (intersect %4 (minute 0)) true)
-    :hour-interval true)
+  (interval (intersect %2 (minute 0)) (intersect %4 (minute 0)) true)
 
   "<interval> month"
   [(dim :time) {:form :month}]
