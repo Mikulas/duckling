@@ -453,9 +453,9 @@
   #"(?iu)poledn([áa]ch|[íi]ch|[íi]m|ema|em|[íi]|e|y)" ; removed "i" to ignore "po poledni"
   (hour 12 false)
 
-  ;; "midnight|EOD|end of day"
-  ;; #"(?iu)p[óo][łl]noc|polnoc|koniec dnia"
-  ;; (hour 0 false)
+  "midnight|EOD|end of day"
+  #"(?iu)p[ůu]lno(c[íi]ch|cemi|cema|c[íi]m|cech|cem|c[íi]|ce|ci|c)"
+  (hour 0 false)
 
   "quarter (relative minutes)"
   #"(?iu)[čc]tvr(t[ěe]|ti|t)( hodiny)?"
@@ -643,7 +643,7 @@
   ; Blocked for :latent time. May need to accept certain latents only, like hours
 
   "<datetime> - <datetime> (interval)"
-  [(dim :time #(not (:latent %))) #"\-|do|po|a[žz] do|a[žz] po" (dim :time #(not (:latent %)))]
+  [(dim :time #(not (:latent %))) #"\-|do|a[žz] do|a[žz] po" (dim :time #(not (:latent %)))]
   (interval %1 %3 true)
 
   "from <ordinal> - <ordinal> (interval)"
@@ -678,7 +678,7 @@
 
   "<time-of-day> - <time-of-day> (interval)"
   [#(and (= :time-of-day (:form %)) (not (:latent %)))
-    #"\-|:|do|po|a[žz] do|az do|a[žz] po|az po"
+    #"\-|:|do|a[žz] do|az do|a[žz] po|az po"
     #(and (= :time-of-day (:form %)) (not (:latent %)))
   ]
   (interval %1 %3 true)
@@ -716,7 +716,7 @@
 
   ;; In this special case, the upper limit is exclusive
   "<hour-of-day> - <hour-of-day> (interval)"
-  [{:form :time-of-day} #"(?iu)-|do|a[žz] po|po" #(and (= :time-of-day (:form %))
+  [{:form :time-of-day} #"(?iu)-|do|a[žz] po" #(and (= :time-of-day (:form %))
   									  (not (:latent %)))]
   (interval %1 %3 :exclusive)
 

@@ -319,6 +319,9 @@
  "pozitri"
  (datetime 2013 2 14)
 
+ "popozitri"
+ (datetime 2013 2 15)
+
   "predevcirem"
   (datetime 2013 2 10)
 
@@ -375,6 +378,14 @@
 
 ; ;; Hours
 
+ "v poledne"
+ "o poledni"
+ (datetime 2013 2 12 12 :hour 12)
+
+ "o pulnoci"
+ "v pulnoci"
+ (datetime 2013 2 13 0 :hour 0)
+
  "ve 3 rano"
  "3 z rana"
  "o treti rano"
@@ -382,7 +393,7 @@
  (datetime 2013 2 12 3 :hour 3)
 
  "3 v noci"
- "3 po pulnoci"
+ ; "3 po pulnoci" ; ambiguous minutes
  "o treti v noci"
  (datetime 2013 2 12 3)
 
@@ -831,6 +842,9 @@
 
 
 ; ;;   ; Explicit intervals
+
+ "mezi osmou a devatou"
+ (datetime-interval [2013 2 12 8 0] [2013 2 12 9 1])
 
  "Cervenec 13-15"
  "od 13. do 15. Cervence"

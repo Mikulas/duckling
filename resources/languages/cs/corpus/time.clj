@@ -378,6 +378,14 @@
 
 ; ;; Hours
 
+ "v poledne"
+ "o poledni"
+ (datetime 2013 2 12 12 :hour 12)
+
+ "o půlnoci"
+ "v půlnoci"
+ (datetime 2013 2 13 0 :hour 0)
+
  "ve 3 ráno"
  "3 z rána"
  "o třetí ráno"
@@ -385,7 +393,7 @@
  (datetime 2013 2 12 3 :hour 3)
 
  "3 v noci"
- "3 po půlnoci"
+ ; "3 po půlnoci" ; ambiguous minutes
  "o třetí v noci"
  (datetime 2013 2 12 3)
 
