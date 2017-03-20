@@ -691,15 +691,16 @@
     #"\-|:|do|a[žz] do|az do|a[žz] po|az po"
     #(and (= :time-of-day (:form %)) (not (:latent %)))
   ]
-  (interval %1 %3 true)
+  (interval %1 %3 (contains? #{:year :month :week :day} (:grain %2)))
 
   "from <time-of-day> - <time-of-day> (interval)"
   [#"(?iu)(od|po)" {:form :time-of-day} #"((ale )?p[řr]ed)|\-|do|po|a[žz] do|az do|a[žz] po|az po" {:form :time-of-day}]
-  (interval %2 %4 true)
+  (interval %2 %4 (contains? #{:year :month :week :day} (:grain %2)))
 
   "between <time-of-day> and <time-of-day> (interval)"
   [#"(?iu)mezi" {:form :time-of-day} #"a|i" {:form :time-of-day}]
-  (interval %2 %4 true)
+  (interval %2 %4 (contains? #{:year :month :week :day} (:grain %2)))
+
 
   ; ; Specific for within duration... Would need to be reworked
   ; "within <duration>"
@@ -708,7 +709,7 @@
 
   "by <time>"; if time is interval, take the start of the interval (by tonight = by 6pm)
   [#"(?iu)(a[z[žz]] )?do" (dim :time)]
-  (interval (cycle-nth :second 0) %2 false)
+  (interval (cycle-nth :second 0) %2 (contains? #{:year :month :week :day} (:grain %2)))
 
   "by the end of <time>"; in this case take the end of the time (by the end of next week = by the end of next sunday)
   [#"(?iu)do (konce )?(tohoto|t[ée]to)?" (dim :time)]
@@ -724,16 +725,16 @@
   [#"(?iu)po" (dim :time)]
   (merge %2 {:direction :after})
 
-  ;; In this special case, the upper limit is exclusive
-  "<hour-of-day> - <hour-of-day> (interval)"
-  [{:form :time-of-day} #"(?iu)-|do|a[žz] po" #(and (= :time-of-day (:form %))
-  									  (not (:latent %)))]
-  (interval %1 %3 :exclusive)
+  ; ;; In this special case, the upper limit is exclusive
+  ; "<hour-of-day> - <hour-of-day> (interval)"
+  ; [{:form :time-of-day} #"(?iu)-|do|a[žz] po" #(and (= :time-of-day (:form %))
+  ; 									  (not (:latent %)))]
+  ; (interval %1 %3 true)
 
-  "from <hour-of-day> - <hour-of-day> (interval)"
-  [#"(?iu)od" {:form :time-of-day} #"-|a[žz] po|do|po" #(and (= :time-of-day (:form %))
-  									              (not (:latent %)))]
-  (interval %2 %4 :exclusive)
+  ; "from <hour-of-day> - <hour-of-day> (interval)"
+  ; [#"(?iu)od" {:form :time-of-day} #"-|a[žz] po|do|po" #(and (= :time-of-day (:form %))
+  ; 									              (not (:latent %)))]
+  ; (interval %2 %4 :exclusive)
 
   ;; "time => time2 (experiment)"
   ;; (dim :time)
