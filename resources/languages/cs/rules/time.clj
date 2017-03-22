@@ -5,7 +5,7 @@
   [(dim :time #(not (:latent %))) (dim :time #(not (:latent %)))] ; sequence of two tokens with a time dimension
   (intersect %1 %2)
 
-  ; same thing, like "sobota z minulého týdne"
+  ; same thing, like "sobota z minul[ée]ho t[ýy]dne"
   "intersect by \"of\", \"from\", \"'s\""
   [(dim :time #(not (:latent %))) #"(?iu)ve?|ze?" (dim :time #(not (:latent %)))] ; sequence of two tokens with a time fn
   (intersect %1 %3)

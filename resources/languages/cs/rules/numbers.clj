@@ -188,20 +188,20 @@
  "one and ordinal-tens no space"
  #"(?iux)
   # single digit prefix
-  (jede?n|dva|tři|čty(?:ři|ry)|pět|šest|sedu?m|osu?m|devět)
+  (jede?n|dva|t[řr]i|[čc]ty(?:[řr]i|ry)|p[ěe]t|[šs]est|sedu?m|osu?m|dev[ěe]t)
   # intersection
   a
   # tens
   (?:
     # common inflection 1
     (?:
-      (dvac|třic|čty(?:ři|ry)c)
-      (?:ítkách|ítkám|ítkama|ítkami|ítkou|ítka|ítce|ítek|ítko|ítku|ítky|íti|eti|et)
+      (dvac|t[řr]ic|[čc]ty(?:[řr]i|ry)c)
+      (?:[íi]tk[áa]ch|[íi]tk[áa]m|[íi]tkama|[íi]tkami|[íi]tkou|[íi]tka|[íi]tce|[íi]tek|[íi]tko|[íi]tku|[íi]tky|[íi]ti|eti|et)
     )
     # common inflection 2
     |(?:
-      (pades|šedes|sedu?mdes|osu?mdes|devades)
-      (?:átkách|átkám|átkama|átkami|átkou|átka|átce|átek|átko|átku|átky|áti|át)
+      (pades|[šs]edes|sedu?mdes|osu?mdes|devades)
+      (?:[áa]tk[áa]ch|[áa]tk[áa]m|[áa]tkama|[áa]tkami|[áa]tkou|[áa]tka|[áa]tce|[áa]tek|[áa]tko|[áa]tku|[áa]tky|[áa]ti|[áa]t)
     )
   )
   "
