@@ -582,22 +582,22 @@
     true)
 
   "<datetime> - <datetime> (interval)"
-  [(dim :time #(not (:latent %))) #"\-|do|a[žz] do|a[žz] po" (dim :time #(not (:latent %)))]
+  [(dim :time #(not (:latent %))) #"\-|do|a[žz]( [pd]o)?|a[žz] po" (dim :time #(not (:latent %)))]
   (interval %1 %3
     (contains? #{:year :month :week :day} (:grain %2)))
 
   "from <ordinal> - <ordinal> (interval)"
-  [#"(?iu)od" (dim :ordinal) #"\-|do|po|a[žz] [pd]o|(ale )?p[řr]ed" (dim :ordinal)]
+  [#"(?iu)od" (dim :ordinal) #"(?iu)\-|do|po|a[žz]( [pd]o)?|(ale )?p[řr]ed" (dim :ordinal)]
   (interval (day-of-month (:value %2)) (day-of-month (:value %4))
     (contains? #{:year :month :week :day} (:grain %2)))
 
   "from <number> - <number> (interval)"
-  [#"(?iu)od" (dim :number) #"\-|do|po|a[žz] [pd]o|(ale )?p[řr]ed" (dim :number)]
+  [#"(?iu)od" (dim :number) #"(?iu)\-|do|po|a[žz]( [pd]o)?|(ale )?p[řr]ed" (dim :number)]
   (interval (day-of-month (:value %2)) (day-of-month (:value %4))
     (contains? #{:year :month :week :day} (:grain %2)))
 
   "from <datetime> - <datetime> (interval)"
-  [#"(?iu)od" (dim :time) #"\-|do|po|a[žz] [pd]o|(ale )?p[řr]ed" (dim :time)]
+  [#"(?iu)od" (dim :time) #"(?iu)\-|do|po|a[žz]( [pd]o)?|(ale )?p[řr]ed" (dim :time)]
   (interval %2 %4 (contains? #{:year :month :week :day} (:grain %2)))
 
   "between <datetime> and <datetime> (interval)"
@@ -605,8 +605,45 @@
   (interval %2 %4 (contains? #{:year :month :week :day} (:grain %2)))
 
   "<interval> month"
-  [(dim :time) {:form :month}]
+  [(dim :time #(contains? #{:year :month :week :day} (:grain %))) {:form :month}]
   (intersect %1 %2)
+
+  "<integer> - <integer> month"
+  [(integer 1 31) #"(?iu)\-|do|po|a[žz]( [pd]o)?|(ale )?p[řr]ed" (integer 1 31) {:form :month}]
+  (intersect %4
+    (assoc (interval (day-of-month (:value %1)) (day-of-month (:value %3)) true) :grain :day)
+  )
+
+  "<integer> - <integer> month"
+  [#"(?iu)od" (integer 1 31) #"(?iu)\-|do|po|a[žz]( [pd]o)?|(ale )?p[řr]ed" (integer 1 31) {:form :month}]
+  (intersect %5
+    (assoc (interval (day-of-month (:value %2)) (day-of-month (:value %4)) true) :grain :day)
+  )
+
+  "<ordinal> - <ordinal> month"
+  [(dim :ordinal #(<= 1 (:value %) 31))
+    #"(?iu)\-|do|po|a[žz]( [pd]o)?|(ale )?p[řr]ed"
+    (dim :ordinal #(<= 1 (:value %) 31))
+    {:form :month}]
+  (intersect %4
+    (assoc (interval
+      (day-of-month (:value %1))
+      (day-of-month (:value %3))
+    true) :grain :day)
+  )
+
+  "<ordinal> - <ordinal> month"
+  [#"(?iu)od"
+    (dim :ordinal #(<= 1 (:value %) 31))
+    #"(?iu)\-|do|po|a[žz]( [pd]o)?|(ale )?p[řr]ed"
+    (dim :ordinal #(<= 1 (:value %) 31))
+    {:form :month}]
+  (intersect %5
+    (assoc (interval
+      (day-of-month (:value %2))
+      (day-of-month (:value %4))
+    true) :grain :day)
+  )
 
   "<time-of-day> - <time-of-day> (interval)"
   [#(and (= :time-of-day (:form %)) (not (:latent %)))
