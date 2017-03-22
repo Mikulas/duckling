@@ -496,12 +496,12 @@
     # common inflection 1
     (?:
       (dvac|t[řr]ic|[čc]ty(?:[řr]i|ry)c)
-      át(?:ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)
+      [áa]t(?:[ýy]ho|[ýy]ch|[ýy]mi|ejch|[ýy]ma|ejma|[ýy]mu|[ée]mu|[ée]ho|[ýy]m|ejm|[ée]m|ym|[ýy]|[íi]|[ée]|[áa]|ou|ej)
     )
     # common inflection 2
     |(?:
       (pades|[šs]edes|sedu?mdes|osu?mdes|devades)
-      át(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)
+      [áa]t([ýy]ho|[ýy]ch|[ýy]mi|ejch|[ýy]ma|ejma|[ýy]mu|[ée]mu|[ée]ho|[ýy]m|ejm|[ée]m|ym|[ýy]|[íi]|[ée]|[áa]|ou|ej)
     )
   )
   "
