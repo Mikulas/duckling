@@ -618,6 +618,9 @@
   (datetime-interval [2013 7 13] [2013 7 16])
 
   "Srpen 8 - Srpen 12"
+  "8 - 12 Srpna"
+  "8. az 12. Srpna"
+  "od 8. az 12. Srpen"
   (datetime-interval [2013 8 8] [2013 8 13])
 
   "9:30 - 11:00"
