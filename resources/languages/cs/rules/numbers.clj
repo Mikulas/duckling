@@ -483,59 +483,41 @@
              first
              Integer/parseInt)}
 
- ;  "numerical ordinal"
- ; #"(?i)(\d+)"
- ; {:dim :ordinal
- ;  :value (-> (:groups %1)
- ;             first
- ;             Integer/parseInt)
- ;  :latent true}
+ ;; no space digit prefix eg triatricaty
 
- ;; no space digit prefix eg t[řr]iat[řr]icet
-
- ; "one and ordinal-tens no space"
- ; [#"(?i)jedena" (dim :ordinal (:ordinal-tens true))]
- ; {:dim :ordinal
- ;  :value (+ 1 (get %2 :value))}
-
- ; "two and ordinal-tens no space"
- ; [#"(?i)dvaa"(dim :ordinal (:ordinal-tens true))]
- ; {:dim :ordinal
- ;  :value (+ 2 (get %2 :value))}
-
- ; "three and ordinal-tens no space"
- ; [#"(?i)t[řr]ia"(dim :ordinal (:ordinal-tens true))]
- ; {:dim :ordinal
- ;  :value (+ 3 (get %2 :value))}
-
- ; "four and ordinal-tens no space"
- ; [#"(?i)[čc]ty[řr]ia"(dim :ordinal (:ordinal-tens true))]
- ; {:dim :ordinal
- ;  :value (+ 4 (get %2 :value))}
-
- ; "five and ordinal-tens no space"
- ; [#"(?i)p[ěe]ta"(dim :ordinal (:ordinal-tens true))]
- ; {:dim :ordinal
- ;  :value (+ 5 (get %2 :value))}
-
- ; "six and ordinal-tens no space"
- ; [#"(?i)[šs]esta"(dim :ordinal (:ordinal-tens true))]
- ; {:dim :ordinal
- ;  :value (+ 6 (get %2 :value))}
-
- ; "seven and ordinal-tens no space"
- ; [#"(?i)sedu?ma"(dim :ordinal (:ordinal-tens true))]
- ; {:dim :ordinal
- ;  :value (+ 7 (get %2 :value))}
-
- ; "eight and ordinal-tens no space"
- ; [#"(?i)osu?ma"(dim :ordinal (:ordinal-tens true))]
- ; {:dim :ordinal
- ;  :value (+ 8 (get %2 :value))}
-
- ; "nine and ordinal-tens no space"
- ; [#"(?i)dev[ěe]ta"(dim :ordinal (:ordinal-tens true))]
- ; {:dim :ordinal
- ;  :value (+ 9 (get %2 :value))}
+ "one and ordinal-tens no space"
+ #"(?iux)
+  # single digit prefix
+  (jede?n|dva|t[řr]i|[čc]ty(?:[řr]i|ry)|p[ěe]t|[šs]est|sedu?m|osu?m|dev[ěe]t)
+  # intersection
+  a
+  # tens
+  (?:
+    # common inflection 1
+    (?:
+      (dvac|t[řr]ic|[čc]ty(?:[řr]i|ry)c)
+      át(?:ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)
+    )
+    # common inflection 2
+    |(?:
+      (pades|[šs]edes|sedu?mdes|osu?mdes|devades)
+      át(ýho|ých|ými|ejch|ýma|ejma|ýmu|ému|ého|ým|ejm|ém|ym|ý|í|é|á|ou|ej)
+    )
+  )
+  "
+  {:dim :ordinal :value (+
+    ; process single digit
+    (get {"jed" 1 "dva" 2 "tři" 3 "čty" 4 "pět" 5 "šes" 6 "sed" 7 "osm" 8 "dev" 9
+                          "tri" 3 "cty" 4 "pet" 5 "ses" 6         "osu" 8}
+      (-> (subs (first (:groups %1)) 0 3) clojure.string/lower-case))
+    (get {"dvac" 20 "třic" 30 "čtyř" 40 "pade" 50 "šede" 60 "sedu" 70 "osmd" 80 "deva" 90
+                              "čtyr" 40
+                    "tric" 30 "ctyr" 40           "sede" 60           "osum" 80}
+      (-> (subs (or
+          (nth (:groups %1) 1)
+          (nth (:groups %1) 2)
+        ) 0 4) clojure.string/lower-case)
+    )
+  )}
 
 )
