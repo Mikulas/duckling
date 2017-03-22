@@ -105,6 +105,37 @@
   "dve ste tisic"
   (number 200000)
 
+  "dvacet jedna tisic" ; hammer this rule, prevents {"dvacet" "jedna tisic"}
+  "dvacet jedna tisic"
+  "dvacet jedna tisic"
+  "dvacet jedna tisic"
+  "dvacet jedna tisic"
+  "dvacet jedna tisic"
+  "dvacet jedna tisic"
+  "dvacet jedna tisic"
+  "dvacet jedna tisic"
+  "dvacet jedna tisic"
+  "dvacet jedna tisic"
+  "dvacet jedna tisic"
+  "dvacet jedna tisic"
+  "dvacet jedna tisic"
+  (number 21000)
+
+  "tricet jedna milionu" ; hammer this rule, prevents {"tricet" "jedna milionu"}
+  "tricet jedna milionu"
+  "tricet jedna milionu"
+  "tricet jedna milionu"
+  "tricet jedna milionu"
+  "tricet jedna milionu"
+  "tricet jedna milionu"
+  "tricet jedna milionu"
+  "tricet jedna milionu"
+  "tricet jedna milionu"
+  "tricet jedna milionu"
+  "tricet jedna milionu"
+  "tricet jedna milionu"
+  (number 31000000)
+
   "dvacet jedna tisic jedenact"
   (number 21011)
 

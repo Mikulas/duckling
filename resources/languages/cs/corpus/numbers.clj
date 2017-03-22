@@ -105,6 +105,37 @@
   "dvě stě tisíc"
   (number 200000)
 
+  "dvacet jedna tisíc" ; hammer this rule, prevents {"dvacet" "jedna tisíc"}
+  "dvacet jedna tisíc"
+  "dvacet jedna tisíc"
+  "dvacet jedna tisíc"
+  "dvacet jedna tisíc"
+  "dvacet jedna tisíc"
+  "dvacet jedna tisíc"
+  "dvacet jedna tisíc"
+  "dvacet jedna tisíc"
+  "dvacet jedna tisíc"
+  "dvacet jedna tisíc"
+  "dvacet jedna tisíc"
+  "dvacet jedna tisíc"
+  "dvacet jedna tisíc"
+  (number 21000)
+
+  "třicet jedna milionů" ; hammer this rule, prevents {"třicet" "jedna milionů"}
+  "třicet jedna milionů"
+  "třicet jedna milionů"
+  "třicet jedna milionů"
+  "třicet jedna milionů"
+  "třicet jedna milionů"
+  "třicet jedna milionů"
+  "třicet jedna milionů"
+  "třicet jedna milionů"
+  "třicet jedna milionů"
+  "třicet jedna milionů"
+  "třicet jedna milionů"
+  "třicet jedna milionů"
+  (number 31000000)
+
   "dvacet jedna tisíc jedenáct"
   (number 21011)
 
