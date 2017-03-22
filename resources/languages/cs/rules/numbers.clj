@@ -185,9 +185,37 @@
 
  ;; Compound numbers: single digit prefix
 
- ; "one and ordinal-tens no space"
- ; [#"(?i)jedena" (dim :number (:numeric-tens true))]
- ; {:dim :number :value (+ 1 (get %2 :value))}
+ "one and ordinal-tens no space"
+ [#"(?iux)
+  # single digit prefix
+  (jede?n|dva|tři|čty(ři|ry)|pět|šest|sedu?m|osu?m|devět)
+  # intersection
+  a
+  # tens
+  (?:
+    # common inflection 1
+    (?:
+      (dvac|třic|čty(ři|ry)c)
+      (?:ítkách|ítkám|ítkama|ítkami|ítkou|ítka|ítce|ítek|ítko|ítku|ítky|íti|eti|et)
+    )
+    # common inflection 2
+    |(?:
+      (pades|šedes|sedu?mdes|osu?mdes|devades)
+      (?:átkách|átkám|átkama|átkami|átkou|átka|átce|átek|átko|átku|átky|áti|át)
+    )
+  )
+  " (dim :number (:numeric-tens true))]
+  {:dim :number :value (+
+    ; process single digit
+    (get {"je" 1 "dv" 2 "tř" 3 "čt" 4 "pě" 5 "še" 6 "se" 7 "os" 8 "de" 9}
+        (-> (subs (nth (:groups %1) 1) 0 2) clojure.string/lower-case))
+    (
+      (get {"dv" 20 "tř" 30 "čt" 40 "pa" 50 "še" 60 "se" 70 "os" 80 "de" 90}
+      (-> (subs
+        (or (nth (:groups %1) 2) (nth (:groups %1) 3))
+       0 2) clojure.string/lower-case))
+      )
+  )}
 
  ; "three and  ordinal-tens no space"
  ; [#"(?i)t[řr]ia" (dim :number (:numeric-tens true))]

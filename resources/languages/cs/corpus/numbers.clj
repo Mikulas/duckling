@@ -26,8 +26,14 @@
 
   "33"
   "třicet tři"
-  ;"třiatřicet"
+  "třiatřicet"
   (number 33)
+
+  "čtyřicet sedm"
+  "čtyřicet sedum"
+  "sedmačtyřicet"
+  "sedumačtyřicet"
+  (number 47)
 
   "14"
   "čtrnáct"
@@ -127,5 +133,6 @@
   (ordinal 70)
 
   "osmdesátá devátá"
+  "devětaosmdesátý"
   (ordinal 89)
 )

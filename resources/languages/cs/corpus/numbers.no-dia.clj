@@ -26,8 +26,14 @@
 
   "33"
   "tricet tri"
-  ;"triatricet"
+  "triatricet"
   (number 33)
+
+  "ctyricet sedm"
+  "ctyricet sedum"
+  "sedmactyricet"
+  "sedumactyricet"
+  (number 47)
 
   "14"
   "ctrnact"
@@ -127,5 +133,6 @@
   (ordinal 70)
 
   "osmdesata devata"
+  "devetaosmdesaty"
   (ordinal 89)
 )
