@@ -30,7 +30,7 @@
   ;; named days
 
   "named-day"
-  #"(?iu)pond[ěe]ln([íi]mu|[íi]ch|[íi]ma|[íi]ho|[íi]mi|[íi]m|[íi])|pond[ěe]l([íi]ma|[íi]ch|[íi]mi|[íi]m|[íi]|k[áa]ch|c[íi]ch|k[ůu]m|kama|kem|k[ůu]|kum|ka|ek|ku|ky)|pon?\.?"
+  (duckling.cs/dyn-re '("pond[ěe]ln" :pondelni "|pond[ěe]l" :pondelek "|pon?\\.?"))
   (day-of-week 1)
 
   "named-day"

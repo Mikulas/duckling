@@ -10,7 +10,8 @@
             [duckling.resource :as res]
             [duckling.time.api :as api]
             [duckling.time.obj :as time]
-            [duckling.util :as util]))
+            [duckling.util :as util]
+            [duckling.cs :as cs]))
 
 (defonce rules-map (atom {}))
 (defonce corpus-map (atom {}))
