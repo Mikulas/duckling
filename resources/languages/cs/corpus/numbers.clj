@@ -45,10 +45,12 @@
 
   "17"
   "sedmnáct"
+  "sedumnáct"
   (number 17)
 
   "18"
   "osmnáct"
+  "osumnáct"
   (number 18)
 
   "1.1"

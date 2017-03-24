@@ -92,11 +92,11 @@
  {:dim :number :integer true :value 16 :grain 1}
 
  "seventeen"
- #"(?i)sedmn[áa]ct(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
+ #"(?i)sedu?mn[áa]ct(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 17 :grain 1}
 
  "eighteen"
- #"(?i)osmn[áa]ct(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
+ #"(?i)osu?mn[áa]ct(k[áa]ch|k[áa]m|kama|kami|kou|ka|ce|ek|ko|ku|ky|i)?"
  {:dim :number :integer true :value 18 :grain 1}
 
  "nineteen"
