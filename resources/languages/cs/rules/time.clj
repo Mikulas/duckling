@@ -61,51 +61,55 @@
   ;; named months
 
   "named-month"
-  #"(?iu)lednov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])|led(nama|nech|n[ůu]m|num|n[ůu]|nem|na|ne|en|nu|ny)"
+  (duckling.cs/dyn-re '("lednov" :lednovy "|led" :leden "|led\\.?"))
   (month 1)
 
   "named-month"
-  #"(?iu)[úu]norov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])|[úu]no(r[ůu]m|rama|rech|rum|rem|r[ůu]|ra|re|ru|ry|r)"
+  (duckling.cs/dyn-re '("[úu]norov" :lednovy "|[úu]no" :unor "|un\\.?"))
   (month 2)
 
   "named-month"
-  #"(?iu)b[řr]eznov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])|b[řr]ez(nama|nech|n[ůu]m|num|n[ůu]|nem|na|ne|en|nu|ny)"
+  (duckling.cs/dyn-re '("b[řr]eznov" :lednovy "|b[řr]ez" :leden "|brez\\.?"))
   (month 3)
 
   "named-month"
-  #"(?iu)dubnov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])|dub(nama|nech|n[ůu]m|num|n[ůu]|nem|na|ne|en|nu|ny)"
+  (duckling.cs/dyn-re '("dubnov" :lednovy "|dub" :leden "|dub\\.?"))
   (month 4)
 
   "named-month"
-  #"(?iu)kv[ěe]tnov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])|kv[ěe]t(nama|nech|n[ůu]m|num|n[ůu]|nem|na|ne|en|nu|ny)"
+  (duckling.cs/dyn-re '("kv[ěe]tnov" :lednovy "|kv[ěe]t" :leden "|květ?\\.?"))
   (month 5)
 
   "named-month"
-  #"(?iu)[čc]ervnov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])|[čc]erv(nama|nech|n[ůu]m|num|n[ůu]|nem|na|ne|en|nu|ny)"
+  (duckling.cs/dyn-re '("m[áa]jov" :lednovy "|m[áa]j" :maj))
+  (month 5)
+
+  "named-month"
+  (duckling.cs/dyn-re '("[čc]ervnov" :lednovy "|[čc]erv" :leden "|červ\\.?"))
   (month 6)
 
   "named-month"
-  #"(?iu)[čc]ervencov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])|[čc]erven(c[íi]ch|c[ůu]m|cema|cum|c[ůu]|cem|ec|ce|ci)"
+  (duckling.cs/dyn-re '("[čc]ervencov" :lednovy "|[čc]erven" :cervenec))
   (month 7)
 
   "named-month"
-  #"(?iu)srpnov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])|srp(nama|nech|n[ůu]m|num|n[ůu]|nem|na|ne|en|nu|ny)"
+  (duckling.cs/dyn-re '("srpnov" :lednovy "|srp" :leden "|srp\\.?"))
   (month 8)
 
   "named-month"
-  #"(?iu)[žz][áa][řr]ij?ov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])|z[áa][řr]([íi]ma|[íi]ch|[íi]mi|[íi]m|[íi])"
+  (duckling.cs/dyn-re '("[žz][áa][řr]ij?ov" :lednovy "|z[áa][řr]" :zari "|z[áa][rř]\\.?"))
   (month 9)
 
   "named-month"
-  #"(?iu)[řr][íi]jnov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])|[řr][íi]j(nama|nech|n[ůu]m|num|n[ůu]|nem|na|ne|en|nu|ny)"
+  (duckling.cs/dyn-re '("[řr][íi]jnov" :lednovy "|[řr][íi]j" :leden "|[řr][íi]j\\.?"))
   (month 10)
 
   "named-month"
-  #"(?iu)listopadov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])|listop(adama|ad[ůu]m|adech|adem|adum|ad[ůu]|ade|adu|ady|ad)"
+  (duckling.cs/dyn-re '("listopadov" :lednovy "|listop" :listopad "|list\\.?"))
   (month 11)
 
   "named-month"
-  #"(?iu)prosincov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])|prosin(c[íi]ch|c[ůu]m|cema|cum|c[ůu]|cem|ec|ce|ci)"
+  (duckling.cs/dyn-re '("prosincov" :lednovy "|prosin" :cervenec "|pros\\.?"))
   (month 12)
 
 
