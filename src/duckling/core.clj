@@ -187,7 +187,7 @@
   ([module-id s]
    (play module-id s nil))
   ([module-id s targets]
-   (play module-id s targets (default-context :corpus)))
+   (play module-id s targets (default-context :now)))
   ([module-id s targets context]
    (let [targets (when targets (map (fn [dim] {:dim dim :label dim}) targets))
          {stash :stash
