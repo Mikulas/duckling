@@ -13,7 +13,7 @@
 	      :sobota "(?:ot[áa]ch|otami|otama|ot[áa]m|ot[ěe]|otou|ota|oto|otu|oty|ot)"
 	      :nedele "(?:l[íi]ch|lema|lemi|l[íi]m|l[íi]|le|li|l)"
 
-	      :lednovy "(?:ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])"
+	      :lednovy "(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])" ; captured
 	      :leden "(?:nama|nech|n[ůu]m|num|n[ůu]|nem|na|ne|en|nu|ny)"
 	      :unor "(?:r[ůu]m|rama|rech|rum|rem|r[ůu]|ra|re|ru|ry|r)"
 	      :maj "(?:j[íi]ch|jema|j[ůu]m|jemi|j[íi]m|jem|jum|j[ůu]|j[íi]|je|ji|j)"

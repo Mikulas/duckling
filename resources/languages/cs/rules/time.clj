@@ -62,106 +62,68 @@
 
   "named-month"
   (duckling.cs/dyn-re '("lednov" :lednovy "|led" :leden "|led\\.?"))
-  (month 1)
+  (assoc (month 1)
+    :month-adjective (-> %1 :groups first empty?))
 
   "named-month"
   (duckling.cs/dyn-re '("[úu]norov" :lednovy "|[úu]no" :unor "|un\\.?"))
-  (month 2)
+  (assoc (month 2)
+    :month-adjective (-> %1 :groups first empty?))
 
   "named-month"
   (duckling.cs/dyn-re '("b[řr]eznov" :lednovy "|b[řr]ez" :leden "|brez\\.?"))
-  (month 3)
+  (assoc (month 3)
+    :month-adjective (-> %1 :groups first empty?))
 
   "named-month"
   (duckling.cs/dyn-re '("dubnov" :lednovy "|dub" :leden "|dub\\.?"))
-  (month 4)
+  (assoc (month 4)
+    :month-adjective (-> %1 :groups first empty?))
 
   "named-month"
   (duckling.cs/dyn-re '("kv[ěe]tnov" :lednovy "|kv[ěe]t" :leden "|květ?\\.?"))
-  (month 5)
+  (assoc (month 5)
+    :month-adjective (-> %1 :groups first empty?))
 
   "named-month"
   (duckling.cs/dyn-re '("m[áa]jov" :lednovy "|m[áa]j" :maj))
-  (month 5)
+  (assoc (month 5)
+    :month-adjective (-> %1 :groups first empty?))
 
   "named-month"
   (duckling.cs/dyn-re '("[čc]ervnov" :lednovy "|[čc]erv" :leden "|červ\\.?"))
-  (month 6)
+  (assoc (month 6)
+    :month-adjective (-> %1 :groups first empty?))
 
   "named-month"
   (duckling.cs/dyn-re '("[čc]ervencov" :lednovy "|[čc]erven" :cervenec))
-  (month 7)
+  (assoc (month 7)
+    :month-adjective (-> %1 :groups first empty?))
 
   "named-month"
   (duckling.cs/dyn-re '("srpnov" :lednovy "|srp" :leden "|srp\\.?"))
-  (month 8)
+  (assoc (month 8)
+    :month-adjective (-> %1 :groups first empty?))
 
   "named-month"
   (duckling.cs/dyn-re '("[žz][áa][řr]ij?ov" :lednovy "|z[áa][řr]" :zari "|z[áa][rř]\\.?"))
-  (month 9)
+  (assoc (month 9)
+    :month-adjective (-> %1 :groups first empty?))
 
   "named-month"
   (duckling.cs/dyn-re '("[řr][íi]jnov" :lednovy "|[řr][íi]j" :leden "|[řr][íi]j\\.?"))
-  (month 10)
+  (assoc (month 10)
+    :month-adjective (-> %1 :groups first empty?))
 
   "named-month"
   (duckling.cs/dyn-re '("listopadov" :lednovy "|listop" :listopad "|list\\.?"))
-  (month 11)
+  (assoc (month 11)
+    :month-adjective (-> %1 :groups first empty?))
 
   "named-month"
   (duckling.cs/dyn-re '("prosincov" :lednovy "|prosin" :cervenec "|pros\\.?"))
-  (month 12)
-
-
-  ;; month adjectives
-
-  "month adjective"
-  #"(?iu)lednov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])"
-  {:form :month :month 1 :month-adjective true}
-
-  "month adjective"
-  #"(?iu)[úu]norov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])"
-  {:form :month :month 2 :month-adjective true}
-
-  "month adjective"
-  #"(?iu)b[řr]eznov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])"
-  {:form :month :month 3 :month-adjective true}
-
-  "month adjective"
-  #"(?iu)dubnov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])"
-  {:form :month :month 4 :month-adjective true}
-
-  "month adjective"
-  #"(?iu)kv[ěe]tnov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])"
-  {:form :month :month 5 :month-adjective true}
-
-  "month adjective"
-  #"(?iu)[čc]ervnov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])"
-  {:form :month :month 6 :month-adjective true}
-
-  "month adjective"
-  #"(?iu)[čc]ervencov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])"
-  {:form :month :month 7 :month-adjective true}
-
-  "month adjective"
-  #"(?iu)srpnov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])"
-  {:form :month :month 8 :month-adjective true}
-
-  "month adjective"
-  #"(?iu)[žz][áa][řr]ij?ov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])"
-  {:form :month :month 9 :month-adjective true}
-
-  "month adjective"
-  #"(?iu)[řr][íi]jnov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])"
-  {:form :month :month 10 :month-adjective true}
-
-  "month adjective"
-  #"(?iu)listopadov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])"
-  {:form :month :month 11 :month-adjective true}
-
-  "month adjective"
-  #"(?iu)prosincov(ou|[ýy]mi|[ée]|[áa]|[ýy]|[íi])"
-  {:form :month :month 12 :month-adjective true}
+  (assoc (month 12)
+    :month-adjective (-> %1 :groups first empty?))
 
 
   ;; Holidays
