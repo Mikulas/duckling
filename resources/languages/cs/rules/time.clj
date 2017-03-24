@@ -216,13 +216,13 @@
   #"(?iu)popoz[íi]t[řr][íi]|popoz[íi]t[řr](c[íi]ch|k[áa]ch|kama|k[ůu]m|kem|k[ůu]|kum|ek|ku|ky)"
   (cycle-nth :day 3)
 
-  "end of month"
-  #"(?iu)((ve?|na|ze?) )kon(c[íi]ch|c[ůu]m|cema|cum|c[ůu]|cem|ec|ce|ci) m[ěe]s[íi](c[íi]ch|cema|c[ůu]m|cem|cum|c[ůu]|ce|ci|c)"
-  (cycle-nth :month 1)
+  ; "end of month"
+  ; #"(?iu)((ve?|na|ze?) )kon(c[íi]ch|c[ůu]m|cema|cum|c[ůu]|cem|ec|ce|ci) m[ěe]s[íi](c[íi]ch|cema|c[ůu]m|cem|cum|c[ůu]|ce|ci|c)"
+  ; (cycle-nth :month 1)
 
-  "end of year"
-  #"(?iu)((ve?|na|ze?) )kon(c[íi]ch|c[ůu]m|cema|cum|c[ůu]|cem|ec|ce|ci) (rok(ama|[áa]ch|em|um|[ůu]m|[ůu]v|y|a|u|[ůu])?)"
-  (cycle-nth :year 1)
+  ; "end of year"
+  ; #"(?iu)((ve?|na|ze?) )kon(c[íi]ch|c[ůu]m|cema|cum|c[ůu]|cem|ec|ce|ci) (rok(ama|[áa]ch|em|um|[ůu]m|[ůu]v|y|a|u|[ůu])?)"
+  ; (cycle-nth :year 1)
 
 
   ;; This, Next, Last
@@ -506,6 +506,24 @@
   "<time> <part-of-day>"
   [#"(?iu)o" (dim :time) {:form :part-of-day}]
   (assoc (intersect %3 %2) :grain (:grain %1))
+
+  "end of month as interval"
+  #"(?iu)((ve?|na|ze?) )kon(c[íi]ch|c[ůu]m|cema|cum|c[ůu]|cem|ec|ce|ci) m[ěe]s[íi](c[íi]ch|cema|c[ůu]m|cem|cum|c[ůu]|ce|ci|c)"
+  (let [
+      start (day-of-month 25)
+      end (cycle-nth-after :month 1 start)
+    ]
+    (interval start end true)
+  )
+
+  "end of year as interval"
+  #"(?iu)((ve?|na|ze?) )kon(c[íi]ch|c[ůu]m|cema|cum|c[ůu]|cem|ec|ce|ci) (rok(ama|[áa]ch|em|um|[ůu]m|[ůu]v|y|a|u|[ůu])?)"
+  (let [
+      start (month 11)
+      end (cycle-nth-after :year 1 start)
+    ]
+    (interval start end true)
+  )
 
 
   ;; other intervals: week-end, seasons

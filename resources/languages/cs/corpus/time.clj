@@ -646,4 +646,13 @@
   "10:30"
   (datetime 2013 2 12 10 30)
 
+  "na konci měsíce"
+  (datetime-interval [2013 2 25] [2013 3 1])
+
+  "na konci měsíce ledna"
+  (datetime-interval [2014 1 25] [2014 2 1])
+
+  "na konci roku"
+  (datetime-interval [2013 11] [2014 1])
+
 )
