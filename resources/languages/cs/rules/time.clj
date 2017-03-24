@@ -30,31 +30,31 @@
   ;; named days
 
   "named-day"
-  (duckling.cs/dyn-re '("pond[ěe]ln" :pondelni "|pond[ěe]l" :pondelek "|pon?\\.?"))
+  (duckling.cs/dyn-re '("pond[ěe]ln" :pondelni "|pond[ěe]l" :pondeli "|pon?\\.?"))
   (day-of-week 1)
 
   "named-day"
-  #"(?iu)[úu]tern([íi]mu|[íi]ch|[íi]ma|[íi]ho|[íi]mi|[íi]m|[íi])|[úu]ter([ýy]ma|[ýy]ch|[ýy]m|[ýy]|k[áa]ch|c[íi]ch|k[ůu]m|kama|kem|k[ůu]|kum|ka|ek|ku|ky)|[úu]t\.?"
+  (duckling.cs/dyn-re '("[úu]tern" :pondelni "|[úu]ter" :utery "|[úu]t\\.?"))
   (day-of-week 2)
 
   "named-day"
-  #"(?iu)st[řr]ede[čc]n([íi]mu|[íi]ch|[íi]ma|[íi]ho|[íi]mi|[íi]m|[íi])|st[řr](ed[áa]ch|edami|edama|ed[áa]m|ed[ěe]|edou|eda|edo|edu|edy|ed)|st\.?"
+  (duckling.cs/dyn-re '("st[řr]ede[čc]n" :pondelni "|st[řr]" :streda "|st\\.?"))
   (day-of-week 3)
 
   "named-day"
-  #"(?iu)[čc]tvrte[čc]n([íi]mu|[íi]ch|[íi]ma|[íi]ho|[íi]mi|[íi]m|[íi])|[čc]tvrt(k[áa]ch|c[íi]ch|k[ůu]m|kama|kem|k[ůu]|kum|ka|ek|ku|ky)|[čc]tv?\.?"
+  (duckling.cs/dyn-re '("[čc]tvrte[čc]n" :pondelni "|[čc]tvrt" :ctvrtek "|[čc]tv?\\.?"))
   (day-of-week 4)
 
   "named-day"
-  #"(?iu)p[áa]te[čc]n([íi]mu|[íi]ch|[íi]ma|[íi]ho|[íi]mi|[íi]m|[íi])|p[áa]t(c[íi]ch|k[áa]ch|k[ůu]m|kama|kem|k[ůu]|kum|ka|ek|ku|ky)|p[áa]t?\.?"
+  (duckling.cs/dyn-re '("p[áa]te[čc]n" :pondelni "|p[áa]t" :ctvrtek "|p[áa]t?\\.?"))
   (day-of-week 5)
 
   "named-day"
-  #"(?iu)sobotn([íi]mu|[íi]ch|[íi]ma|[íi]ho|[íi]mi|[íi]m|[íi])|sob(ot[áa]ch|otami|otama|ot[áa]m|ot[ěe]|otou|ota|oto|otu|oty|ot)|sob?\.?"
+  (duckling.cs/dyn-re '("sobotn" :pondelni "|sob" :sobota "|sob?\\.?"))
   (day-of-week 6)
 
   "named-day"
-  #"(?iu)ned[ěe]ln([íi]mu|[íi]ch|[íi]ma|[íi]ho|[íi]mi|[íi]m|[íi])|ned[ěe](l[íi]ch|lema|lemi|l[íi]m|l[íi]|le|li|l)|ne\.?"
+  (duckling.cs/dyn-re '("ned[ěe]ln" :pondelni "|ned[ěe]" :nedele "|ne\\.?"))
   (day-of-week 7)
 
 
