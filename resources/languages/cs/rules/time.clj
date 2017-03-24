@@ -129,11 +129,21 @@
   ;; Holidays
 
   "christmas eve"
-  #"(?iu)V[áa]n(oc[íi]ch|ocema|ocemi|oc[ůu]m|oce|oci|oc)|[šs]t[ěe]d(r[ée]mu|r[ýy]mi|r[ýy]ch|r[ée]ho|r[ýy]ma|r[ýy]m|[řr][íi]|r[ée]m|r[ýy]|rou|r[áa]|r[ée]) d(enama|en[ůu]m|nov[ée]|enech|n[ůu]m|nech|n[ůu]v|n[íi]m|en[ůu]|enum|enem|ene|eny|enu|nem|n[íi]|n[ůu]|en|ny|nu|ne|ni)"
+  #"(?iux)
+    # Vánoce
+    V[áa]n(oc[íi]ch|ocema|ocemi|oc[ůu]m|oce|oci|oc)
+    # Štědrý den
+    |[šs]t[ěe]d(r[ée]mu|r[ýy]mi|r[ýy]ch|r[ée]ho|r[ýy]ma|r[ýy]m|[řr][íi]|r[ée]m|r[ýy]|rou|r[áa]|r[ée])
+      d(enama|en[ůu]m|nov[ée]|enech|n[ůu]m|nech|n[ůu]v|n[íi]m|en[ůu]|enum|enem|ene|eny|enu|nem|n[íi]|n[ůu]|en|ny|nu|ne|ni)"
   (month-day 12 24)
 
   "new year's eve"
-  #"(?iu)Silvest(rov[ée]|rovi|rama|rech|r[ůu]m|rum|[řr]i|rem|r[ůu]|[řr]e|ra|re|ru|ry|r)|nov[ýy] rok"
+  #"(?iux)
+    # Silvertr
+    Silvest(rov[ée]|rovi|rama|rech|r[ůu]m|rum|[řr]i|rem|r[ůu]|[řr]e|ra|re|ru|ry|r)
+    # Nový rok
+    |Nov([ée]mu|[ýy]m|[ýy]) rok(u)?
+  "
   (month-day 12 31)
 
   "valentine's day"
