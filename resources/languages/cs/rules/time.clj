@@ -322,6 +322,9 @@
   #"(?i)letos"
   (cycle-nth :year 0)
 
+  "next year"
+  #"(?i)nap[řr]esrok"
+  (cycle-nth :year 1)
 
   ;; day in month
 

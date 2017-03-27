@@ -262,8 +262,10 @@
 
   "za rok"
   "za jeden rok"
-  "napřesrok"
   (datetime 2014 2)
+
+  "napřesrok"
+  (datetime 2014)
 
   "za dva roky"
   "za 2 roky"
