@@ -241,6 +241,9 @@
   "před dvěma lety"
   (datetime 2011 2)
 
+  "před půl rokem"
+  (datetime 2012 8)
+
   "za půl roku"
   (datetime 2013 8)
 

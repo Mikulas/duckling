@@ -241,6 +241,9 @@
   "pred dvema lety"
   (datetime 2011 2)
 
+  "pred pul rokem"
+  (datetime 2012 8)
+
   "za pul roku"
   (datetime 2013 8)
 

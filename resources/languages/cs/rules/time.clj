@@ -326,6 +326,17 @@
   #"(?i)nap[řr]esrok"
   (cycle-nth :year 1)
 
+
+  ;; relative months
+
+  "half a year in past"
+  #"(?i)(p[řr]ed )?p[ůu]l rokem"
+  (cycle-nth :month -6)
+
+  "half a year in future"
+  #"(?i)(za )?p[ůu]l rok(u)?"
+  (cycle-nth :month 6)
+
   ;; day in month
 
   "<day-of-month> (ordinal)"
