@@ -22,7 +22,7 @@
    :grain :day}
 
   "week (unit-of-duration)"
-  #"(?iu)t(ejdnov[ée]|[ýy]dnov[ée]|[ýy]dn[ůu]m|[ýy]dn[ůu]v|ejdn[ůu]v|ejdn[ůu]m|ejdnech|[ýy]dnech|[ýy]dn[ůu]|ejdnem|ejdn[íi]|ejdn[ůu]|[ýy]dnem|[ýy]dn[íi]|ejdne|[ýy]dny|[ýy]dnu|[ýy]den|[ýy]dni|ejdni|ejdny|ejdnu|[ýy]dne)"
+  #"(?iu)t(ejdnov[ée]|[ýy]dnov[ée]|[ýy]dn[ůu]m|[ýy]dn[ůu]v|ejdn[ůu]v|ejdn[ůu]m|ejdnech|[ýy]dnech|[ýy]dn[ůu]|ejdnem|ejdn[íi]|ejdn[ůu]|[ýy]dnem|[ýy]dn[íi]|ejdne|[ýy]dny|[ýy]dnu|[ýy]den|[ýy]dni|ejdni|ejden|ejdny|ejdnu|[ýy]dne)"
   {:dim :unit-of-duration
    :grain :week}
 

@@ -31,7 +31,7 @@
    :grain :day}
 
   "week (cycle)"
-  #"(?i)t(ejdnov[ée]|[ýy]dnov[ée]|[ýy]dn[ůu]m|[ýy]dn[ůu]v|ejdn[ůu]v|ejdn[ůu]m|ejdnech|[ýy]dnech|[ýy]dn[ůu]|ejdnem|ejdn[íi]|ejdn[ůu]|[ýy]dnem|[ýy]dn[íi]|ejdne|[ýy]dny|[ýy]dnu|[ýy]den|[ýy]dni|ejdni|ejdny|ejdnu|[ýy]dne)"
+  #"(?i)t(ejdnov[ée]|[ýy]dnov[ée]|[ýy]dn[ůu]m|[ýy]dn[ůu]v|ejdn[ůu]v|ejdn[ůu]m|ejdnech|[ýy]dnech|[ýy]dn[ůu]|ejdnem|ejdn[íi]|ejdn[ůu]|[ýy]dnem|[ýy]dn[íi]|ejdne|[ýy]dny|[ýy]dnu|[ýy]den|[ýy]dni|ejdni|ejdny|ejden|ejdnu|[ýy]dne)"
   {:dim :cycle
    :grain :week}
 
