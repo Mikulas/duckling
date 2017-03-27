@@ -45,10 +45,12 @@
 
   "17"
   "sedmnact"
+  "sedumnact"
   (number 17)
 
   "18"
   "osmnact"
+  "osumnact"
   (number 18)
 
   "1.1"

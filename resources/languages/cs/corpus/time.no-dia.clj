@@ -241,6 +241,9 @@
   "pred dvema lety"
   (datetime 2011 2)
 
+  "za pul roku"
+  (datetime 2013 8)
+
   "pred peti lety"
   "pred peti roky"
   (datetime 2008 2)
@@ -259,6 +262,7 @@
 
   "za rok"
   "za jeden rok"
+  "napresrok"
   (datetime 2014 2)
 
   "za dva roky"
@@ -504,6 +508,9 @@
   "Pa, Cervenec 18, 2014 19:00"
   (datetime 2014 7 18 19 0 :day-of-week 5 :hour 7 :meridiem :pm)
 
+  "novy rok"
+  (datetime 2013 12 31)
+
   "za vterinu"
   "za sekundu"
   "ve vterine"
@@ -555,6 +562,7 @@
   (datetime 2013 2 19 4)
 
   "za jeden tyden"
+  "za jeden tejden"
   ; "za tyden"
   (datetime 2013 2 19)
 
